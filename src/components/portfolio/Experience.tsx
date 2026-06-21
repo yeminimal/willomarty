@@ -23,7 +23,18 @@ export function Experience() {
                 <div className="mt-1 md:mt-0">
                   <h3 className="display-serif text-xl md:text-2xl text-foreground">
                     {e.role} <span className="text-accent">·</span>{" "}
-                    <span className="text-accent">{e.company}</span>
+                    {e.link ? (
+                      <a
+                        href={e.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent underline-offset-4 decoration-accent/40 hover:decoration-accent hover:underline transition"
+                      >
+                        {e.company}
+                      </a>
+                    ) : (
+                      <span className="text-accent">{e.company}</span>
+                    )}
                   </h3>
                   <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
                     {e.location}
