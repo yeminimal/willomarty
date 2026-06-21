@@ -26,9 +26,10 @@ export function Hero() {
         <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
           <div>
             <h1 className="display-serif leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="italic text-accent">Olayemi</span>
+              <span className="text-foreground">Williams</span>
               <br />
-              <span className="text-foreground">Williams Martins</span>
+              <span className="italic text-accent">Olayemi</span>{" "}
+              <span className="text-foreground">Martins</span>
             </h1>
             <div className="mt-6 h-px w-32 bg-accent/40" />
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">
