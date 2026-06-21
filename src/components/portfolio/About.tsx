@@ -1,12 +1,12 @@
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Palette, Code2, Clapperboard, Wrench, type LucideIcon } from "lucide-react";
 
-const FACTS = [
-  { icon: "🎨", label: "Brand Identity & Logo Design" },
-  { icon: "💻", label: "Frontend Dev (React, Tailwind, Vite)" },
-  { icon: "🎬", label: "Video Production & Motion" },
-  { icon: "🛠", label: "Micro-Tool Builder (4 Live Tools)" },
+const FACTS: { icon: LucideIcon; label: string }[] = [
+  { icon: Palette, label: "Brand Identity & Logo Design" },
+  { icon: Code2, label: "Frontend Dev (React, Tailwind, Vite)" },
+  { icon: Clapperboard, label: "Video Production & Motion" },
+  { icon: Wrench, label: "Micro-Tool Builder (4 Live Tools)" },
 ];
 
 export function About() {
