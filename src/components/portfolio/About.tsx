@@ -49,8 +49,8 @@ export function About() {
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
               {[
                 { label: "Behance", href: "https://www.behance.net/willomarty" },
+                { label: "GitHub", href: "https://github.com/yeminimal" },
                 { label: "LinkedIn", href: "#" },
-                { label: "GitHub", href: "#" },
               ].map((l) => (
                 <a
                   key={l.label}
