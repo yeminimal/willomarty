@@ -1,6 +1,26 @@
-import { EDUCATION } from "@/data/education";
+import { EDUCATION, CERTIFICATIONS, type Education as EducationItem } from "@/data/education";
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
+
+function Card({ e, i }: { e: EducationItem; i: number }) {
+  const Icon = e.icon;
+  return (
+    <Reveal delay={i * 0.05}>
+      <div className="border border-border bg-surface p-7 h-full border-l-2 border-l-transparent hover:border-l-accent transition-colors">
+        <Icon size={24} className="text-accent" strokeWidth={1.5} />
+        <h3 className="display-serif mt-4 text-xl md:text-2xl text-foreground">
+          {e.credential}
+        </h3>
+        <div className="mt-2 text-foreground/70">{e.institution}</div>
+        {e.period && (
+          <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dim">
+            {e.period}
+          </div>
+        )}
+      </div>
+    </Reveal>
+  );
+}
 
 export function Education() {
   return (
@@ -13,20 +33,22 @@ export function Education() {
 
         <div className="mt-14 grid md:grid-cols-2 gap-5">
           {EDUCATION.map((e, i) => (
-            <Reveal key={e.credential} delay={i * 0.05}>
-              <div className="border border-border bg-surface p-7 h-full border-l-2 border-l-transparent hover:border-l-accent transition-colors">
-                <div className="text-2xl">{e.icon}</div>
-                <h3 className="display-serif mt-4 text-xl md:text-2xl text-foreground">
-                  {e.credential}
-                </h3>
-                <div className="mt-2 text-foreground/70">{e.institution}</div>
-                {e.period && (
-                  <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dim">
-                    {e.period}
-                  </div>
-                )}
-              </div>
-            </Reveal>
+            <Card key={e.credential} e={e} i={i} />
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="mt-20 flex items-center gap-4">
+            <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim">
+              Certifications
+            </div>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid md:grid-cols-2 gap-5">
+          {CERTIFICATIONS.map((e, i) => (
+            <Card key={e.credential} e={e} i={i} />
           ))}
         </div>
       </div>
