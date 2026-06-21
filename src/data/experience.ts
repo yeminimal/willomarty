@@ -1,6 +1,7 @@
 export type Experience = {
   role: string;
   company: string;
+  link?: string;
   period: string;
   location: string;
   bullets: string[];
