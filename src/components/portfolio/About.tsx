@@ -28,9 +28,9 @@ export function About() {
           <Reveal delay={0.1}>
             <div className="space-y-6 text-base md:text-[17px] leading-[1.7] text-foreground/85">
               <p>
-                I'm Williams — a visual, brand and web designer, video creator and copywriter. I've spent
-                the better part of a decade refining a quiet blend of creativity and precision; meticulousness
-                has become the bigger part of my signature.
+                I'm Williams — a Visual (Creative) Director. I've spent the better part of a decade
+                refining a quiet blend of creativity and precision; meticulousness has become the
+                bigger part of my signature.
               </p>
               <p>
                 Though I'm obsessed with brand design, my expertise spans user interfaces, packaging, video
