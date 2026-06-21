@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 const LINKS = [
   { href: "#about", label: "About" },
@@ -14,6 +15,7 @@ const LINKS = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -44,14 +46,30 @@ export function Nav() {
               {l.label}
             </a>
           ))}
+          <button
+            aria-label="Toggle theme"
+            onClick={toggle}
+            className="text-muted hover:text-accent transition-colors"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </nav>
-        <button
-          aria-label="Toggle navigation"
-          className="md:hidden text-foreground"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <button
+            aria-label="Toggle theme"
+            onClick={toggle}
+            className="text-muted hover:text-accent transition-colors"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            aria-label="Toggle navigation"
+            className="text-foreground"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
