@@ -28,7 +28,7 @@ export function Contact() {
 
           <div className="mt-8 inline-flex items-center gap-2 border border-accent/50 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent">
             <span className="w-1.5 h-1.5 bg-accent animate-pulse" />
-            Open to Work — June 2026
+            Open to Work — {new Date().toLocaleString("en-US", { month: "long", year: "numeric" })}
           </div>
         </Reveal>
 

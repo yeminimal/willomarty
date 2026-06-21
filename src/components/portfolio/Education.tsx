@@ -7,7 +7,18 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
   return (
     <Reveal delay={i * 0.05}>
       <div className="border border-border bg-surface p-7 h-full border-l-2 border-l-transparent hover:border-l-accent transition-colors">
-        <Icon size={24} className="text-accent" strokeWidth={1.5} />
+        {e.logo ? (
+          <img
+            src={e.logo}
+            alt=""
+            width={28}
+            height={28}
+            loading="lazy"
+            className="h-7 w-7 object-contain"
+          />
+        ) : (
+          <Icon size={24} className="text-accent" strokeWidth={1.5} />
+        )}
         <h3 className="display-serif mt-4 text-xl md:text-2xl text-foreground">
           {e.credential}
         </h3>
@@ -15,6 +26,34 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
         {e.period && (
           <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dim">
             {e.period}
+          </div>
+        )}
+        {e.tools && e.tools.length > 0 && (
+          <div className="mt-5 pt-5 border-t border-border">
+            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dim mb-3">
+              Stack
+            </div>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+              {e.tools.map((t) => (
+                <div
+                  key={t.name}
+                  title={t.name}
+                  className="flex items-center gap-2 text-foreground/75 hover:text-accent transition-colors"
+                >
+                  <img
+                    src={t.logo}
+                    alt={t.name}
+                    width={18}
+                    height={18}
+                    loading="lazy"
+                    className="h-[18px] w-[18px] object-contain"
+                  />
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em]">
+                    {t.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
