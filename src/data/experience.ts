@@ -11,6 +11,7 @@ export const EXPERIENCE: Experience[] = [
   {
     role: "Visual Designer",
     company: "MASAI Communications",
+    link: "https://www.instagram.com/euphoriquepr/",
     period: "Apr 2025 — Sep 2025",
     location: "Lagos · Remote",
     bullets: [
@@ -22,6 +23,7 @@ export const EXPERIENCE: Experience[] = [
   {
     role: "Marketing Designer",
     company: "Getcrib",
+    link: "https://getcrib.co",
     period: "Nov 2024 — Mar 2025",
     location: "Lagos · Remote",
     bullets: [
@@ -33,6 +35,7 @@ export const EXPERIENCE: Experience[] = [
   {
     role: "Visual Graphic Designer",
     company: "Mytherapist.ng",
+    link: "https://mytherapist.ng",
     period: "Oct 2023 — Apr 2024",
     location: "Lagos · Remote",
     bullets: [
@@ -44,6 +47,7 @@ export const EXPERIENCE: Experience[] = [
   {
     role: "UI/UX Designer",
     company: "Incash",
+    link: "https://incash.africa",
     period: "Jan 2022 — Oct 2022",
     location: "Lagos · Remote",
     bullets: [
