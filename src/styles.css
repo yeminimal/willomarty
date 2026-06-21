@@ -37,6 +37,21 @@
 }
 
 :root {
+  color-scheme: light;
+  /* Crisp White + Antique Gold (light, default) */
+  --background: #FFFFFF;
+  --foreground: #0F1F14;
+  --surface: #FAFAF5;
+  --border: #E4E1D6;
+  --accent: #B8924A;
+  --accent-dim: #8C6E37;
+  --accent-green: #1F3826;
+  --muted: #5C6660;
+  --tag: #F2EFE6;
+  --radius: 0px;
+}
+
+.dark {
   color-scheme: dark;
   /* Dark Forest + Warm Gold */
   --background: #0A1410;
@@ -48,7 +63,6 @@
   --accent-green: #3F6B58;
   --muted: #7A8A82;
   --tag: #15211C;
-  --radius: 0px;
 }
 
 @layer base {
