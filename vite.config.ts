@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force-enable Nitro on hosts without Lovable context (e.g. Vercel) and target the Vercel preset.
+  nitro: {
+    preset: "vercel",
+  },
 });
