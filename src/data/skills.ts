@@ -1,0 +1,58 @@
+export type SkillGroup = { title: string; tags: string[] };
+
+export const SKILL_GROUPS: SkillGroup[] = [
+  {
+    title: "Design",
+    tags: [
+      "Brand Identity",
+      "Logo Design",
+      "Typography",
+      "Visual Systems",
+      "UI/UX Design",
+      "Figma",
+      "Framer",
+      "Webflow",
+      "Wireframing",
+      "Design Systems",
+      "Motion Graphics",
+      "Video Editing",
+      "Color Grading",
+      "Art Direction",
+    ],
+  },
+  {
+    title: "Development",
+    tags: [
+      "HTML / CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Vite",
+      "Node.js",
+      "Puppeteer",
+      "REST APIs",
+      "Git & GitHub",
+      "Vercel",
+      "Railway",
+      "Lovable",
+    ],
+  },
+  {
+    title: "Tools & Workflow",
+    tags: [
+      "AI-Assisted Design",
+      "Prompt Engineering",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Premiere Pro",
+      "CapCut",
+      "Canva Pro",
+      "WordPress",
+      "VS Code",
+      "Notion",
+      "Storytelling",
+      "Copywriting",
+    ],
+  },
+];
