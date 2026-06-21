@@ -40,7 +40,7 @@ export function Hero() {
           </div>
 
           <div className="hidden md:block">
-            <div className="relative w-[260px] h-[260px] lg:w-[280px] lg:h-[280px] rounded-full overflow-hidden border border-accent/30 shadow-[0_0_0_8px_color-mix(in_oklab,var(--accent)_8%,transparent)]">
+            <div className="relative w-[260px] h-[260px] lg:w-[280px] lg:h-[280px] overflow-hidden border border-accent/30 shadow-[0_0_0_8px_color-mix(in_oklab,var(--accent)_8%,transparent)]">
               <img
                 src={portrait.url}
                 alt="Portrait of Williams Olayemi Martins"
