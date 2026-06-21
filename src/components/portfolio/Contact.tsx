@@ -1,12 +1,13 @@
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
-import { ArrowRight, Mail, Phone, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, Phone, Github, Linkedin, Dribbble } from "lucide-react";
 
 const ITEMS = [
   { icon: Mail, label: "Email", value: "willomarty01@gmail.com", href: "mailto:willomarty01@gmail.com" },
   { icon: Phone, label: "Phone", value: "+234 702 678 7353", href: "tel:+2347026787353" },
-  { icon: ExternalLink, label: "Behance", value: "behance.net/willomarty", href: "https://www.behance.net/willomarty" },
-  { icon: ExternalLink, label: "LinkedIn", value: "Connect with me", href: "#" },
+  { icon: Dribbble, label: "Behance", value: "behance.net/willomarty", href: "https://www.behance.net/willomarty" },
+  { icon: Github, label: "GitHub", value: "github.com/yeminimal", href: "https://github.com/yeminimal" },
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "#" },
 ];
 
 export function Contact() {

@@ -1,77 +1,73 @@
-## Portfolio Site — Williams Olayemi Martins
 
-A single-page editorial portfolio. Dark mode first (we can flip to light later if needed). Palette swapped from the original prompt's gold-on-black to **deep green canvas with warm gold accents**, matching the teal-green tone in your portrait. Content is sourced from your resume + Portfolio 2026 PDF, not the placeholder copy in the original brief.
+## Fixes
 
-### Design system
+### 1. Name order (Hero)
+`src/components/portfolio/Hero.tsx` — change the two-line byline to `Williams` / `Olayemi Martins`, keeping the gold italic accent on `Olayemi` (now in the middle). Update the mobile order accordingly. Other surfaces already say "Williams Olayemi Martins" — no change.
 
-Palette (dark):
-- `--bg` deep forest near-black `#0A1410`
-- `--surface` `#0F1C17`
-- `--border` `#1F302A`
-- `--accent` warm gold `#C8A96E`
-- `--accent-dim` `#8A6F3F`
-- `--accent-green` muted emerald `#3F6B58` (for secondary highlights / hovers)
-- `--text` warm white `#F0EDE6`
-- `--muted` `#7A8A82`
-- `--tag` `#15211C`
+### 2. Square portrait
+Hero.tsx — remove `rounded-full` on both desktop and mobile portrait wrappers. Keep border + gold shadow ring; corners stay sharp like the rest of the system.
 
-Typography: Playfair Display (display, used sparingly), Inter (body), JetBrains Mono (labels/tags). Loaded via `<link>` in `__root.tsx` head.
+### 3. About role line
+`src/components/portfolio/About.tsx` — replace the sentence "a visual, brand and web designer, video creator and copywriter" with **"a Visual (Creative) Director"**. Yes — Visual/Creative Director is broad enough to span brand, design, video, copy, and the frontend/tooling work, since it's about owning the creative output across mediums. Surrounding paragraph wording updated minimally to flow.
 
-Layout: max-width 1100px, single column, generous whitespace, no rounded corners on cards, gold left-border-on-hover reveal, ALL-CAPS tracked mono section labels.
+### 4. Replace all emojis with lucide-react icons
+Unified icon set: **lucide-react** (already used in Contact). All icons rendered in gold (`text-accent`); when placed on a gold-filled component, switch to green (`text-accent-green`).
 
-Signature hero: name as a two-line byline — **"Olayemi"** in warm-gold italic Playfair, **"Williams Martins"** in regular weight warm-white. Thin 1px gold rule (40% opacity) below. Portrait (your uploaded photo) sits top-right in a 280px circle with a subtle gold ring.
+- `src/data/education.ts` — drop `icon: string` emoji field; add `iconName` keyed to a lucide component, or just inline the component in `Education.tsx`. Map: 🎓→`GraduationCap`, 📐→`Compass`, 💻→`Code2`, 🤖→`ShieldCheck` (Cybersecurity), plus `BadgeCheck` for the new certifications.
+- `src/components/portfolio/About.tsx` — replace the 4 feature emojis with `Palette`, `Code2`, `Clapperboard`, `Wrench`. Render at `size={20}` in `text-accent`.
+- `Education.tsx` — render lucide component instead of `{e.icon}`.
+- Audit Tools.tsx, Skills.tsx, Contact.tsx, Footer.tsx, Faq.tsx for any other emoji glyphs and swap.
 
-Tokens go in `src/styles.css` as semantic CSS variables wired through `@theme inline`. No hardcoded colors in components.
+### 5. Career-journey company links
+`src/data/experience.ts` — add optional `link?: string` to the `Experience` type, populate where available, and render the company name as an anchor in `Experience.tsx` (gold underline on hover, `target="_blank" rel="noopener"`).
 
-### Sections (single page, anchor nav)
+| Company | Link |
+|---|---|
+| MASAI Communications | `https://www.instagram.com/euphoriquepr/` (Euphorique PR, the division he worked under) |
+| Getcrib | `https://getcrib.co` |
+| Mytherapist.ng | `https://mytherapist.ng` |
+| Incash | `https://incash.africa` |
+| Jobhut, Victorious Tech, Comtech Systems, Mercab Prints | no link (per user) |
 
-Sticky top nav: **WOM** logo (mono gold) left; About · Experience · Tools · Skills · Education · Contact right. Transparent on hero, solid-with-blur on scroll. Mobile hamburger drawer.
+### 6. Selected Work links
+`src/data/work.ts` — update/add `link` for each project:
 
-1. **Hero** — eyebrow "DESIGNER · DEVELOPER · CREATOR", byline name, tagline "Brand Design · Frontend Development · Media Production · Lagos, Nigeria", stat row (7+ Years Designing / 20+ Projects Delivered / 4 Micro-Tools Shipped), CTAs ([See My Work →] [Get In Touch]), animated scroll indicator, portrait top-right.
-2. **About** — headline "Design that communicates. Code that ships. Work that matters." Three short paragraphs adapted from your Portfolio 2026 voice (process-obsessed, brand-first, multidisciplinary) plus the frontend/AI-tooling angle from the brief. 2×2 mini-card grid: Brand Identity, Frontend Dev, Video Production, Micro-Tool Builder. Link row: Behance, LinkedIn, GitHub.
-3. **Experience** — vertical timeline, year on left, role on right. Entries from your resume (most recent first):
-   - MASAI Communications — Visual Designer (Apr 2025 – Sep 2025, Remote)
-   - Getcrib — Marketing Designer (Nov 2024 – Mar 2025, Remote)
-   - Mytherapist.ng — Visual Graphic Designer (Oct 2023 – Apr 2024, Remote)
-   - Incash — UI/UX Designer (Jan 2022 – Oct 2022, Remote)
-   - Jobhut — UI Designer (Jul 2021 – Nov 2021, Lagos)
-   - Victorious Tech — Lead Graphic Designer (Oct 2018 – Feb 2019, Lagos)
-   - Comtech Systems — Visual/Print Designer (May – Sep 2018, Lagos)
-   - Mercab Prints — Visual/Print Designer (Jan – Apr 2018, Lagos)
-4. **Selected Work** — editorial 2-col card grid pulling from Portfolio 2026: Vana, Frauwa Roofs & Interior Decor, Zamack Consults, Juliet Moses, Rebound, Activate Pilot, Moon Republic, Mytherapist.ng, Getcrib, Incash, Zaytrix Modeste, Caretaker Pro, #EndSARS Documentary. Each card: client, discipline tag, one-line description, "View on Behance ↗" link. (Project images can be added later — cards work as text-first editorial entries with a gold rule, matching the disciplined aesthetic.)
-5. **Tools** — the 4 micro-tools from the brief: Scrapely, Screenshot Studio, ImageSqueeze, Pocket QR. 2-col cards, gold left-border hover, live links, tech tags.
-6. **Skills** — three grouped tag clouds (Design / Development / Tools & Workflow) — no fake percentage bars.
-7. **Education** — University of Benin, B.Sc. Mass Communication (Aug 2021 – Feb 2025); Enikin Design Academy, Diploma in Graphic Design (Feb – Dec 2017); plus self-directed Frontend Development and AI-Assisted Product Development entries.
-8. **Contact** — headline "Got a project? Let's talk." Email `willomarty01@gmail.com`, phone `+234 702 678 7353`, Behance `behance.net/willomarty`, LinkedIn/GitHub placeholders. "Open to Work — June 2026" gold pill. Mailto CTA.
-9. **Footer** — © 2026 Williams Olayemi Martins · Lagos, Nigeria · Back to Top.
+- Frauwa → `https://vt.tiktok.com/ZSQKPaKbA/` (replace existing IG link)
+- Vana → `https://vt.tiktok.com/ZSQKPqLvx/`
+- Activate Pilot → `https://vt.tiktok.com/ZSQKPrw82/`
+- #EndSARS Documentary → `https://vt.tiktok.com/ZSQKPmSA6/` (replace existing)
+- Rebound → `https://www.behance.net/gallery/178594001/REBOUND`
+- Caretaker Pro Inc. → `https://caretakerpros.com.ng`
+- Mytherapist.ng, Getcrib, Moon Republic Academy, Incash → respective Twitter/X accounts
+- Zamack Consults → Instagram link
+- Zaytrix Modeste, Zaytrix Mgmt. & Tech Group → `https://zaytrix.com`
 
-### Data layer
+For the Twitter/Instagram handles I don't have explicit URLs for (Mytherapist, Getcrib, Moon Republic, Incash Twitter; Zamack IG), I'll use best-guess handles based on the brand names (e.g. `https://x.com/mytherapistng`, `https://x.com/getcrib`, `https://x.com/moonrepublic_`, `https://x.com/incashafrica`, `https://www.instagram.com/zamackconsults/`). **Open question below** — confirm or supply exact handles.
 
-All list content lives in `src/data/`:
-- `experience.ts`, `work.ts` (selected projects), `tools.ts`, `skills.ts`, `education.ts`
+Render link as a small "Visit ↗" affordance per card (already supported by `link?` field).
 
-So future updates are one-line data edits.
+### 7. Background / certifications
+`src/data/education.ts` — append three entries to a new `CERTIFICATIONS` array (or extend existing list with a `kind: "education" | "certification"` discriminator) and group them under a "Certifications" subheading inside `Education.tsx`:
+- Google Ads Display Certification — Google Ads — 2021
+- Jobberman Soft Skills Course — Jobberman Youth Engagement and Learning — 2021
+- Cybersecurity — University of the People — Ongoing
 
-### SEO / structured data
+Each gets a lucide icon (`BadgeCheck`, `GraduationCap`, `ShieldCheck`).
 
-`src/routes/index.tsx` `head()`:
-- title: "Williams Olayemi Martins — Brand Designer & Frontend Developer, Nigeria"
-- description, keywords, author, canonical
-- OG + Twitter cards (image placeholder `/og-image.jpg`)
-- JSON-LD `Person` schema injected via `scripts` field with name "Williams Olayemi Martins", alternateName "Yẹmí", jobTitle, knowsAbout, sameAs, address (Lagos, NG)
-- Hidden FAQ section with `FAQPage` schema for AEO
+### 8. GitHub
+`src/components/portfolio/Contact.tsx` and `Footer.tsx` — wire GitHub to `https://github.com/yeminimal`. Add a GitHub row to Contact (lucide `Github` icon) alongside Behance and LinkedIn. LinkedIn stays placeholder until provided.
 
-### Technical notes (for the curious)
+## Files touched
+- `src/components/portfolio/Hero.tsx` (name order, square portrait)
+- `src/components/portfolio/About.tsx` (role line, lucide features)
+- `src/components/portfolio/Experience.tsx` (clickable company)
+- `src/components/portfolio/Education.tsx` (lucide icons + certifications group)
+- `src/components/portfolio/Contact.tsx` (GitHub row)
+- `src/data/experience.ts` (links)
+- `src/data/work.ts` (links)
+- `src/data/education.ts` (lucide icon refs + new certifications)
 
-- TanStack Start single route at `/` (`src/routes/index.tsx`), components under `src/components/portfolio/`.
-- `framer-motion` for subtle fade-up reveals (respects `prefers-reduced-motion`).
-- Smooth scroll via native `scroll-behavior: smooth`; active section highlight via IntersectionObserver hook.
-- Your portrait uploaded as a Lovable Asset (no binary copied into the repo).
-- Theme structured so flipping to light mode later is a single tokens change, not a rewrite.
+No business-logic, no new dependencies (lucide-react already installed).
 
-### Open questions before I build
-
-1. **LinkedIn / GitHub / Behance handles** — I have `behance.net/willomarty`. Do you have LinkedIn and GitHub URLs to wire up, or should I leave them as `#` placeholders for now?
-2. **Selected Work cards** — text-only editorial cards now (clean and fast), or do you want me to extract project images from your Portfolio PDF and host them as assets too? (Image extraction adds weight but adds visual proof.)
-
-If you say "build it," I'll proceed with `#` placeholders for missing socials and text-only work cards, and we iterate from there.
+## Open question
+Confirm the Twitter/X handles for **Mytherapist.ng, Getcrib, Moon Republic, Incash** and the Instagram handle for **Zamack Consults** — or I'll use the best-guess handles listed above and you can correct any after preview.

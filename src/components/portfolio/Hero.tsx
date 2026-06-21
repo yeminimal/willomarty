@@ -26,9 +26,10 @@ export function Hero() {
         <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
           <div>
             <h1 className="display-serif leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="italic text-accent">Olayemi</span>
+              <span className="text-foreground">Williams</span>
               <br />
-              <span className="text-foreground">Williams Martins</span>
+              <span className="italic text-accent">Olayemi</span>{" "}
+              <span className="text-foreground">Martins</span>
             </h1>
             <div className="mt-6 h-px w-32 bg-accent/40" />
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">
@@ -39,7 +40,7 @@ export function Hero() {
           </div>
 
           <div className="hidden md:block">
-            <div className="relative w-[260px] h-[260px] lg:w-[280px] lg:h-[280px] rounded-full overflow-hidden border border-accent/30 shadow-[0_0_0_8px_color-mix(in_oklab,var(--accent)_8%,transparent)]">
+            <div className="relative w-[260px] h-[260px] lg:w-[280px] lg:h-[280px] overflow-hidden border border-accent/30 shadow-[0_0_0_8px_color-mix(in_oklab,var(--accent)_8%,transparent)]">
               <img
                 src={portrait.url}
                 alt="Portrait of Williams Olayemi Martins"
@@ -81,7 +82,7 @@ export function Hero() {
 
         {/* Mobile portrait below */}
         <div className="md:hidden mt-14 flex justify-center">
-          <div className="relative w-48 h-48 rounded-full overflow-hidden border border-accent/30">
+          <div className="relative w-48 h-48 overflow-hidden border border-accent/30">
             <img src={portrait.url} alt="Portrait of Williams Olayemi Martins" className="w-full h-full object-cover" />
           </div>
         </div>
