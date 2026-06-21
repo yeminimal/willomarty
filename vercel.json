@@ -3,5 +3,11 @@
   "buildCommand": "bun run build",
   "outputDirectory": ".vercel/output",
   "installCommand": "bun install",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/__l5e/:path*",
+      "destination": "https://project--f1851375-a6e9-4675-b255-2aa4c603bacf.lovable.app/__l5e/:path*"
+    }
+  ]
 }
