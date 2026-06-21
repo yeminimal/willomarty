@@ -7,6 +7,8 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+import chatgptLogo from "@/assets/chatgpt-logo.png.asset.json";
+import orchidsLogo from "@/assets/orchids-wordmark.svg.asset.json";
 
 export type EducationTool = { name: string; logo: string };
 
@@ -48,9 +50,9 @@ export const EDUCATION: Education[] = [
     institution: "Self-directed",
     tools: [
       { name: "Lovable", logo: "https://lovable.dev/favicon.ico" },
-      { name: "Orchids (Buds)", logo: "https://orchids.app/favicon.ico" },
+      { name: "Orchids (Buds)", logo: orchidsLogo.url },
       { name: "Claude", logo: `https://cdn.simpleicons.org/claude/${gold}` },
-      { name: "ChatGPT", logo: `https://cdn.simpleicons.org/openai/${gold}` },
+      { name: "ChatGPT", logo: chatgptLogo.url },
       { name: "GitHub Copilot", logo: `https://cdn.simpleicons.org/githubcopilot/${gold}` },
       { name: "Gemini", logo: `https://cdn.simpleicons.org/googlegemini/${gold}` },
     ],
