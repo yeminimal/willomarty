@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import chatgptLogo from "@/assets/chatgpt-logo.png.asset.json";
-import orchidsLogo from "@/assets/orchids-wordmark.svg.asset.json";
+import orchidsLogo from "@/assets/orchids-icon.svg.asset.json";
 
 export type EducationTool = { name: string; logo: string };
 
