@@ -68,15 +68,18 @@ export function About() {
 
           <Reveal delay={0.2}>
             <div className="grid grid-cols-2 gap-3">
-              {FACTS.map((f) => (
-                <div
-                  key={f.label}
-                  className="border border-border bg-surface p-5 hover:border-accent/60 transition-colors"
-                >
-                  <div className="text-2xl">{f.icon}</div>
-                  <div className="mt-3 text-sm leading-snug text-foreground/85">{f.label}</div>
-                </div>
-              ))}
+              {FACTS.map((f) => {
+                const Icon = f.icon;
+                return (
+                  <div
+                    key={f.label}
+                    className="border border-border bg-surface p-5 hover:border-accent/60 transition-colors"
+                  >
+                    <Icon size={22} className="text-accent" strokeWidth={1.5} />
+                    <div className="mt-3 text-sm leading-snug text-foreground/85">{f.label}</div>
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>
