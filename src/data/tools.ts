@@ -1,3 +1,8 @@
+import scrapelyImg from "@/assets/tool-scrapely.jpg.asset.json";
+import screenshotImg from "@/assets/tool-screenshot.jpg.asset.json";
+import imagesqueezeImg from "@/assets/tool-imagesqueeze.jpg.asset.json";
+import pocketqrImg from "@/assets/tool-pocketqr.jpg.asset.json";
+
 export type Tool = {
   name: string;
   tagline: string;
@@ -5,6 +10,7 @@ export type Tool = {
   tags: string[];
   url: string;
   status: "Live" | "Coming Soon";
+  image: string;
 };
 
 export const TOOLS: Tool[] = [
@@ -16,6 +22,7 @@ export const TOOLS: Tool[] = [
     tags: ["AI", "Web Scraping", "JSON", "React", "Vercel"],
     url: "https://scrapely-ai.vercel.app/",
     status: "Live",
+    image: scrapelyImg.url,
   },
   {
     name: "Screenshot Studio",
@@ -25,6 +32,7 @@ export const TOOLS: Tool[] = [
     tags: ["Puppeteer", "Node.js", "Railway", "Mockup", "React"],
     url: "https://screen-shot-studio.vercel.app/",
     status: "Live",
+    image: screenshotImg.url,
   },
   {
     name: "ImageSqueeze",
@@ -34,6 +42,7 @@ export const TOOLS: Tool[] = [
     tags: ["Client-side", "Privacy-first", "WebP", "React", "Vercel"],
     url: "https://image-squeeze-lite.vercel.app/",
     status: "Live",
+    image: imagesqueezeImg.url,
   },
   {
     name: "Pocket QR",
@@ -43,5 +52,6 @@ export const TOOLS: Tool[] = [
     tags: ["QR Code", "Camera API", "Mobile-first", "React", "Vercel"],
     url: "https://pocket-qr-vision.vercel.app/",
     status: "Live",
+    image: pocketqrImg.url,
   },
 ];

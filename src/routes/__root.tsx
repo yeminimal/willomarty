@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import portraitAsset from "../assets/portrait.webp.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -77,20 +78,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Williams Olayemi Martins — Visual (Creative) Director, brand designer, and frontend developer based in Nigeria. Brand identity, UI/UX, video, and shipped micro-tools.",
+      },
+      { name: "author", content: "Williams Olayemi Martins" },
+      { property: "og:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      {
+        property: "og:description",
+        content:
+          "Brand design, UI/UX, video, and frontend development. A decade of work, four live micro-tools, and a meticulous eye.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:image", content: portraitAsset.url },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      { name: "twitter:image", content: portraitAsset.url },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "icon", type: "image/webp", href: portraitAsset.url },
+      { rel: "apple-touch-icon", href: portraitAsset.url },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
