@@ -28,19 +28,16 @@ export function About() {
           <Reveal delay={0.1}>
             <div className="space-y-6 text-base md:text-[17px] leading-[1.7] text-foreground/85">
               <p>
-                I'm Williams — a Visual (Creative) Director. I've spent the better part of a decade
-                refining a quiet blend of creativity and precision; meticulousness has become the
-                bigger part of my signature.
+                I'm Williams, a Visual/Creative Director. I help brands tell their story, curate their journey,
+                and define their identity. As a Creative Director, the end goal is to attract, convert, and retain.
               </p>
               <p>
-                Though I'm obsessed with brand design, my expertise spans user interfaces, packaging, video
-                creation and frontend development — all underpinned by a solid grasp of digital landscapes.
-                I use AI-assisted tooling to move fast without cutting corners, and ship production work
-                with React, Tailwind, GitHub and Vercel.
+                I take pride in engaging in the messy part of building, designing, and shaping experiences.
+                Finding out what works, what doesn't, and how to make what works even better. That moment of clarity.
+                It doesn't matter who or what I'm building for, what matters is that i build it well.
               </p>
               <p>
-                I work from Nigeria with a sharp eye for what the market here needs — interfaces that load on
-                mid-range devices, brands that earn trust in a skeptical market, and digital tools that solve
+                I work with a sharp eye for what the market needs — brands that earn trust in a skeptical market, and digital tools that solve
                 friction people have learned to live with. With me, it's not just about the design. It's
                 about the journey we take together to create lasting impact.
               </p>
@@ -49,7 +46,7 @@ export function About() {
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
               {[
                 { label: "Behance", href: "https://www.behance.net/willomarty" },
-                { label: "GitHub", href: "https://github.com/yeminimal" },
+                { label: "GitHub", href: "https://github.com/willomarty" },
                 { label: "LinkedIn", href: "#" },
               ].map((l) => (
                 <a
