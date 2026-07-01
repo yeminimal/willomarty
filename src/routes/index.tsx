@@ -10,15 +10,20 @@ import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
+import { TOOLS } from "@/data/tools";
+
+const SITE_URL = "https://thewilliamsmartins.vercel.app";
 
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
   name: "Williams Olayemi Martins",
   alternateName: ["Yẹmí", "Williams Martins"],
-  jobTitle: "Brand Designer & Frontend Developer",
+  jobTitle: "Visual (Creative) Director",
   description:
-    "Nigerian designer and frontend developer building brand identities, web tools and digital products from Lagos.",
+    "Nigerian visual director, brand designer and frontend developer building brand identities, web tools and digital products from Lagos.",
+  url: SITE_URL,
   email: "mailto:willomarty01@gmail.com",
   telephone: "+2347026787353",
   address: {
@@ -36,7 +41,35 @@ const PERSON_SCHEMA = {
     "Motion Graphics",
     "Video Editing",
   ],
-  sameAs: ["https://www.behance.net/willomarty"],
+  sameAs: [
+    "https://www.behance.net/willomarty",
+    "https://github.com/yeminimal",
+  ],
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: "Williams Olayemi Martins — Portfolio",
+  inLanguage: "en",
+  author: { "@id": `${SITE_URL}/#person` },
+  publisher: { "@id": `${SITE_URL}/#person` },
+};
+
+const TOOLS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": TOOLS.map((t) => ({
+    "@type": "SoftwareApplication",
+    name: t.name,
+    description: t.description,
+    url: t.url,
+    applicationCategory: "WebApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: { "@id": `${SITE_URL}/#person` },
+  })),
 };
 
 export const Route = createFileRoute("/")({
@@ -61,7 +94,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_NG" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Designer & Developer" },
       {
@@ -70,7 +103,7 @@ export const Route = createFileRoute("/")({
       },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -79,14 +112,10 @@ export const Route = createFileRoute("/")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(PERSON_SCHEMA),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(FAQ_SCHEMA),
-      },
+      { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
     ],
   }),
   component: Index,

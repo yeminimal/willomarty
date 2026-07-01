@@ -1,0 +1,31 @@
+# Williams Olayemi Martins
+
+> Nigerian Visual (Creative) Director, brand designer and frontend developer based in Lagos. Seven+ years shaping identities, digital products and marketing systems for African startups and global brands; ships lightweight browser-based tools on the side.
+
+## About
+- Full name: Williams Olayemi Martins (Olayemi is a middle name).
+- Location: Lagos, Nigeria — available worldwide, remote-first.
+- Role: Visual (Creative) Director spanning brand identity, UI/UX, video production, copywriting and frontend engineering.
+- Contact: willomarty01@gmail.com · +234 702 678 7353
+
+## Services
+- Brand identity and logo systems
+- UI/UX design for web and mobile products
+- Frontend development with React, TypeScript and Tailwind
+- Video production, editing and motion design
+- Creative direction for marketing and product campaigns
+- AI-assisted product development (Lovable, Orchids/Buds, Claude, ChatGPT, GitHub Copilot, Gemini)
+
+## Micro-tools shipped
+- [Scrapely](https://scrapely-ai.vercel.app/) — Turn any webpage into clean JSON with AI-assisted extraction.
+- [Screenshot Studio](https://screen-shot-studio.vercel.app/) — Device-framed screenshots of any URL for design reviews.
+- [ImageSqueeze](https://image-squeeze-lite.vercel.app/) — Privacy-first, in-browser JPEG/PNG/WebP compression.
+- [Pocket QR](https://pocket-qr-vision.vercel.app/) — Generate and scan QR codes from the browser, no install.
+
+## Selected clients & projects
+Masai School, Getcrib, MyTherapist.ng, Incash, Frauwa, Vana, Activate Pilot, EndSARS, Rebound, Caretaker Pro.
+
+## Links
+- Portfolio: https://thewilliamsmartins.vercel.app
+- GitHub: https://github.com/yeminimal
+- Behance: https://www.behance.net/willomarty
