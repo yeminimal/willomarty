@@ -95,18 +95,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: portraitAsset.url },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
-      { name: "twitter:image", content: portraitAsset.url },
-      { name: "description", content: "I help brands tell their story, curate their journey, and define their identity.
-
-I'm currently building, designing, and shaping experiences." },
-      { property: "og:description", content: "I help brands tell their story, curate their journey, and define their identity.
-
-I'm currently building, designing, and shaping experiences." },
-      { name: "twitter:description", content: "I help brands tell their story, curate their journey, and define their identity.
-
-I'm currently building, designing, and shaping experiences." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp" },
+      {
+        name: "twitter:description",
+        content:
+          "Brand design, UI/UX, video, and frontend development. A decade of work, four live micro-tools, and a meticulous eye.",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
+      },
+      { property: "og:site_name", content: "Williams Olayemi Martins" },
     ],
     links: [
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
