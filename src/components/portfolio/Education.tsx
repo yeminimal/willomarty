@@ -42,7 +42,7 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
                 >
                   <img
                     src={t.logo}
-                    alt={t.name}
+                    alt={`${t.name} logo`}
                     width={18}
                     height={18}
                     loading="lazy"
