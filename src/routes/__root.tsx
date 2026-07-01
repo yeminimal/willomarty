@@ -92,7 +92,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Brand design, UI/UX, video, and frontend development. A decade of work, four live micro-tools, and a meticulous eye.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: portraitAsset.url },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
       {
