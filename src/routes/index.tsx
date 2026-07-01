@@ -94,7 +94,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_NG" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Designer & Developer" },
       {
@@ -103,7 +103,7 @@ export const Route = createFileRoute("/")({
       },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -112,14 +112,10 @@ export const Route = createFileRoute("/")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(PERSON_SCHEMA),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(FAQ_SCHEMA),
-      },
+      { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
     ],
   }),
   component: Index,
