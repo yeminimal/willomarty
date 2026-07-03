@@ -6,7 +6,6 @@ import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import {
   PLAUSIBLE_DOMAIN,
   PLAUSIBLE_SHARED_LINK,
-  PLAUSIBLE_HOST,
 } from "@/config/analytics";
 
 export const Route = createFileRoute("/analytics")({
