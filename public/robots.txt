@@ -1,32 +1,43 @@
 User-agent: *
 Allow: /
+Disallow: /analytics
 
-# Explicitly allow AI / GEO crawlers
+# Explicitly allow AI / GEO crawlers on the public site,
+# but keep /analytics out of every crawl and LLM index.
 User-agent: GPTBot
 Allow: /
+Disallow: /analytics
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /analytics
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /analytics
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /analytics
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /analytics
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /analytics
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /analytics
 
 User-agent: CCBot
 Allow: /
+Disallow: /analytics
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /analytics
 
 Sitemap: https://thewilliamsmartins.vercel.app/sitemap.xml
