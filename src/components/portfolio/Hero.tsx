@@ -30,6 +30,7 @@ export function Hero() {
               <br />
               <span className="italic text-accent">Olayemi</span>{" "}
               <span className="text-foreground">Martins</span>
+              <span className="sr-only"> — Brand Designer & Frontend Developer</span>
             </h1>
             <div className="mt-6 h-px w-32 bg-accent/40" />
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">

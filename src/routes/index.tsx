@@ -75,11 +75,11 @@ const TOOLS_SCHEMA = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Williams Olayemi Martins — Brand Designer & Frontend Developer, Nigeria" },
+      { title: "Williams Olayemi Martins — Brand Designer & Developer" },
       {
         name: "description",
         content:
-          "Williams Olayemi Martins is a Nigerian brand designer and frontend developer building visual identities, web tools and digital products from Lagos. Available for freelance work globally.",
+          "Williams Olayemi Martins — Lagos-based brand designer and frontend developer building visual identities, web tools and digital products for clients worldwide.",
       },
       {
         name: "keywords",
