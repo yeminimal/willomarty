@@ -12,10 +12,10 @@
 //    /analytics renders the embedded dashboard.
 
 // e.g. "thewilliamsmartins.vercel.app"
-export const PLAUSIBLE_DOMAIN = "";
+export const PLAUSIBLE_DOMAIN: string = "";
 
 // e.g. "https://plausible.io/share/thewilliamsmartins.vercel.app?auth=XXXXXXXX"
-export const PLAUSIBLE_SHARED_LINK = "";
+export const PLAUSIBLE_SHARED_LINK: string = "";
 
 // Change if self-hosting Plausible.
 export const PLAUSIBLE_HOST = "https://plausible.io";
