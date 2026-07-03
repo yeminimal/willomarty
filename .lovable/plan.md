@@ -1,45 +1,54 @@
-## SEO + GEO Optimization Plan
+## Add a public Plausible Analytics page at `/analytics`
 
-Adapting the Next.js-oriented prompt to this TanStack Start project. Skipping items that are already done (Person schema, FAQPage schema) or don't apply (Next.js Metadata API, `next/image`, `next/font`, `app/sitemap.ts`).
+Plausible (github.com/plausible/analytics) is a privacy-first, cookieless analytics tool. It supports two things we'll wire up:
 
-### 1. Structured data additions
-- Add **`WebSite`** JSON-LD to `src/routes/index.tsx` alongside the existing Person + FAQPage blocks (name, url, author reference).
-- Add **`SoftwareApplication`** (better fit than `CreativeWork`/`Product` for the browser tools) JSON-LD for each of the 4 micro-tools inside `src/components/portfolio/Tools.tsx` — name, url, applicationCategory, operatingSystem "Web", author reference to Person.
-- Extend Person `sameAs` with GitHub (`https://github.com/yeminimal`) and LinkedIn/X where confirmed.
+1. A tiny **tracking script** included on every page so pageviews get counted.
+2. A **shared dashboard link** — a public, no-login URL you generate in Plausible Settings → Visibility → Shared links — that we embed in an iframe on `/analytics`.
 
-### 2. Canonical domain + og URL
-- Once the Vercel domain is confirmed (assumption: `https://thewilliamsmartins.vercel.app`), set absolute canonical + `og:url` on index route, and use the same origin as `url` in the JSON-LD blocks. **Need confirmation of the production URL** — see question below.
+Both need values you don't have yet (site domain + shared link URL), so I'll stub them behind a single config file with TODOs and clear setup steps.
 
-### 3. Sitemap + robots + llms.txt
-- Add `src/routes/api/public/sitemap[.]xml.ts` server route emitting the homepage URL with `lastmod`. (Static `public/sitemap.xml` would also work but a route lets us keep `lastmod` fresh.)
-- Add `public/robots.txt` allowing all crawlers, explicitly allowing `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `CCBot`, pointing to the sitemap.
-- Add `public/llms.txt` — plain-Markdown summary of who Williams is, services, key links (Behance, GitHub), and the 4 micro-tools with URLs.
+### Files to add
 
-### 4. Image alt text pass
-- `Hero` portrait: keep descriptive (mention role + location).
-- `Work` cards: currently no `<img>` — copy-only; no change needed there.
-- `Tools` cards: swap generic alts to `"{Tool name} — {tagline}"` per tool.
-- `Education` certification/school logos: use `"{Issuer} logo"` where currently generic.
+1. **`src/config/analytics.ts`** — one place for both values:
+   ```ts
+   // TODO: fill in after creating the site in Plausible
+   export const PLAUSIBLE_DOMAIN = ""; // e.g. "thewilliamsmartins.vercel.app"
+   export const PLAUSIBLE_SHARED_LINK = ""; // e.g. "https://plausible.io/share/xxx?auth=yyy"
+   export const PLAUSIBLE_HOST = "https://plausible.io"; // change if self-hosted
+   ```
 
-### 5. Heading hierarchy audit
-- Verify single `<h1>` (Hero name), all section headings `<h2>`, sub-labels `<h3>`. Fix any skips in About / Experience / Tools / Contact if found during the pass.
+2. **`src/routes/analytics.tsx`** — new page. Contents:
+   - Editorial header matching site style: SectionLabel "Live Metrics", H2 "Analytics, in the open."
+   - Short copy explaining this is a public, privacy-first Plausible dashboard (no cookies, no PII).
+   - GitHub link out to `plausible/analytics` with the site's icon treatment.
+   - Embedded iframe of `PLAUSIBLE_SHARED_LINK` (full width, ~1600px tall, dark border to match cards). If the config value is empty, render a placeholder card with setup steps instead of a broken iframe.
+   - `head()` sets `<meta name="robots" content="noindex, nofollow">` plus a title/description. No canonical, no og image.
+   - Reuses `Nav` + `Footer` so it feels like part of the site.
 
-### 6. Metadata trim + dedupe in `__root.tsx`
-- Current `__root.tsx` head() has **duplicate** `og:image`, `og:description`, `twitter:image`, and `description` meta entries (some appended later with hard newlines in the string). Consolidate into one canonical set per field.
-- Trim keywords on `index.tsx` to focused phrases ("Lagos brand designer", "Nigerian frontend developer", "brand identity Nigeria").
-- Add `og:url` (absolute) and keep `<link rel="canonical" href="/">` — upgrade to absolute once domain confirmed.
+3. **Tracking script in `src/routes/__root.tsx`** — add a `scripts` entry that injects `https://plausible.io/js/script.js` with `data-domain={PLAUSIBLE_DOMAIN}` **only when the domain is configured**, so nothing loads until you fill it in.
 
-### 7. Core Web Vitals (framework-appropriate)
-- Add explicit `width`/`height` (or `aspect-ratio` CSS) to portrait + tool images to prevent CLS.
-- Add `loading="lazy"` + `decoding="async"` to below-the-fold images (tool cards, cert logos); keep hero portrait `loading="eager"` with `fetchpriority="high"`.
-- Fonts already loaded via `<link>` with `display=swap`; add `rel="preload"` for the display font used above the fold (Playfair Display) via `__root.tsx` head links.
+### Files to edit
 
-### 8. Internal linking
-- Add 1–2 contextual in-body links: e.g. in About/Tools intro copy, link the phrase "four micro-tools" to `#tools`, and inline-link tool names to their live URLs where mentioned outside the Tools grid.
+- **`public/robots.txt`** — add before the AI-crawler blocks:
+  ```
+  User-agent: *
+  Disallow: /analytics
+  ```
+  And append a wildcard-blocked entry per AI crawler already listed (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-Web, PerplexityBot, Google-Extended, CCBot, Applebot-Extended) with `Disallow: /analytics` so it's excluded from LLM crawls even though those bots are otherwise allowed.
 
-### Skipped from the prompt
-- `next/image`, `next/font`, `app/layout.tsx` Metadata API, `generateMetadata`, `metadataBase` — Next.js-specific; TanStack Start uses route `head()` which we already use.
-- FAQPage schema, Person schema — already implemented.
+- **`public/sitemap.xml`** — leave as-is (only lists `/`). No entry for `/analytics`.
 
-### Question before build
-1. What's the production URL to use as canonical / `metadataBase` equivalent? The prompt guesses `https://thewilliamsmartins.vercel.app` — confirm or provide the real one (custom domain?).
+- **Optional: `src/components/portfolio/Nav.tsx`** — I'll skip adding a visible nav link so the page stays unlisted; you can navigate directly to `/analytics` or share the URL yourself. Say the word if you want it in the nav anyway.
+
+### Setup steps you'll follow after I ship this
+
+1. Sign up at plausible.io (or spin up self-hosted from the repo) and add your Vercel domain as a site.
+2. Paste the domain into `PLAUSIBLE_DOMAIN` in `src/config/analytics.ts`.
+3. In Plausible → Site Settings → Visibility → Shared links → "New link" (no password). Copy the URL and paste into `PLAUSIBLE_SHARED_LINK`.
+4. Redeploy. The tracking script starts recording; `/analytics` renders the live dashboard.
+
+### Why this shape
+
+- Keeping both values in one config file means you flip analytics on with one edit — no hunting through components.
+- Rendering a setup-instructions placeholder (rather than an empty iframe) avoids a broken-looking page while the values are blank.
+- `noindex` meta + `Disallow: /analytics` for every crawler (regular + AI) belt-and-suspenders the "don't index this" requirement — search engines respect robots, well-behaved AI crawlers respect their named blocks, and the meta tag catches anything that fetched the page anyway.

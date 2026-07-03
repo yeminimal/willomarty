@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import portraitAsset from "../assets/portrait.webp.asset.json";
+import { PLAUSIBLE_DOMAIN, PLAUSIBLE_HOST } from "../config/analytics";
 
 function NotFoundComponent() {
   return (
@@ -116,6 +117,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
     ],
+    scripts: PLAUSIBLE_DOMAIN
+      ? [
+          {
+            defer: true,
+            "data-domain": PLAUSIBLE_DOMAIN,
+            src: `${PLAUSIBLE_HOST}/js/script.js`,
+          },
+        ]
+      : [],
   }),
   shellComponent: RootShell,
   component: RootComponent,
