@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      { title: "Williams Olayemi Martins — Designer & Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Williams Olayemi Martins — Visual (Creative) Director, brand designer, and frontend developer based in Nigeria. Brand identity, UI/UX, video, and shipped micro-tools.",
+          "Portfolio of Williams Olayemi Martins — Nigerian visual director, brand designer and frontend developer shipping identities, UI/UX and micro-tools.",
       },
       { name: "author", content: "Williams Olayemi Martins" },
-      { property: "og:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      { property: "og:title", content: "Williams Olayemi Martins — Designer & Developer" },
       {
         property: "og:description",
         content:

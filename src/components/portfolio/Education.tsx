@@ -10,7 +10,7 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
         {e.logo ? (
           <img
             src={e.logo}
-            alt={`${e.institution} logo`}
+            alt={`${e.institution} — ${e.credential}`}
             width={28}
             height={28}
             loading="lazy"
@@ -42,7 +42,7 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
                 >
                   <img
                     src={t.logo}
-                    alt={`${t.name} logo`}
+                    alt={`${t.name} — AI tool in stack`}
                     width={18}
                     height={18}
                     loading="lazy"
