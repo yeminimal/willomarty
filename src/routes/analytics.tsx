@@ -86,10 +86,6 @@ function AnalyticsPage() {
                   className="w-full block"
                   style={{ height: 1600, border: 0 }}
                 />
-                <script
-                  async
-                  src={`${PLAUSIBLE_HOST}/js/embed.host.js`}
-                />
               </div>
             ) : (
               <div className="border border-border bg-surface p-8 md:p-12">
