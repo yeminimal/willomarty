@@ -1,8 +1,14 @@
+import reboundImg from "@/assets/work-rebound.jpg.asset.json";
+import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
+import zaytrixMgmtImg from "@/assets/work-zaytrix-mgmt.jpg.asset.json";
+import caretakerImg from "@/assets/work-caretaker.jpg.asset.json";
+
 export type Work = {
   client: string;
   discipline: string;
   description: string;
   link?: string;
+  image?: string;
 };
 
 export const WORK: Work[] = [
@@ -53,6 +59,7 @@ export const WORK: Work[] = [
     description:
       "Self-initiated identity for a fictional herbal energy drink — pushing packaging, type and trend experiments.",
     link: "https://www.behance.net/gallery/178594001/REBOUND",
+    image: reboundImg.url,
   },
   {
     client: "Mytherapist.ng",
@@ -81,6 +88,7 @@ export const WORK: Work[] = [
     description:
       "Shopify storefront for a Canadian modest-fashion retailer — AI-assisted product visualization and on-page SEO.",
     link: "https://zaytrix.com",
+    image: zaytrixModesteImg.url,
   },
   {
     client: "Caretaker Pro Inc.",
@@ -88,6 +96,7 @@ export const WORK: Work[] = [
     description:
       "Refined website and integrated property management software for a Nigerian real-estate facility company.",
     link: "https://caretakerpros.com.ng",
+    image: caretakerImg.url,
   },
   {
     client: "Zaytrix Mgmt. & Tech Group",
@@ -95,6 +104,7 @@ export const WORK: Work[] = [
     description:
       "Corporate website for a Canadian group operating across telecom, digital technology and management services.",
     link: "https://zaytrix.com",
+    image: zaytrixMgmtImg.url,
   },
   {
     client: "#EndSARS Documentary",
