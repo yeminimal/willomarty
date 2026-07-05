@@ -28,6 +28,7 @@ export const WORK: Work[] = [
     description:
       "Iconic logo, packaging system and marketing design for an all-natural Nigerian feminine cosmetic brand.",
     link: "https://vt.tiktok.com/ZSQKPqLvx/",
+    image: vanaImg.url,
   },
   {
     client: "Frauwa Roofs & Interior Decor",
@@ -35,6 +36,7 @@ export const WORK: Work[] = [
     description:
       "Full visual identity and a promotional video reel for a Lagos roofing and interior construction company.",
     link: "https://vt.tiktok.com/ZSQKPaKbA/",
+    image: frauwaImg.url,
   },
   {
     client: "Zamack Consults",
@@ -42,6 +44,7 @@ export const WORK: Work[] = [
     description:
       "Visual overhaul and a cleaner, minimalist logo system covering social, profile, flyer and print use cases.",
     link: "https://www.instagram.com/zamackconsults/",
+    image: zamackImg.url,
   },
   {
     client: "Moon Republic",
