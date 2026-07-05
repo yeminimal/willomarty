@@ -40,4 +40,4 @@ User-agent: Applebot-Extended
 Allow: /
 Disallow: /analytics
 
-Sitemap: https://thewilliamsmartins.vercel.app/sitemap.xml
+Sitemap: https://willomarty.vercel.app/sitemap.xml
