@@ -1,7 +1,13 @@
+import moonRepublicImg from "@/assets/work-moon-republic.jpg.asset.json";
+import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
+import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
 import reboundImg from "@/assets/work-rebound.jpg.asset.json";
+import mytherapistImg from "@/assets/work-mytherapistng.jpg.asset.json";
+import getcribImg from "@/assets/work-getcrib.jpg.asset.json";
+import incashImg from "@/assets/work-incash.jpg.asset.json";
 import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
-import zaytrixMgmtImg from "@/assets/work-zaytrix-mgmt.jpg.asset.json";
-import caretakerImg from "@/assets/work-caretaker.jpg.asset.json";
+import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
+import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
 
 export type Work = {
   client: string;
@@ -39,6 +45,7 @@ export const WORK: Work[] = [
     description:
       "Educational and promotional design for a Web3 learning platform — Twitter and Instagram, cohort campaigns and roadmaps.",
     link: "https://x.com/moonrepublic_",
+    image: moonRepublicImg.url,
   },
   {
     client: "Activate Pilot",
@@ -46,12 +53,14 @@ export const WORK: Work[] = [
     description:
       "Mark and expression for an AI-powered business naming service — across mockups, profile and merchandise.",
     link: "https://vt.tiktok.com/ZSQKPrw82/",
+    image: activatePilotImg.url,
   },
   {
     client: "Juliet Moses",
     discipline: "Brand Identity",
     description:
       "Initials-led monogram, clothing tags, custom shopping bag and stationery for a Nigerian fashion label.",
+    image: julietMosesImg.url,
   },
   {
     client: "Rebound",
@@ -67,6 +76,7 @@ export const WORK: Work[] = [
     description:
       "Editorial-feeling marketing design and educational video for a Nigerian mental health firm.",
     link: "https://x.com/mytherapistng",
+    image: mytherapistImg.url,
   },
   {
     client: "Getcrib",
@@ -74,6 +84,7 @@ export const WORK: Work[] = [
     description:
       "Culturally fluent marketing design plus app feature demos and walkthroughs for a Nigerian rental startup.",
     link: "https://x.com/getcrib",
+    image: getcribImg.url,
   },
   {
     client: "Incash",
@@ -81,6 +92,7 @@ export const WORK: Work[] = [
     description:
       "Web app, mobile app and marketing site for a fintech focused on financial freedom for employees.",
     link: "https://x.com/incashafrica",
+    image: incashImg.url,
   },
   {
     client: "Zaytrix Modeste",
