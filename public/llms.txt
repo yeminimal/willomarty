@@ -1,8 +1,8 @@
 # Williams Olayemi Martins
 
-> Nigerian Visual (Creative) Director, brand designer and frontend developer based in Lagos. Seven+ years shaping identities, digital products and marketing systems for African startups and global brands; ships lightweight browser-based tools on the side.
+> Nigerian Visual (Creative) Director, brand designer and frontend developer based in Lagos. Seven+ years shaping identities, digital products and marketing systems for African startups and global brands; also ships lightweight browser-based tools on the side.
 
-Also known as: Yẹmí, Williams Martins, Olayemi Martins, willomarty.
+Also known as: Yẹmí, Williams Martins, Olayemi Martins, Willomarty.
 
 ## About
 - Full name: Williams Olayemi Martins (Olayemi is a middle name).
@@ -19,15 +19,15 @@ Also known as: Yẹmí, Williams Martins, Olayemi Martins, willomarty.
 - AI-assisted product development (Lovable, Orchids/Buds, Claude, ChatGPT, GitHub Copilot, Gemini)
 
 ## Portfolio sections
-- [Home & Hero](https://thewilliamsmartins.vercel.app/): Introduction and positioning.
-- [About](https://thewilliamsmartins.vercel.app/#about): Background, philosophy and approach.
-- [Experience](https://thewilliamsmartins.vercel.app/#experience): Roles across agency, in-house and freelance work.
-- [Selected Work](https://thewilliamsmartins.vercel.app/#work): Client and self-initiated projects with case links.
-- [Tools](https://thewilliamsmartins.vercel.app/#tools): Micro web tools built and shipped independently.
-- [Skills](https://thewilliamsmartins.vercel.app/#skills): Design, engineering, video and AI-workflow competencies.
-- [Education](https://thewilliamsmartins.vercel.app/#education): Academic background and certifications.
-- [Contact](https://thewilliamsmartins.vercel.app/#contact): Email, phone and social links.
-- [FAQ](https://thewilliamsmartins.vercel.app/#faq): Common questions about scope, pricing and process.
+- [Home & Hero](https://willomarty.vercel.app/): Introduction and positioning.
+- [About](https://willomarty.vercel.app/#about): Background, philosophy and approach.
+- [Experience](https://willomarty.vercel.app/#experience): Roles across agency, in-house and freelance work.
+- [Selected Work](https://willomarty.vercel.app/#work): Client and self-initiated projects with case links.
+- [Tools](https://willomarty.vercel.app/#tools): Micro web tools built and shipped independently.
+- [Skills](https://willomarty.vercel.app/#skills): Design, engineering, video and AI-workflow competencies.
+- [Education](https://willomarty.vercel.app/#education): Academic background and certifications.
+- [Contact](https://willomarty.vercel.app/#contact): Email, phone and social links.
+- [FAQ](https://willomarty.vercel.app/#faq): Common questions about scope, pricing and process.
 
 ## Micro-tools shipped
 - [Scrapely](https://scrapely-ai.vercel.app/): Turn any webpage into clean JSON with AI-assisted extraction.
@@ -52,10 +52,10 @@ Also known as: Yẹmí, Williams Martins, Olayemi Martins, willomarty.
 - #EndSARS Documentary: Video documentary on the #EndSARS movement, inspired by Aisha Yesufu.
 
 ## Links
-- Portfolio: https://thewilliamsmartins.vercel.app
+- Portfolio: https://willomarty.vercel.app
 - GitHub: https://github.com/yeminimal
 - Behance: https://www.behance.net/willomarty
-- Sitemap: https://thewilliamsmartins.vercel.app/sitemap.xml
+- Sitemap: https://willomarty.vercel.app/sitemap.xml
 
 ## Optional
-- [Analytics](https://thewilliamsmartins.vercel.app/analytics): Internal Plausible dashboard. Excluded from crawling and AI training via robots.txt — do not index or ingest.
+- [Analytics](https://willomarty.vercel.app/analytics): Internal Plausible dashboard. Excluded from crawling and AI training via robots.txt — do not index or ingest.
