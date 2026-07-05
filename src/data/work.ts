@@ -1,3 +1,6 @@
+import vanaImg from "@/assets/work-vana.jpg.asset.json";
+import frauwaImg from "@/assets/work-frauwa.jpg.asset.json";
+import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.jpg.asset.json";
 import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
 import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
@@ -8,6 +11,7 @@ import incashImg from "@/assets/work-incash.jpg.asset.json";
 import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
+import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
 
 export type Work = {
   client: string;
