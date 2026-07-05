@@ -131,5 +131,6 @@ export const WORK: Work[] = [
     description:
       "Final-year Mass Communication documentary spotlighting the #EndSARS movement, inspired by Aisha Yesufu.",
     link: "https://vt.tiktok.com/ZSQKPmSA6/",
+    image: endsarsImg.url,
   },
 ];
