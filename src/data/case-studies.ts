@@ -91,8 +91,8 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     industry: "Legal / Business Registration Consultancy",
     year: "January 2026",
     liveLink: {
-      label: "@zamackconsults_",
-      url: "https://www.instagram.com/zamackconsults/",
+      label: "@zamack.consults",
+      url: "https://www.instagram.com/zamack.consults/",
     },
     image: zamackImg.url,
     metaTitle: "Zamack Consults — Case Study | Williams Olayemi Martins",
