@@ -205,7 +205,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     role: "Lead Visual Designer",
     scope: "Brand identity, promo reel, website",
     industry: "Construction / Interior Decor",
-    liveLink: { label: "Watch promo reel", url: "https://vt.tiktok.com/ZSQKPaKbA/" },
+    liveLink: { label: "Watch promo reel", url: "https://www.instagram.com/reel/DZ0_BfwM33F/?igsh=dm01eXJhb2Y0eXM4" },
     image: frauwaImg.url,
     metaTitle: "Frauwa Roofs & Interior Decor — Case Study | Williams Olayemi Martins",
     metaDescription:
