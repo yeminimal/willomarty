@@ -3,13 +3,13 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#work", label: "Work" },
-  { href: "#tools", label: "Tools" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#work", label: "Work" },
+  { href: "/#tools", label: "Tools" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#education", label: "Education" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -33,7 +33,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-[1100px] px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
+        <a href="/#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
           WOM
         </a>
         <nav className="hidden md:flex items-center gap-7">

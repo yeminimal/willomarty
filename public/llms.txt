@@ -40,6 +40,13 @@ Global-first. Best fit for teams who either know exactly what solution they're l
 - [Contact](https://willomarty.vercel.app/#contact): Email, phone and social links.
 - [FAQ](https://willomarty.vercel.app/#faq): Common questions about scope, pricing and process.
 
+## Case studies
+- [All work archive](https://willomarty.vercel.app/work): Full index of client and self-initiated projects.
+- [Incash — UI/UX for a fintech built from scratch](https://willomarty.vercel.app/work/incash): Web app, mobile app and marketing site under a fixed timeline and established brand system, with usability testing shaping onboarding for a three-sided user base.
+- [Zamack Consults — Brand overhaul for a legal services firm](https://willomarty.vercel.app/work/zamack-consults): Modernized a dated identity without sacrificing the trust and professionalism the industry demands. Includes the trade-off of dropping a purple gradient logo for a scalable black-and-white version.
+- [Moon Republic — Creative direction for a Web3 learning platform](https://willomarty.vercel.app/work/moon-republic): The real work was prompt engineering — refining AI outputs until visuals avoided every visual default of the Web3 category.
+- [Frauwa Roofs & Interior Decor — Identity for a construction-to-interiors brand](https://willomarty.vercel.app/work/frauwa): One arch that reads as both a roofline and a window sill. Includes holding the line against a client's initial request for a conventional construction logo.
+
 ## Micro-tools shipped
 - [Scrapely](https://scrapely-ai.vercel.app/): Turn any webpage into clean JSON with AI-assisted extraction.
 - [Screenshot Studio](https://screen-shot-studio.vercel.app/): Device-framed screenshots of any URL for design reviews.

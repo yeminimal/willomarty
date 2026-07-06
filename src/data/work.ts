@@ -14,15 +14,106 @@ import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
 import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
 
 export type Work = {
+  slug: string;
   client: string;
   discipline: string;
   description: string;
   link?: string;
   image?: string;
+  /** Featured on the homepage Selected Work grid (larger card). */
+  featured?: boolean;
+  /** Slug of a matching case study under /work/$slug. When present, the card links there. */
+  caseStudySlug?: string;
+  /** Extra copy shown only on the featured homepage card. */
+  role?: string;
+  outcomeLine?: string;
 };
 
 export const WORK: Work[] = [
   {
+    slug: "incash",
+    client: "Incash",
+    discipline: "UI/UX · Web App",
+    description:
+      "Web app, mobile app and marketing site for a fintech giving employees salary advances without waiting on payday.",
+    link: "https://x.com/incashafrica",
+    image: incashImg.url,
+    featured: true,
+    caseStudySlug: "incash",
+    role: "UI/UX Designer · Fintech / Employee Financial Wellness",
+    outcomeLine:
+      "Shipped from scratch across three surfaces under a fixed timeline, with usability testing shaping onboarding for a three-sided user base.",
+  },
+  {
+    slug: "zamack-consults",
+    client: "Zamack Consults",
+    discipline: "Brand Refresh · Logo",
+    description:
+      "Complete visual identity overhaul for a legal services company — a modern system that preserved the professionalism and trust the industry demands.",
+    link: "https://www.instagram.com/zamackconsults/",
+    image: zamackImg.url,
+    featured: true,
+    caseStudySlug: "zamack-consults",
+    role: "Lead Visual Designer · Legal / Business Registration",
+    outcomeLine:
+      "A modular identity that elevated perceived authority while staying warm and accessible — the foundation for all marketing across social and print.",
+  },
+  {
+    slug: "moon-republic",
+    client: "Moon Republic",
+    discipline: "Creative Direction · Marketing",
+    description:
+      "Social content and ongoing marketing assets for a Web3 learning platform, built to deliberately avoid every visual cliché of the category.",
+    link: "https://x.com/moonrepublic_",
+    image: moonRepublicImg.url,
+    featured: true,
+    caseStudySlug: "moon-republic",
+    role: "Creative Direction / Marketing Design · Web3 / Education",
+    outcomeLine:
+      "The real work was prompt engineering — refining AI outputs until the visuals held a distinct identity instead of drifting back to generic Web3 tropes.",
+  },
+  {
+    slug: "frauwa",
+    client: "Frauwa Roofs & Interior Decor",
+    discipline: "Brand Identity · Motion · Web",
+    description:
+      "Full identity, promo reel and website for a company that grew from roofing into interior decor — one mark carrying both halves of the business.",
+    link: "https://vt.tiktok.com/ZSQKPaKbA/",
+    image: frauwaImg.url,
+    featured: true,
+    caseStudySlug: "frauwa",
+    role: "Lead Visual Designer · Construction / Interior Decor",
+    outcomeLine:
+      "A logo that reads as both a roofline and a window sill, and a client conversation won on reasoning — not just execution.",
+  },
+  {
+    slug: "zaytrix-modeste",
+    client: "Zaytrix Modeste",
+    discipline: "Website Design · SEO",
+    description:
+      "Shopify storefront for a Canadian modest-fashion retailer — AI-assisted product visualization and on-page SEO built around a lean product catalogue.",
+    link: "https://zaytrix.com",
+    image: zaytrixModesteImg.url,
+    featured: true,
+    role: "Website Design & SEO · Fashion / E-commerce",
+    outcomeLine:
+      "A merchandising-first storefront and on-page SEO system tuned for a small catalogue that had to punch above its weight in search.",
+  },
+  {
+    slug: "caretaker-pro",
+    client: "Caretaker Pro Inc.",
+    discipline: "Website · Property Tech",
+    description:
+      "Refined website and integrated property management software for a Nigerian real-estate facility company operating across multiple estates.",
+    link: "https://caretakerpros.com.ng",
+    image: caretakerImg.url,
+    featured: true,
+    role: "Web & Product Design · Real Estate / PropTech",
+    outcomeLine:
+      "A public-facing site and a tenant/manager-facing product built to talk to each other — one identity across marketing and operations.",
+  },
+  {
+    slug: "vana",
     client: "Vana",
     discipline: "Visual Identity · Packaging",
     description:
@@ -31,61 +122,7 @@ export const WORK: Work[] = [
     image: vanaImg.url,
   },
   {
-    client: "Frauwa Roofs & Interior Decor",
-    discipline: "Visual Identity · Motion",
-    description:
-      "Full visual identity and a promotional video reel for a Lagos roofing and interior construction company.",
-    link: "https://vt.tiktok.com/ZSQKPaKbA/",
-    image: frauwaImg.url,
-  },
-  {
-    client: "Zamack Consults",
-    discipline: "Brand Refresh · Logo",
-    description:
-      "Visual overhaul and a cleaner, minimalist logo system covering social, profile, flyer and print use cases.",
-    link: "https://www.instagram.com/zamackconsults/",
-    image: zamackImg.url,
-  },
-  {
-    client: "Moon Republic",
-    discipline: "Marketing Design",
-    description:
-      "Educational and promotional design for a Web3 learning platform — Twitter and Instagram, cohort campaigns and roadmaps.",
-    link: "https://x.com/moonrepublic_",
-    image: moonRepublicImg.url,
-  },
-  {
-    client: "Activate Pilot",
-    discipline: "Logo · Brand Identity",
-    description:
-      "Mark and expression for an AI-powered business naming service — across mockups, profile and merchandise.",
-    link: "https://vt.tiktok.com/ZSQKPrw82/",
-    image: activatePilotImg.url,
-  },
-  {
-    client: "Juliet Moses",
-    discipline: "Brand Identity",
-    description:
-      "Initials-led monogram, clothing tags, custom shopping bag and stationery for a Nigerian fashion label.",
-    image: julietMosesImg.url,
-  },
-  {
-    client: "Rebound",
-    discipline: "Brand Identity (Concept)",
-    description:
-      "Self-initiated identity for a fictional herbal energy drink — pushing packaging, type and trend experiments.",
-    link: "https://www.behance.net/gallery/178594001/REBOUND",
-    image: reboundImg.url,
-  },
-  {
-    client: "Mytherapist.ng",
-    discipline: "Marketing Design · Video",
-    description:
-      "Editorial-feeling marketing design and educational video for a Nigerian mental health firm.",
-    link: "https://x.com/mytherapistng",
-    image: mytherapistImg.url,
-  },
-  {
+    slug: "getcrib",
     client: "Getcrib",
     discipline: "Marketing · Feature Demos",
     description:
@@ -94,30 +131,42 @@ export const WORK: Work[] = [
     image: getcribImg.url,
   },
   {
-    client: "Incash",
-    discipline: "UI/UX · Web App",
+    slug: "activate-pilot",
+    client: "Activate Pilot",
+    discipline: "Logo · Brand Identity",
     description:
-      "Web app, mobile app and marketing site for a fintech focused on financial freedom for employees.",
-    link: "https://x.com/incashafrica",
-    image: incashImg.url,
+      "Mark and expression for an AI-powered business naming service — across mockups, profile and merchandise.",
+    link: "https://vt.tiktok.com/ZSQKPrw82/",
+    image: activatePilotImg.url,
   },
   {
-    client: "Zaytrix Modeste",
-    discipline: "Website Design · SEO",
+    slug: "juliet-moses",
+    client: "Juliet Moses",
+    discipline: "Brand Identity",
     description:
-      "Shopify storefront for a Canadian modest-fashion retailer — AI-assisted product visualization and on-page SEO.",
-    link: "https://zaytrix.com",
-    image: zaytrixModesteImg.url,
+      "Initials-led monogram, clothing tags, custom shopping bag and stationery for a Nigerian fashion label.",
+    image: julietMosesImg.url,
   },
   {
-    client: "Caretaker Pro Inc.",
-    discipline: "Website · Property Tech",
+    slug: "rebound",
+    client: "Rebound",
+    discipline: "Brand Identity (Concept)",
     description:
-      "Refined website and integrated property management software for a Nigerian real-estate facility company.",
-    link: "https://caretakerpros.com.ng",
-    image: caretakerImg.url,
+      "Self-initiated identity for a fictional herbal energy drink — pushing packaging, type and trend experiments.",
+    link: "https://www.behance.net/gallery/178594001/REBOUND",
+    image: reboundImg.url,
   },
   {
+    slug: "mytherapistng",
+    client: "Mytherapist.ng",
+    discipline: "Marketing Design · Video",
+    description:
+      "Editorial-feeling marketing design and educational video for a Nigerian mental health firm.",
+    link: "https://x.com/mytherapistng",
+    image: mytherapistImg.url,
+  },
+  {
+    slug: "zaytrix-mgmt",
     client: "Zaytrix Mgmt. & Tech Group",
     discipline: "Website Design",
     description:
@@ -126,6 +175,7 @@ export const WORK: Work[] = [
     image: zaytrixMgmtImg.url,
   },
   {
+    slug: "endsars",
     client: "#EndSARS Documentary",
     discipline: "Video Creation",
     description:
@@ -134,3 +184,5 @@ export const WORK: Work[] = [
     image: endsarsImg.url,
   },
 ];
+
+export const FEATURED_WORK = WORK.filter((w) => w.featured);
