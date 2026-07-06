@@ -50,7 +50,7 @@ export const WORK: Work[] = [
     discipline: "Brand Refresh · Logo",
     description:
       "Complete visual identity overhaul for a legal services company — a modern system that preserved the professionalism and trust the industry demands.",
-    link: "https://www.instagram.com/zamackconsults/",
+    link: "https://www.instagram.com/zamack.consults/",
     image: zamackImg.url,
     featured: true,
     caseStudySlug: "zamack-consults",
