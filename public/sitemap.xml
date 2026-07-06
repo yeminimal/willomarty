@@ -122,4 +122,55 @@
     </image:image>
 
   </url>
+
+  <url>
+    <loc>https://thewilliamsmartins.vercel.app/work</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://thewilliamsmartins.vercel.app/work/incash</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thewilliamsmartins.vercel.app/__l5e/assets-v1/e76433d9-44d6-4df6-81a0-fdfdc74faaff/work-incash.jpg</image:loc>
+      <image:title>Incash — UI/UX Case Study</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thewilliamsmartins.vercel.app/work/zamack-consults</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thewilliamsmartins.vercel.app/__l5e/assets-v1/8dd3200f-98f5-4005-bccd-41873160142d/work-zamack-consults.jpg</image:loc>
+      <image:title>Zamack Consults — Brand Refresh Case Study</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thewilliamsmartins.vercel.app/work/moon-republic</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thewilliamsmartins.vercel.app/__l5e/assets-v1/2ac0a4ac-4ced-42b8-9ee5-a7ae58be5baa/work-moon-republic.jpg</image:loc>
+      <image:title>Moon Republic — Creative Direction Case Study</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thewilliamsmartins.vercel.app/work/frauwa</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thewilliamsmartins.vercel.app/__l5e/assets-v1/af6a886b-21f0-4832-b8c9-3c739a236a64/work-frauwa.jpg</image:loc>
+      <image:title>Frauwa Roofs &amp; Interior Decor — Brand Identity Case Study</image:title>
+    </image:image>
+  </url>
 </urlset>
