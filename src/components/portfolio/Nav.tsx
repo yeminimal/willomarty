@@ -33,7 +33,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-[1100px] px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
+        <a href="/#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
           WOM
         </a>
         <nav className="hidden md:flex items-center gap-7">
