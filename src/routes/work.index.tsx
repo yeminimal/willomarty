@@ -9,7 +9,7 @@ import { WorkCard } from "@/components/portfolio/WorkCard";
 
 const SITE_URL = "https://thewilliamsmartins.vercel.app";
 
-export const Route = createFileRoute("/work")({
+export const Route = createFileRoute("/work/")({
   head: () => ({
     meta: [
       { title: "Selected Work — Williams Olayemi Martins" },
