@@ -1,13 +1,15 @@
-import incashImg from "@/assets/work-incash.jpg.asset.json";
+import incashImg from "@/assets/work-incash.png.asset.json";
 import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
-import moonRepublicImg from "@/assets/work-moon-republic.jpg.asset.json";
-import frauwaImg from "@/assets/work-frauwa.jpg.asset.json";
+import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
+import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
+import frauwaImg from "@/assets/work-frauwa.png.asset.json";
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[] }
   | { kind: "list"; heading: string; items: { label: string; body: string }[] }
   | { kind: "callout"; heading: string; body: string }
-  | { kind: "placeholder"; heading: string; note: string };
+  | { kind: "placeholder"; heading: string; note: string }
+  | { kind: "image"; heading?: string; src: string; alt: string; caption?: string };
 
 export type CaseStudy = {
   slug: string;
@@ -187,9 +189,11 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         body: "The difficulty wasn't the AI tools — whatever worked was used — the difficulty was getting consistent output that avoided the visual defaults of an entire category. That took iterative, deliberate prompt refinement: testing, rejecting outputs that drifted back toward generic Web3 visual language, and refining until results held a distinct identity. It's a harder problem than a normal identity brief because it isn't solved once; it has to hold up across an ongoing stream of content, not a single hero image.",
       },
       {
-        kind: "placeholder",
+        kind: "image",
         heading: "Prompt Iterations",
-        note: "Before/after prompt iteration images coming soon — showing how outputs drifted back to generic Web3 defaults and were refined out.",
+        src: moonRepublicProcessImg.url,
+        alt: "Detailed process of Moon Republic prompt engineering — from starting reference photo through refinement to the final output with money flying from a car window.",
+        caption: "Start reference → refined mid-states → final output.",
       },
       {
         kind: "prose",

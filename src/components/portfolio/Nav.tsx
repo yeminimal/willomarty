@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const LINKS = [
@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/#tools", label: "Tools" },
   { href: "/#skills", label: "Skills" },
   { href: "/#education", label: "Education" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -46,6 +47,16 @@ export function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href="/resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dim hover:text-accent transition-colors border border-border hover:border-accent-dim/70 px-3 py-1.5"
+          >
+            Résumé
+            <Download size={11} className="group-hover:translate-y-0.5 transition-transform" />
+          </a>
           <button
             aria-label="Toggle theme"
             onClick={toggle}
@@ -84,6 +95,17 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="/resume.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-accent-dim hover:text-accent border border-border hover:border-accent-dim/70 px-4 py-3"
+            >
+              Résumé
+              <Download size={12} />
+            </a>
           </nav>
         </div>
       )}

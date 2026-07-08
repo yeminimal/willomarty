@@ -54,6 +54,29 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
     );
   }
 
+  if (section.kind === "image") {
+    return (
+      <div>
+        {section.heading && <SectionLabel>{section.heading}</SectionLabel>}
+        <figure className={section.heading ? "mt-5" : ""}>
+          <div className="aspect-video w-full overflow-hidden border border-border bg-tag">
+            <img
+              src={section.src}
+              alt={section.alt}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          {section.caption && (
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+              {section.caption}
+            </figcaption>
+          )}
+        </figure>
+      </div>
+    );
+  }
+
   // placeholder
   return (
     <div>
