@@ -1,13 +1,13 @@
 import vanaImg from "@/assets/work-vana.jpg.asset.json";
-import frauwaImg from "@/assets/work-frauwa.jpg.asset.json";
+import frauwaImg from "@/assets/work-frauwa.png.asset.json";
 import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
-import moonRepublicImg from "@/assets/work-moon-republic.jpg.asset.json";
+import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
 import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
-import reboundImg from "@/assets/work-rebound.jpg.asset.json";
+import reboundImg from "@/assets/work-rebound.png.asset.json";
 import mytherapistImg from "@/assets/work-mytherapistng.jpg.asset.json";
 import getcribImg from "@/assets/work-getcrib.jpg.asset.json";
-import incashImg from "@/assets/work-incash.jpg.asset.json";
+import incashImg from "@/assets/work-incash.png.asset.json";
 import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
@@ -94,7 +94,6 @@ export const WORK: Work[] = [
       "Shopify storefront for a Canadian modest-fashion retailer — AI-assisted product visualization and on-page SEO built around a lean product catalogue.",
     link: "https://zaytrix.com",
     image: zaytrixModesteImg.url,
-    featured: true,
     role: "Website Design & SEO · Fashion / E-commerce",
     outcomeLine:
       "A merchandising-first storefront and on-page SEO system tuned for a small catalogue that had to punch above its weight in search.",
@@ -107,7 +106,6 @@ export const WORK: Work[] = [
       "Refined website and integrated property management software for a Nigerian real-estate facility company operating across multiple estates.",
     link: "https://caretakerpros.com.ng",
     image: caretakerImg.url,
-    featured: true,
     role: "Web & Product Design · Real Estate / PropTech",
     outcomeLine:
       "A public-facing site and a tenant/manager-facing product built to talk to each other — one identity across marketing and operations.",
