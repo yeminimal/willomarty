@@ -12,7 +12,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { TOOLS } from "@/data/tools";
 
-const SITE_URL = "https://thewilliamsmartins.vercel.app";
+const SITE_URL = "https://willomarty.vercel.app";
 
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",
@@ -72,7 +72,8 @@ const TOOLS_SCHEMA = {
   })),
 };
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/")(
+{
   head: () => ({
     meta: [
       { title: "Williams Olayemi Martins — Brand Designer & Developer" },
@@ -119,7 +120,8 @@ export const Route = createFileRoute("/")({
     ],
   }),
   component: Index,
-});
+}
+);
 
 function Index() {
   return (
