@@ -5,7 +5,6 @@
 # Allow all crawlers full access by default
 User-agent: *
 Allow: /
-Disallow: /analytics/
 
 # Allow crawling of important directories
 Allow: /sitemap.xml
