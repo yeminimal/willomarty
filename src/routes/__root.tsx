@@ -117,15 +117,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
     ],
-    scripts: PLAUSIBLE_DOMAIN
-      ? [
-          {
-            defer: true,
-            "data-domain": PLAUSIBLE_DOMAIN,
-            src: `${PLAUSIBLE_HOST}/js/script.js`,
-          },
-        ]
-      : [],
+    scripts: [
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-XXLVQ61EJ9",
+      },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-XXLVQ61EJ9');",
+      },
+      ...(PLAUSIBLE_DOMAIN
+        ? [
+            {
+              defer: true,
+              "data-domain": PLAUSIBLE_DOMAIN,
+              src: `${PLAUSIBLE_HOST}/js/script.js`,
+            },
+          ]
+        : []),
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
