@@ -9,15 +9,15 @@ export type Experience = {
 
 export const EXPERIENCE: Experience[] = [
   {
-    role: "Visual Designer",
+    role: "Marketing Designer",
     company: "MASAI Communications",
     link: "https://www.instagram.com/euphoriquepr/",
     period: "Apr 2025 — Sep 2025",
     location: "Lagos · Remote",
     bullets: [
-      "Designed communication materials for MASAI's social channels.",
-      "Owned crucial deliverables including pitch decks and video content.",
-      "Maintained design consistency across all visual communication assets.",
+      "Spearheaded visual design of multi-platform communication materials for MASAI socials, enhancing brand presence across Instagram and Twitter.",
+      "Directly authored high-stakes deliverables including investment pitch decks and cinematic video content.",
+      "Established and enforced design systems to ensure rigorous visual consistency across all brand assets.",
     ],
   },
   {
@@ -27,9 +27,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Nov 2024 — Mar 2025",
     location: "Lagos · Remote",
     bullets: [
-      "Designed compelling visuals simplifying rental automation.",
-      "Created engaging videos promoting Getcrib's services.",
-      "Maintained design consistency across marketing assets.",
+      "Optimized UI/UX workflows by designing compelling visuals and app feature walkthroughs that simplified rental automation.",
+      "Produced engaging promotional videos and feature demos, leveraging storytelling to drive user engagement.",
+      "Collaborated with marketing teams to maintain a cohesive brand identity across all digital marketing assets.",
     ],
   },
   {
@@ -39,9 +39,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Oct 2023 — Apr 2024",
     location: "Lagos · Remote",
     bullets: [
-      "Designed visuals that promoted mental health support to Nigerians.",
-      "Created videos that educated audiences on mental health.",
-      "Developed graphics that reinforced Mytherapist.ng's mission.",
+      "Designed focused user interfaces and graphic visuals that increased accessibility to mental health support.",
+      "Created educational video content and GIFs, utilizing motion graphics to reinforce the platform's mission.",
+      "Developed intuitive digital experiences through flyers and social media content to promote mental wellness.",
     ],
   },
   {
@@ -51,9 +51,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Jan 2022 — Oct 2022",
     location: "Lagos · Remote",
     bullets: [
-      "Collaborated with the UX Lead to design intuitive digital experiences.",
-      "Identified usability challenges through user feedback and testing.",
-      "Contributed to the design and launch of a web app and mobile app.",
+      "Partnered with the UX Lead and product teams to deliver a fully functional web app, mobile app, and website.",
+      "Utilized usability testing and user feedback to identify and resolve critical design challenges.",
+      "Contributed to the end-to-end design lifecycle, from wireframing to high-fidelity prototyping and launch.",
     ],
   },
   {
@@ -62,9 +62,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Jul 2021 — Nov 2021",
     location: "Lagos",
     bullets: [
-      "Designed solutions that enhanced product visuals and experience.",
-      "Collaborated with developers to bridge design and functionality.",
-      "Crafted visuals that supported Jobhut's mission in job creation.",
+      "Designed visual solutions that enhanced product aesthetics and overall user experience.",
+      "Liaised between design and engineering teams to ensure seamless implementation of UI functionality.",
+      "Crafted brand-aligned visuals that supported mission-critical objectives in job market creation.",
     ],
   },
   {
@@ -73,9 +73,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Oct 2018 — Feb 2019",
     location: "Lagos",
     bullets: [
-      "Led brand creativity in delivering high-quality visual and print design.",
-      "Delivered publication and marketing designs for diverse industries.",
-      "Strengthened customer engagement through impactful visuals.",
+      "Led creative direction for high-quality visual and print designs, managing projects from concept to delivery.",
+      "Delivered diverse marketing materials, ensuring consistent brand identity across various industry publications.",
+      "Leveraged impactful visuals to strengthen customer engagement and brand recognition.",
     ],
   },
   {
@@ -84,8 +84,8 @@ export const EXPERIENCE: Experience[] = [
     period: "May 2018 — Sep 2018",
     location: "Lagos",
     bullets: [
-      "Designed print and digital assets using industry-standard tools.",
-      "Delivered on-demand visual and print design across industries.",
+      "Developed sophisticated print and digital assets using industry-standard tools like Adobe Illustrator and Photoshop.",
+      "Executed on-demand visual designs for diverse sectors, maintaining high standards of creative precision.",
     ],
   },
   {
@@ -94,8 +94,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Jan 2018 — Apr 2018",
     location: "Lagos",
     bullets: [
-      "Collaborated with printers to deliver high-quality, on-demand visuals.",
-      "Translated brand values into compelling, on-trend designs.",
+      "Managed production workflows with printers to ensure top-tier quality for physical visual deliverables.",
+      "Provided creative guidance and brand identity expertise to ensure collaborative project success.",
+      "Translated core brand values into compelling, trend-forward designs that resonated with the target audience.",
     ],
   },
 ];
