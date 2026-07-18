@@ -28,25 +28,26 @@ export function About() {
           <Reveal delay={0.1}>
             <div className="space-y-6 text-base md:text-[17px] leading-[1.7] text-foreground/85">
               <p>
-                I'm Williams, a Visual/Creative Director. I help brands tell their story, curate their journey,
-                and define their identity. As a Creative Director, the end goal is to attract, convert, and retain.
+                I'm Williams, a Graphic Designer passionate about helping brands communicate with clarity, consistency, and purpose.
+                I specialize in crafting visual identities and design systems that not only look distinctive but also build trust,
+                tell compelling stories, and leave lasting impressions.
               </p>
               <p>
-                I take pride in engaging in the messy part of building, designing, and shaping experiences.
-                Finding out what works, what doesn't, and how to make what works even better. That moment of clarity.
-                It doesn't matter who or what I'm building for, what matters is that i build it well.
+                I enjoy the messy, iterative side of the creative process—exploring ideas, challenging assumptions,
+                refining concepts, and discovering what truly connects with people. Every project is an opportunity
+                to create work that is thoughtful, functional, and meaningful.
               </p>
               <p>
-                I work with a sharp eye for what the market needs — brands that earn trust in a skeptical market, and digital tools that solve
-                friction people have learned to live with. With me, it's not just about the design. It's
-                about the journey we take together to create lasting impact.
+                I approach every design with a sharp understanding of both brand strategy and visual communication,
+                creating identities that resonate with audiences and stand out in competitive markets.
+                For me, great design goes beyond aesthetics—it's about building experiences that strengthen brands and create lasting impact.
               </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
               {[
                 { label: "Behance", href: "https://www.behance.net/willomarty" },
-                { label: "GitHub", href: "https://github.com/willomarty" },
+                { label: "GitHub", href: "https://github.com/yeminimal" },
                 { label: "LinkedIn", href: "#" },
               ].map((l) => (
                 <a
