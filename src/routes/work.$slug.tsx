@@ -1,10 +1,11 @@
 import { createFileRoute, notFound, useRouter, Link } from "@tanstack/react-router";
+import { siteConfig } from "@/config/site";
 import { useEffect } from "react";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 
-const SITE_URL = "https://willomarty.vercel.app";
+const SITE_URL = siteConfig.url;
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {

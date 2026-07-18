@@ -1,6 +1,7 @@
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
 import { ExternalLink, Palette, Code2, Clapperboard, Wrench, type LucideIcon } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const FACTS: { icon: LucideIcon; label: string }[] = [
   { icon: Palette, label: "Brand Identity & Logo Design" },
@@ -46,9 +47,10 @@ export function About() {
 
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
               {[
-                { label: "Behance", href: "https://www.behance.net/willomarty" },
-                { label: "GitHub", href: "https://github.com/yeminimal" },
-                { label: "LinkedIn", href: "#" },
+                { label: "Behance", href: siteConfig.social.behance },
+                { label: "GitHub", href: siteConfig.social.github },
+                // LinkedIn: update siteConfig.social.linkedin with real URL when available
+                { label: "LinkedIn", href: siteConfig.social.linkedin },
               ].map((l) => (
                 <a
                   key={l.label}

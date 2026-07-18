@@ -1,13 +1,15 @@
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
 import { ArrowRight, Mail, Phone, Github, Linkedin, Dribbble } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const ITEMS = [
-  { icon: Mail, label: "Email", value: "willomarty01@gmail.com", href: "mailto:willomarty01@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+234 702 678 7353", href: "tel:+2347026787353" },
-  { icon: Dribbble, label: "Behance", value: "behance.net/willomarty", href: "https://www.behance.net/willomarty" },
-  { icon: Github, label: "GitHub", value: "github.com/yeminimal", href: "https://github.com/yeminimal" },
-  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "#" },
+  { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+  { icon: Phone, label: "Phone", value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
+  { icon: Dribbble, label: "Behance", value: "behance.net/willomarty", href: siteConfig.social.behance },
+  { icon: Github, label: "GitHub", value: "github.com/yeminimal", href: siteConfig.social.github },
+  // LinkedIn: update siteConfig.social.linkedin with real URL when available
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: siteConfig.social.linkedin },
 ];
 
 export function Contact() {

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { siteConfig } from "@/config/site";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
@@ -12,20 +13,20 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { TOOLS } from "@/data/tools";
 
-const SITE_URL = "https://willomarty.vercel.app";
+const SITE_URL = siteConfig.url;
 
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
   name: "Williams Olayemi Martins",
-  alternateName: ["Yẹmí", "Williams Martins"],
+  alternateName: ["Yẹmí", "Williams Martins", "Willomarty", "Olayemi Martins"],
   jobTitle: "Visual (Creative) Director",
   description:
     "Nigerian visual director, brand designer and frontend developer building brand identities, web tools and digital products from Lagos.",
   url: SITE_URL,
-  email: "mailto:willomarty01@gmail.com",
-  telephone: "+2347026787353",
+  email: `mailto:${siteConfig.email}`,
+  telephone: siteConfig.phone,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lagos",
@@ -41,9 +42,10 @@ const PERSON_SCHEMA = {
     "Motion Graphics",
     "Video Editing",
   ],
+  // sameAs: LinkedIn placeholder excluded until real URL is supplied
   sameAs: [
-    "https://www.behance.net/willomarty",
-    "https://github.com/yeminimal",
+    siteConfig.social.behance,
+    siteConfig.social.github,
   ],
 };
 

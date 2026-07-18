@@ -1,13 +1,15 @@
 # Williams Olayemi Martins - Portfolio - robots.txt
 # https://willomarty.vercel.app
-# Updated: July 2026
+# Updated: 2026-07-18
+#
+# NOTE: Review crawler entries against Anthropic/OpenAI/Google published docs every few months.
+# Anthropic: https://support.anthropic.com/en/articles/8325881-about-claude-ai-s-web-crawler
+# OpenAI:    https://platform.openai.com/docs/bots
 
 # Allow all crawlers full access by default
 User-agent: *
 Allow: /
-
-# Allow crawling of important directories
-Allow: /sitemap.xml
+Disallow: /analytics
 
 # --- Major search engines ---
 User-agent: Googlebot
@@ -42,6 +44,14 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
+Allow: /
+
+# Claude-SearchBot and Claude-User added 2026-07-18
+# Re-check against https://support.anthropic.com/en/articles/8325881-about-claude-ai-s-web-crawler
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: anthropic-ai
@@ -92,5 +102,6 @@ User-agent: SemrushBot
 Allow: /
 Crawl-delay: 5
 
-# Sitemap location
+# Sitemap location — matches siteConfig.url in src/config/site.ts
+# Update this line if/when the custom domain is switched in.
 Sitemap: https://willomarty.vercel.app/sitemap.xml

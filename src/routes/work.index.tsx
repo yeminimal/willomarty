@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { siteConfig } from "@/config/site";
 import { ArrowLeft } from "lucide-react";
 import { WORK } from "@/data/work";
 import { Nav } from "@/components/portfolio/Nav";
@@ -7,7 +8,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import { WorkCard } from "@/components/portfolio/WorkCard";
 
-const SITE_URL = "https://willomarty.vercel.app";
+const SITE_URL = siteConfig.url;
 
 export const Route = createFileRoute("/work/")({
   head: () => ({

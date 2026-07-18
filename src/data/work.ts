@@ -143,6 +143,8 @@ export const WORK: Work[] = [
     discipline: "Brand Identity",
     description:
       "Initials-led monogram, clothing tags, custom shopping bag and stationery for a Nigerian fashion label.",
+    // [[PLACEHOLDER: replace with direct Behance gallery URL for the Juliet Moses project]]
+    link: "https://www.behance.net/willomarty",
     image: julietMosesImg.url,
   },
   {
