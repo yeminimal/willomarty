@@ -5,6 +5,7 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
+import { testimonials } from "@/data/testimonials";
 
 function SectionBlock({ section }: { section: CaseStudySection }) {
   if (section.kind === "prose") {
@@ -151,6 +152,36 @@ export function CaseStudyLayout({ study }: { study: CaseStudy }) {
               </Reveal>
             ))}
           </div>
+
+          {(() => {
+            const studyTestimonial = testimonials.find(
+              (t) =>
+                t.projectSlug === study.slug &&
+                t.quote &&
+                !t.quote.startsWith("[[PLACEHOLDER:")
+            );
+            if (!studyTestimonial) return null;
+            return (
+              <Reveal delay={0.1}>
+                <div className="mt-20 md:mt-28 border-t border-border pt-16">
+                  <SectionLabel>Client Feedback</SectionLabel>
+                  <div className="mt-8 max-w-[62ch]">
+                    <blockquote className="display-serif italic text-2xl md:text-3xl leading-relaxed text-foreground">
+                      "{studyTestimonial.quote}"
+                    </blockquote>
+                    <cite className="mt-6 block not-italic">
+                      <span className="font-mono text-xs uppercase tracking-wider text-accent">
+                        {studyTestimonial.name}
+                      </span>
+                      <span className="mt-1 block font-mono text-[10px] uppercase tracking-widest text-muted">
+                        {studyTestimonial.role} &middot; {studyTestimonial.company}
+                      </span>
+                    </cite>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })()}
 
           <div className="mt-20 md:mt-28 border-t border-border pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {study.liveLink ? (

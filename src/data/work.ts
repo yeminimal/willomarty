@@ -94,6 +94,7 @@ export const WORK: Work[] = [
       "Shopify storefront for a Canadian modest-fashion retailer — AI-assisted product visualization and on-page SEO built around a lean product catalogue.",
     link: "https://zaytrix.com",
     image: zaytrixModesteImg.url,
+    caseStudySlug: "zaytrix-modeste",
     role: "Website Design & SEO · Fashion / E-commerce",
     outcomeLine:
       "A merchandising-first storefront and on-page SEO system tuned for a small catalogue that had to punch above its weight in search.",
@@ -106,6 +107,7 @@ export const WORK: Work[] = [
       "Refined website and integrated property management software for a Nigerian real-estate facility company operating across multiple estates.",
     link: "https://caretakerpros.com.ng",
     image: caretakerImg.url,
+    caseStudySlug: "caretaker-pro",
     role: "Web & Product Design · Real Estate / PropTech",
     outcomeLine:
       "A public-facing site and a tenant/manager-facing product built to talk to each other — one identity across marketing and operations.",
@@ -118,6 +120,7 @@ export const WORK: Work[] = [
       "Iconic logo, packaging system and marketing design for an all-natural Nigerian feminine cosmetic brand.",
     link: "https://vt.tiktok.com/ZSQKPqLvx/",
     image: vanaImg.url,
+    caseStudySlug: "vana",
   },
   {
     slug: "getcrib",
@@ -127,6 +130,7 @@ export const WORK: Work[] = [
       "Culturally fluent marketing design plus app feature demos and walkthroughs for a Nigerian rental startup.",
     link: "https://x.com/getcrib",
     image: getcribImg.url,
+    caseStudySlug: "getcrib",
   },
   {
     slug: "activate-pilot",
@@ -136,6 +140,7 @@ export const WORK: Work[] = [
       "Mark and expression for an AI-powered business naming service — across mockups, profile and merchandise.",
     link: "https://vt.tiktok.com/ZSQKPrw82/",
     image: activatePilotImg.url,
+    caseStudySlug: "activate-pilot",
   },
   {
     slug: "juliet-moses",
@@ -146,6 +151,7 @@ export const WORK: Work[] = [
     // [[PLACEHOLDER: replace with direct Behance gallery URL for the Juliet Moses project]]
     link: "https://www.behance.net/willomarty",
     image: julietMosesImg.url,
+    caseStudySlug: "juliet-moses",
   },
   {
     slug: "rebound",
@@ -155,6 +161,7 @@ export const WORK: Work[] = [
       "Self-initiated identity for a fictional herbal energy drink — pushing packaging, type and trend experiments.",
     link: "https://www.behance.net/gallery/178594001/REBOUND",
     image: reboundImg.url,
+    caseStudySlug: "rebound",
   },
   {
     slug: "mytherapistng",
@@ -164,6 +171,7 @@ export const WORK: Work[] = [
       "Editorial-feeling marketing design and educational video for a Nigerian mental health firm.",
     link: "https://x.com/mytherapistng",
     image: mytherapistImg.url,
+    caseStudySlug: "mytherapist-ng",
   },
   {
     slug: "zaytrix-mgmt",
@@ -173,6 +181,7 @@ export const WORK: Work[] = [
       "Corporate website for a Canadian group operating across telecom, digital technology and management services.",
     link: "https://zaytrix.com",
     image: zaytrixMgmtImg.url,
+    caseStudySlug: "zaytrix-management",
   },
   {
     slug: "endsars",
@@ -182,6 +191,7 @@ export const WORK: Work[] = [
       "Final-year Mass Communication documentary spotlighting the #EndSARS movement, inspired by Aisha Yesufu.",
     link: "https://vt.tiktok.com/ZSQKPmSA6/",
     image: endsarsImg.url,
+    caseStudySlug: "endsars-documentary",
   },
 ];
 

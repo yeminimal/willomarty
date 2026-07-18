@@ -3,6 +3,16 @@ import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
 import frauwaImg from "@/assets/work-frauwa.png.asset.json";
+import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
+import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
+import vanaImg from "@/assets/work-vana.jpg.asset.json";
+import getcribImg from "@/assets/work-getcrib.jpg.asset.json";
+import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
+import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
+import reboundImg from "@/assets/work-rebound.png.asset.json";
+import mytherapistImg from "@/assets/work-mytherapistng.jpg.asset.json";
+import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
+import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[] }
@@ -258,6 +268,416 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         kind: "prose",
         heading: "Outcome",
         body: "Delivered as a full package — brand identity, marketing materials, a promo reel used for ads, and a company website. No formal metrics tracked, but the deliverables represent a complete identity system, including a client conversation won on reasoning, not just execution.",
+      },
+    ],
+  },
+
+  "zaytrix-modeste": {
+    slug: "zaytrix-modeste",
+    client: "Zaytrix Modeste",
+    role: "Website Design & SEO Specialist",
+    scope: "Shopify Storefront & SEO Audit",
+    industry: "Fashion / E-commerce",
+    year: "2024",
+    liveLink: { label: "zaytrix.com", url: "https://zaytrix.com" },
+    image: zaytrixModesteImg.url,
+    metaTitle: "Zaytrix Modeste — Case Study | Williams Olayemi Martins",
+    metaDescription: "Shopify storefront for a Canadian modest-fashion retailer featuring AI-assisted product visualization and on-page SEO.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Zaytrix Modeste]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Zaytrix Modeste]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Zaytrix Modeste]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Zaytrix Modeste]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Zaytrix Modeste]]",
+      },
+    ],
+  },
+
+  "caretaker-pro": {
+    slug: "caretaker-pro",
+    client: "Caretaker Pro Inc.",
+    role: "Web & Product Designer",
+    scope: "Marketing Website & Property Management Software",
+    industry: "Real Estate / PropTech",
+    year: "2024",
+    liveLink: { label: "caretakerpros.com.ng", url: "https://caretakerpros.com.ng" },
+    image: caretakerImg.url,
+    metaTitle: "Caretaker Pro — Case Study | Williams Olayemi Martins",
+    metaDescription: "Website and property management software for a Nigerian real-estate facility company operating across multiple estates.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Caretaker Pro]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Caretaker Pro]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Caretaker Pro]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Caretaker Pro]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Caretaker Pro]]",
+      },
+    ],
+  },
+
+  vana: {
+    slug: "vana",
+    client: "Vana",
+    role: "Visual Designer",
+    scope: "Visual Identity & Packaging Design",
+    industry: "Cosmetics / Feminine Care",
+    year: "2023",
+    liveLink: { label: "Watch case", url: "https://vt.tiktok.com/ZSQKPqLvx/" },
+    image: vanaImg.url,
+    metaTitle: "Vana — Case Study | Williams Olayemi Martins",
+    metaDescription: "Iconic logo, packaging system and marketing design for an all-natural Nigerian feminine cosmetic brand.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Vana]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Vana]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Vana]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Vana]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Vana]]",
+      },
+    ],
+  },
+
+  getcrib: {
+    slug: "getcrib",
+    client: "Getcrib",
+    role: "Marketing & Demo Designer",
+    scope: "Marketing Graphics & App Feature Walkthroughs",
+    industry: "Real Estate / Rent Tech",
+    year: "2023",
+    liveLink: { label: "View on X", url: "https://x.com/getcrib" },
+    image: getcribImg.url,
+    metaTitle: "Getcrib — Case Study | Williams Olayemi Martins",
+    metaDescription: "Culturally fluent marketing design plus app feature demos and walkthroughs for a Nigerian rental startup.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Getcrib]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Getcrib]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Getcrib]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Getcrib]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Getcrib]]",
+      },
+    ],
+  },
+
+  "activate-pilot": {
+    slug: "activate-pilot",
+    client: "Activate Pilot",
+    role: "Brand Identity Designer",
+    scope: "Logo, Brand Mark & Merchandise",
+    industry: "AI Naming Service",
+    year: "2023",
+    liveLink: { label: "Watch case", url: "https://vt.tiktok.com/ZSQKPrw82/" },
+    image: activatePilotImg.url,
+    metaTitle: "Activate Pilot — Case Study | Williams Olayemi Martins",
+    metaDescription: "Mark and expression for an AI-powered business naming service across mockups, profile, and merchandise.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Activate Pilot]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Activate Pilot]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Activate Pilot]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Activate Pilot]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Activate Pilot]]",
+      },
+    ],
+  },
+
+  "juliet-moses": {
+    slug: "juliet-moses",
+    client: "Juliet Moses",
+    role: "Brand Designer",
+    scope: "Initials Monogram, Clothing Tags, Custom Shopping Bags & Stationery",
+    industry: "Fashion Label",
+    year: "2023",
+    liveLink: { label: "View profile", url: "https://www.behance.net/willomarty" },
+    image: julietMosesImg.url,
+    metaTitle: "Juliet Moses — Case Study | Williams Olayemi Martins",
+    metaDescription: "Initials-led monogram, clothing tags, custom shopping bag, and stationery for a Nigerian fashion label.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Juliet Moses]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Juliet Moses]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Juliet Moses]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Juliet Moses]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Juliet Moses]]",
+      },
+    ],
+  },
+
+  rebound: {
+    slug: "rebound",
+    client: "Rebound",
+    role: "Brand Identity Designer (Concept)",
+    scope: "Brand Identity, Packaging Design & Typography",
+    industry: "Beverages / Herbal Energy Drink",
+    year: "2023",
+    liveLink: { label: "View on Behance", url: "https://www.behance.net/gallery/178594001/REBOUND" },
+    image: reboundImg.url,
+    metaTitle: "Rebound — Case Study | Williams Olayemi Martins",
+    metaDescription: "Self-initiated identity for a fictional herbal energy drink pushing packaging, type, and trend experiments.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Rebound]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Rebound]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Rebound]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Rebound]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Rebound]]",
+      },
+    ],
+  },
+
+  "mytherapist-ng": {
+    slug: "mytherapist-ng",
+    client: "Mytherapist.ng",
+    role: "Marketing & Video Designer",
+    scope: "Editorial Marketing Design & Educational Videos",
+    industry: "Mental Health",
+    year: "2023",
+    liveLink: { label: "View on X", url: "https://x.com/mytherapistng" },
+    image: mytherapistImg.url,
+    metaTitle: "Mytherapist.ng — Case Study | Williams Olayemi Martins",
+    metaDescription: "Editorial-feeling marketing design and educational video for a Nigerian mental health firm.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Mytherapist.ng]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Mytherapist.ng]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Mytherapist.ng]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Mytherapist.ng]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Mytherapist.ng]]",
+      },
+    ],
+  },
+
+  "zaytrix-management": {
+    slug: "zaytrix-management",
+    client: "Zaytrix Mgmt. & Tech Group",
+    role: "Corporate Web Designer",
+    scope: "Corporate Web Design",
+    industry: "Telecom / Management / Tech Group",
+    year: "2024",
+    liveLink: { label: "zaytrix.com", url: "https://zaytrix.com" },
+    image: zaytrixMgmtImg.url,
+    metaTitle: "Zaytrix Management — Case Study | Williams Olayemi Martins",
+    metaDescription: "Corporate website for a Canadian group operating across telecom, digital technology, and management services.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for Zaytrix Mgmt]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for Zaytrix Mgmt]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for Zaytrix Mgmt]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for Zaytrix Mgmt]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for Zaytrix Mgmt]]",
+      },
+    ],
+  },
+
+  "endsars-documentary": {
+    slug: "endsars-documentary",
+    client: "#EndSARS Documentary",
+    role: "Video Creator & Editor",
+    scope: "Mass Communication Video Documentary",
+    industry: "Video / Advocacy",
+    year: "2020",
+    liveLink: { label: "Watch on TikTok", url: "https://vt.tiktok.com/ZSQKPmSA6/" },
+    image: endsarsImg.url,
+    metaTitle: "#EndSARS Documentary — Case Study | Williams Olayemi Martins",
+    metaDescription: "Final-year Mass Communication documentary spotlighting the #EndSARS movement, inspired by Aisha Yesufu.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
+    sections: [
+      {
+        kind: "prose",
+        heading: "Overview",
+        body: "[[PLACEHOLDER: what was built and why for #EndSARS Documentary]]",
+      },
+      {
+        kind: "prose",
+        heading: "The Challenge",
+        body: "[[PLACEHOLDER: the core problem or constraint for #EndSARS Documentary]]",
+      },
+      {
+        kind: "prose",
+        heading: "Approach & Process",
+        body: "[[PLACEHOLDER: how the problem was solved for #EndSARS Documentary]]",
+      },
+      {
+        kind: "prose",
+        heading: "Outcome & Results",
+        body: "[[PLACEHOLDER: results and metrics for #EndSARS Documentary]]",
+      },
+      {
+        kind: "placeholder",
+        heading: "Project Gallery",
+        note: "[[PLACEHOLDER: additional project images for #EndSARS Documentary]]",
       },
     ],
   },
