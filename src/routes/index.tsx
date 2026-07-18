@@ -42,11 +42,11 @@ const PERSON_SCHEMA = {
     "Motion Graphics",
     "Video Editing",
   ],
-  // sameAs: LinkedIn placeholder excluded until real URL is supplied
   sameAs: [
     siteConfig.social.behance,
     siteConfig.social.github,
-  ],
+    siteConfig.social.linkedin,
+  ].filter(url => url && !url.includes("[[PLACEHOLDER:")),
 };
 
 const WEBSITE_SCHEMA = {

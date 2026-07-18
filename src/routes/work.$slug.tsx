@@ -47,16 +47,45 @@ export const Route = createFileRoute("/work/$slug")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "CreativeWork",
+            name: loaderData.client,
             headline: `${loaderData.client} — Case Study`,
             description: loaderData.metaDescription,
             image: ogImage,
-            author: {
+            creator: {
               "@type": "Person",
               name: "Williams Olayemi Martins",
               url: SITE_URL,
             },
-            mainEntityOfPage: url,
+            url: url,
+            datePublished: loaderData.datePublished || "[[PLACEHOLDER: project completion date]]",
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": SITE_URL,
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Work",
+                "item": `${SITE_URL}/work`,
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": loaderData.client,
+                "item": url,
+              },
+            ],
           }),
         },
       ],

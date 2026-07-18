@@ -23,6 +23,7 @@ export type CaseStudy = {
   metaTitle: string;
   metaDescription: string;
   sections: CaseStudySection[];
+  datePublished?: string;
 };
 
 export const CASE_STUDIES: Record<string, CaseStudy> = {
@@ -38,6 +39,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     metaTitle: "Incash — Case Study | Williams Olayemi Martins",
     metaDescription:
       "UI/UX for Incash, a fintech giving employees salary advances repaid in installments or in full — built from scratch across web, mobile and marketing site.",
+    datePublished: "2022-10-01",
     sections: [
       {
         kind: "prose",
@@ -100,6 +102,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     metaTitle: "Zamack Consults — Case Study | Williams Olayemi Martins",
     metaDescription:
       "Complete visual overhaul for a business registration consultancy — modernizing a dated brand without sacrificing the trust a legal services company depends on.",
+    datePublished: "2026-01-01",
     sections: [
       {
         kind: "prose",
@@ -163,6 +166,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     metaTitle: "Moon Republic — Case Study | Williams Olayemi Martins",
     metaDescription:
       "Creative direction and marketing design for a Web3 learning platform, built to deliberately avoid every visual cliché of the category through AI prompt engineering.",
+    datePublished: "2025-11-01",
     sections: [
       {
         kind: "prose",
@@ -214,6 +218,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     metaTitle: "Frauwa Roofs & Interior Decor — Case Study | Williams Olayemi Martins",
     metaDescription:
       "Full identity, promo reel and website for a construction-to-interiors brand. One arch that reads as both a roofline and a window sill — built to stand out in a category of sameness.",
+    datePublished: "[[PLACEHOLDER: project completion date]]",
     sections: [
       {
         kind: "prose",
