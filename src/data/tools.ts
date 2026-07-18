@@ -45,12 +45,12 @@ export const TOOLS: Tool[] = [
     image: imagesqueezeImg.url,
   },
   {
-    name: "Pocket QR",
-    tagline: "Generate and scan QR codes — in your pocket.",
+    name: "SeeQR",
+    tagline: "Upload a photo and we'll read the QR for you.",
     description:
-      "A lightweight QR toolkit: generate codes from any text or URL, and scan them with your camera. No app install, no permissions beyond camera.",
+      "Upload a photo from your device media and we'll read the QR for you. Everything happens on your device — no uploads, no accounts, no tracking.",
     tags: ["QR Code", "Camera API", "Mobile-first", "React", "Vercel"],
-    url: "https://pocket-qr-vision.vercel.app/",
+    url: "https://tryseeqr.vercel.app/",
     status: "Live",
     image: pocketqrImg.url,
   },
