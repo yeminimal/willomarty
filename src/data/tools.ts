@@ -1,7 +1,7 @@
 import scrapelyImg from "@/assets/tool-scrapely.jpg.asset.json";
 import screenshotImg from "@/assets/tool-screenshot.jpg.asset.json";
 import imagesqueezeImg from "@/assets/tool-imagesqueeze.jpg.asset.json";
-import seeqrImg from "@/https://github.com/yeminimal/willomarty/blob/b492b73a62f2463169c4ab108df26574363a624f/public/seeqr.png";
+import seeqrImg from "/public/seeqr.png";
 
 export type Tool = {
   name: string;
