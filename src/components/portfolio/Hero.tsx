@@ -27,15 +27,15 @@ export function Hero() {
         <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
           <div>
             <h1 className="display-serif leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="text-foreground">Williams</span>
+              <span className="text-foreground">hi, i'm Williams Martins, and</span>
               <br />
-              <span className="italic text-accent">Olayemi</span>{" "}
-              <span className="text-foreground">Martins</span>
+              <span className="italic text-accent">i design</span>{" "}
+              <span className="text-foreground">brands & experiences</span>
               <span className="sr-only"> — Brand Designer & Frontend Developer</span>
             </h1>
             <div className="mt-6 h-px w-32 bg-accent/40" />
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">
-              Brand Design · Frontend Development · Media Production
+              I help brands tell their story, curate their journery, and define their identity.
               <br />
               <span className="text-foreground/70">Lagos, Nigeria.</span>
             </p>
