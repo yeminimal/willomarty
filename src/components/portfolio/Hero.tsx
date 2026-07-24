@@ -27,7 +27,7 @@ export function Hero() {
         <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
           <div>
             <h1 className="display-serif leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="text-foreground">i'm Williams, and</span>
+              <span className="text-foreground">i'm Williams,</span>
               <br />
               <span className="italic text-accent">i design</span>{" "}
               <span className="italic text-foreground">!</span>
