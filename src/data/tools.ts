@@ -1,7 +1,7 @@
 import scrapelyImg from "@/assets/tool-scrapely.jpg.asset.json";
 import screenshotImg from "@/assets/tool-screenshot.jpg.asset.json";
 import imagesqueezeImg from "@/assets/tool-imagesqueeze.jpg.asset.json";
-import pocketqrImg from "@/assets/tool-pocketqr.jpg.asset.json";
+import seeqrImg from "@/public/seeqr.png";
 
 export type Tool = {
   name: string;
@@ -49,9 +49,9 @@ export const TOOLS: Tool[] = [
     tagline: "Upload a photo and we'll read the QR for you.",
     description:
       "Upload a photo from your device media and we'll read the QR for you. Everything happens on your device — no uploads, no accounts, no tracking.",
-    tags: ["QR Code", "Camera API", "Mobile-first", "React", "Vercel"],
+    tags: ["QR Code", "Offline", "Camera API", "Mobile-first", "React", "Vercel"],
     url: "https://tryseeqr.vercel.app/",
     status: "Live",
-    image: pocketqrImg.url,
+    image: seeqrImg.url,
   },
 ];
