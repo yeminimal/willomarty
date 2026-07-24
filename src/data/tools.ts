@@ -1,7 +1,7 @@
 import scrapelyImg from "@/assets/tool-scrapely.jpg.asset.json";
 import screenshotImg from "@/assets/tool-screenshot.jpg.asset.json";
 import imagesqueezeImg from "@/assets/tool-imagesqueeze.jpg.asset.json";
-import seeqrImg from "/seeqr.png";
+const seeqrImg = "/seeqr.png";
 
 export type Tool = {
   name: string;
@@ -52,6 +52,6 @@ export const TOOLS: Tool[] = [
     tags: ["QR Code", "Offline", "Camera API", "Mobile-first", "React", "Vercel"],
     url: "https://tryseeqr.vercel.app/",
     status: "Live",
-    image: seeqrImg.url,
+    image: seeqrImg,
   },
 ];
