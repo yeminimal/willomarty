@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
 import portrait from "@/assets/portrait.webp.asset.json";
+import { MetricStrip } from "./MetricStrip";
 
 const STATS = [
   { value: "7+", label: "Years\nDesigning" },
@@ -89,6 +90,8 @@ export function Hero() {
         </div>
       </div>
 
+      <MetricStrip />
+      
       <div className="mt-20 flex justify-center">
         <a href="#about" aria-label="Scroll to about" className="text-accent-dim animate-bounce">
           <ArrowDown size={18} />
