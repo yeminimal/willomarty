@@ -130,7 +130,7 @@ function Index() {
       <main>
         <Hero />
         <About />
-        <Experience />
+        {/* <Experience /> */}
         <Work />
         <Tools />
         <Skills />
