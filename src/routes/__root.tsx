@@ -116,16 +116,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
       { rel: "apple-touch-icon", href: portraitAsset.url },
-      // Non-blocking stylesheet load: preload then apply
-      { rel: "preload", href: appCss, as: "style", onLoad: "this.rel='stylesheet'" },
-      // Fallback smart-load: apply stylesheet without blocking paint
-      { rel: "stylesheet", href: appCss, media: "print", onLoad: "this.media='all'" },
+      { rel: "stylesheet", href: appCss },
     ],
     scripts: [
-      // Load gtag library asynchronously (keeps network request non-blocking)
       {
         async: true,
         src: "https://www.googletagmanager.com/gtag/js?id=G-XXLVQ61EJ9",
+      },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-XXLVQ61EJ9');",
       },
       ...(PLAUSIBLE_DOMAIN
         ? [
@@ -163,23 +163,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    // Defer the inline gtag initialization to after hydration to avoid blocking FCP.
-    try {
-      // Ensure dataLayer exists and provide a lightweight gtag shim if external script hasn't executed yet.
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag(...args: any[]) {
-        (window as any).dataLayer.push(args);
-      }
-      (window as any).gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-XXLVQ61EJ9');
-    } catch (e) {
-      // swallow errors; analytics is non-critical
-      console.warn('gtag init failed', e);
-    }
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
