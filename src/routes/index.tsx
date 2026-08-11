@@ -1,20 +1,76 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
-import React, { lazy, Suspense } from "react";
+import { About } from "@/components/portfolio/About";
 // import { Experience } from "@/components/portfolio/Experience";
-// Lazy-load below-the-fold sections to reduce initial bundle and improve FCP/LCP on mobile
-const Work = lazy(() => import("@/components/portfolio/Work"));
-const Tools = lazy(() => import("@/components/portfolio/Tools"));
-const Skills = lazy(() => import("@/components/portfolio/Skills"));
-const Education = lazy(() => import("@/components/portfolio/Education"));
-const Contact = lazy(() => import("@/components/portfolio/Contact"));
-const Faq = lazy(() => import("@/components/portfolio/Faq"));
+import { Work } from "@/components/portfolio/Work";
+import { Tools } from "@/components/portfolio/Tools";
+import { Skills } from "@/components/portfolio/Skills";
+import { Education } from "@/components/portfolio/Education";
+import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { Faq as FaqStatic, FAQ_SCHEMA } from "@/components/portfolio/Faq";
+import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
+
+const PERSON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
+  name: "Williams Olayemi Martins",
+  alternateName: ["Yẹmí", "Williams Martins"],
+  jobTitle: "Visual (Creative) Director",
+  description:
+    "Nigerian visual director, brand designer and frontend developer building brand identities, web tools and digital products from Lagos.",
+  url: SITE_URL,
+  email: "mailto:willomarty01@gmail.com",
+  telephone: "+2347026787353",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lagos",
+    addressCountry: "NG",
+  },
+  knowsAbout: [
+    "Brand Identity Design",
+    "UI/UX Design",
+    "Frontend Development",
+    "React",
+    "TypeScript",
+    "Web Tools",
+    "Motion Graphics",
+    "Video Editing",
+  ],
+  sameAs: [
+    "https://www.behance.net/willomarty",
+    "https://github.com/yeminimal",
+  ],
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: "Williams Olayemi Martins — Portfolio",
+  inLanguage: "en",
+  author: { "@id": `${SITE_URL}/#person` },
+  publisher: { "@id": `${SITE_URL}/#person` },
+};
+
+const TOOLS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": TOOLS.map((t) => ({
+    "@type": "SoftwareApplication",
+    name: t.name,
+    description: t.description,
+    url: t.url,
+    applicationCategory: "WebApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: { "@id": `${SITE_URL}/#person` },
+  })),
+};
 
 export const Route = createFileRoute("/")(
 {
@@ -57,7 +113,10 @@ export const Route = createFileRoute("/")(
       },
     ],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
       { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
+      { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
     ],
   }),
   component: Index,
@@ -70,15 +129,14 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        {/* Lazy-load all below-the-fold sections in a single Suspense boundary to avoid blocking initial render */}
-        <Suspense fallback={<div aria-hidden /> }>
-          <Work />
-          <Tools />
-          <Skills />
-          <Education />
-          <Contact />
-          <Faq />
-        </Suspense>
+        <About />
+        {/* <Experience /> */}
+        <Work />
+        <Tools />
+        <Skills />
+        <Education />
+        <Contact />
+        <Faq />
       </main>
       <Footer />
     </div>
