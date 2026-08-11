@@ -1,6 +1,6 @@
 # Williams Olayemi Martins - Portfolio - robots.txt
 # https://willomarty.net.ng
-# Updated: July 2026
+# Updated: August 2026
 
 # Allow all crawlers full access by default
 User-agent: *
