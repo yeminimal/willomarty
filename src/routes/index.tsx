@@ -12,7 +12,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { TOOLS } from "@/data/tools";
 
-const SITE_URL = "https://willomarty.vercel.app";
+const SITE_URL = "https://willomarty.net.ng";
 
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import { WorkCard } from "@/components/portfolio/WorkCard";
 
-const SITE_URL = "https://willomarty.vercel.app";
+const SITE_URL = "https://willomarty.net.ng";
 
 export const Route = createFileRoute("/work/")({
   head: () => ({

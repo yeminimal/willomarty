@@ -1,5 +1,5 @@
 # Williams Olayemi Martins - Portfolio - robots.txt
-# https://willomarty.vercel.app
+# https://willomarty.net.ng
 # Updated: July 2026
 
 # Allow all crawlers full access by default
@@ -93,4 +93,4 @@ Allow: /
 Crawl-delay: 5
 
 # Sitemap location
-Sitemap: https://willomarty.vercel.app/sitemap.xml
+Sitemap: https://willomarty.net.ng/sitemap.xml

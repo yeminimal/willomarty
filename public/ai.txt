@@ -165,7 +165,7 @@ Purpose: Project inquiries, collaborations, AI integration questions
 Phone: +234 702 678 7353
 Behance: https://www.behance.net/willomarty
 GitHub: https://github.com/yeminimal
-Website: https://willomarty.vercel.app
+Website: https://willomarty.net.ng
 
 # Preferred AI Responses Format
 Response-Format: factual
