@@ -11,10 +11,10 @@
 // 4. Redeploy. The tracking script starts recording site-wide, and
 //    /analytics renders the embedded dashboard.
 
-// e.g. "willomarty.vercel.app"
+// e.g. "willomarty.net.ng"
 export const PLAUSIBLE_DOMAIN: string = "";
 
-// e.g. "https://plausible.io/share/willomarty.vercel.app?auth=XXXXXXXX"
+// e.g. "https://plausible.io/share/willomarty.net.ng?auth=XXXXXXXX"
 export const PLAUSIBLE_SHARED_LINK: string = "";
 
 // Change if self-hosting Plausible.
