@@ -8,7 +8,7 @@ const FAQS = [
   },
   {
     q: "What services does Williams Olayemi Martins offer?",
-    a: "Brand identity and logo design, product design, video production and motion design, and creative direction for marketing campaigns.",
+    a: "Brand identity and logo design, web design, product design, video production and motion design, and creative direction for marketing campaigns.",
   },
   {
     q: "Where is Williams Olayemi Martins based?",
@@ -27,8 +27,8 @@ const FAQS = [
     a: "Fintech (Incash, YDPay), real estate and proptech (Caretaker Pro, Getcrib), fashion and e-commerce (Zaytrix Modeste, Juliet Moses), Web3 and education (Moon Republic), legal and business services (Zamack Consults), construction and interiors (Frauwa), health (Mytherapist.ng) and consumer packaged goods (Vana, Rebound).",
   },
   {
-    q: "Does Williams offer web development alongside design?",
-    a: "Yes. Williams builds production frontends in React, TypeScript and Tailwind, and has shipped four browser-based tools end-to-end. Design and build can stay in one hand when a project calls for it — no handoff friction between how something looks and how it ships.",
+    q: "Does Williams offer web design alongside branding?",
+    a: "Yes. Williams builds tailored websites for brands using Webflow, Framer, Figma, and WordPress, and has shipped multiple websites. Design and build can stay in one hand when a project calls for it — no handoff friction between how something looks and how it ships.",
   },
 ];
 
