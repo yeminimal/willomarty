@@ -21,7 +21,7 @@ export function Hero() {
       />
       <div className="relative mx-auto max-w-[1100px] px-6 md:px-10">
         <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-accent-dim">
-          Designer · Developer · Creator
+          Brand & Product Designer
         </div>
 
         <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
@@ -31,7 +31,7 @@ export function Hero() {
               <br />
               <span className="italic text-accent">i design</span>{" "}
               <span className="italic text-foreground">!</span>
-              <span className="sr-only"> — Brand Designer & Frontend Developer</span>
+              <span className="sr-only"> — Brand & Product Designer</span>
             </h1>
             <div className="mt-6 h-px w-32 bg-accent/40" />
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">
