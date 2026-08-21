@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { ExternalLink, Palette, Code2, Clapperboard, Wrench, type LucideIcon } from "lucide-react";
 
 const FACTS: { icon: LucideIcon; label: string }[] = [
-  { icon: Palette, label: "Brand Identity & Logo Design" },
+  { icon: Palette, label: "Brand & Product Design + Web Design" },
   { icon: Code2, label: "Frontend Dev (React, Tailwind, Vite)" },
   { icon: Clapperboard, label: "Video Production & Motion" },
   { icon: Wrench, label: "Micro-Tool Builder (4 Live Tools)" },
@@ -28,18 +28,18 @@ export function About() {
           <Reveal delay={0.1}>
             <div className="space-y-6 text-base md:text-[17px] leading-[1.7] text-foreground/85">
               <p>
-                I'm Williams, a Graphic Designer passionate about helping brands communicate with clarity, consistency, and purpose.
-                I specialize in crafting visual identities and design systems that not only look distinctive but also build trust,
+                I'm Williams, a brand & product designer passionate about helping brands communicate with clarity, consistency, and purpose.
+                I specialize in crafting visual identities, product experiences, and web designs that not only look distinctive but also build trust,
                 tell compelling stories, and leave lasting impressions.
               </p>
               <p>
                 I enjoy the messy, iterative side of the creative process—exploring ideas, challenging assumptions,
-                refining concepts, and discovering what truly connects with people. Every project is an opportunity
-                to create work that is thoughtful, functional, and meaningful.
+                refining concepts, and discovering what truly connects with people. Whether through brand strategy, product design, or web design using Framer, Webflow, and Figma,
+                every project is an opportunity to create work that is thoughtful, functional, and meaningful.
               </p>
               <p>
                 I approach every design with a sharp understanding of both brand strategy and visual communication,
-                creating identities that resonate with audiences and stand out in competitive markets.
+                creating identities and digital experiences that resonate with audiences and stand out in competitive markets.
                 For me, great design goes beyond aesthetics—it's about building experiences that strengthen brands and create lasting impact.
               </p>
             </div>
