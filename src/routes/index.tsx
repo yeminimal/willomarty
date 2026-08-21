@@ -20,9 +20,9 @@ const PERSON_SCHEMA = {
   "@id": `${SITE_URL}/#person`,
   name: "Williams Olayemi Martins",
   alternateName: ["Yẹmí", "Williams Martins"],
-  jobTitle: "Visual (Creative) Director",
+  jobTitle: "Brand & Product Designer",
   description:
-    "Nigerian visual director, brand designer and frontend developer building brand identities, web tools and digital products from Lagos.",
+    "Nigerian brand & product designer building brand identities, digital products, and web tools from Lagos.",
   url: SITE_URL,
   email: "mailto:willomarty01@gmail.com",
   telephone: "+2347026787353",
@@ -33,11 +33,13 @@ const PERSON_SCHEMA = {
   },
   knowsAbout: [
     "Brand Identity Design",
-    "UI/UX Design",
+    "Product Design",
     "Frontend Development",
+    "UI/UX Design",
+    "Product Packaging Design",
     "React",
+    "Copywriting",
     "TypeScript",
-    "Web Tools",
     "Motion Graphics",
     "Video Editing",
   ],
@@ -76,22 +78,22 @@ export const Route = createFileRoute("/")(
 {
   head: () => ({
     meta: [
-      { title: "Williams Olayemi Martins — Brand Designer & Developer" },
+      { title: "Williams Olayemi Martins — Brand & Product Designer" },
       {
         name: "description",
         content:
-          "Williams Olayemi Martins — Lagos-based brand designer and frontend developer building visual identities, web tools and digital products for clients worldwide.",
+          "Williams Olayemi Martins — Lagos-based brand & product designer building visual identities, digital products and web tools for the global market.",
       },
       {
         name: "keywords",
         content:
-          "Nigerian designer, brand identity Nigeria, frontend developer Lagos, UI UX designer Nigeria, freelance designer Africa, web developer Nigeria, Williams Martins, Olayemi",
+          "Nigerian designer, brand identity Nigeria, product designer Lagos, product designer Nigeria, brand designer Africa, product designer Nigeria, Williams Martins, Olayemi",
       },
       { name: "author", content: "Williams Olayemi Martins" },
-      { property: "og:title", content: "Williams Olayemi Martins — Designer & Developer" },
+      { property: "og:title", content: "Williams Olayemi Martins — Brand & Product Designer" },
       {
         property: "og:description",
-        content: "Brand design, frontend development and micro-tools built from Lagos, Nigeria.",
+        content: "Brand & product designer from Lagos, Nigeria.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_NG" },
@@ -100,7 +102,7 @@ export const Route = createFileRoute("/")(
       { name: "twitter:title", content: "Williams Olayemi Martins — Designer & Developer" },
       {
         name: "twitter:description",
-        content: "Brand design, frontend development and micro-tools built from Lagos, Nigeria.",
+        content: "Brand & product designer from Lagos, Nigeria.",
       },
     ],
     links: [
