@@ -80,18 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Williams Olayemi Martins — Designer & Developer" },
+      { title: "Williams Olayemi Martins — Brand & Product Designer" },
       {
         name: "description",
         content:
-          "Portfolio of Williams Olayemi Martins — Nigerian visual director, brand designer and frontend developer shipping identities, UI/UX and micro-tools.",
+          "Portfolio of Williams Olayemi Martins — Nigerian brand & product designer shipping identities, digital products and micro-tools.",
       },
       { name: "author", content: "Williams Olayemi Martins" },
-      { property: "og:title", content: "Williams Olayemi Martins — Designer & Developer" },
+      { property: "og:title", content: "Williams Olayemi Martins — Brand & Product Designer"},
       {
         property: "og:description",
         content:
-          "Brand design, UI/UX, video, and frontend development. A decade of work, four live micro-tools, and a meticulous eye.",
+          "Brand design, product design, video, motion design, and frontend development.",
       },
       { property: "og:type", content: "website" },
       {
@@ -100,11 +100,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Williams Olayemi Martins — Visual Director & Frontend Developer" },
+      { name: "twitter:title", content: "Williams Olayemi Martins — Brand & Product Designer" },
       {
         name: "twitter:description",
         content:
-          "Brand design, UI/UX, video, and frontend development. A decade of work, four live micro-tools, and a meticulous eye.",
+          "Brand design, product design, video, motion design, and frontend development.",
       },
       {
         name: "twitter:image",
