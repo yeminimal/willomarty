@@ -15,6 +15,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import portraitAsset from "../assets/portrait.webp.asset.json";
 import { PLAUSIBLE_DOMAIN, PLAUSIBLE_HOST } from "../config/analytics";
 
+const SITE_URL = "https://willomarty.net.ng";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -80,18 +82,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Williams Olayemi Martins — Brand & Product Designer" },
+      { title: "Williams Olayemi Martins — Brand, Product & Web Designer" },
       {
         name: "description",
         content:
-          "Portfolio of Williams Olayemi Martins — Nigerian brand & product designer shipping identities, digital products and micro-tools.",
+          "Portfolio of Williams Olayemi Martins — Nigerian brand, product & web designer shipping identities, digital products and web tools.",
       },
       { name: "author", content: "Williams Olayemi Martins" },
-      { property: "og:title", content: "Williams Olayemi Martins — Brand & Product Designer"},
+      { property: "og:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
       {
         property: "og:description",
         content:
-          "Brand design, product design, video, motion design, and frontend development.",
+          "Brand design, product design, web design, video, motion design, and frontend development.",
       },
       { property: "og:type", content: "website" },
       {
@@ -100,11 +102,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Williams Olayemi Martins — Brand & Product Designer" },
+      { name: "twitter:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
       {
         name: "twitter:description",
         content:
-          "Brand design, product design, video, motion design, and frontend development.",
+          "Brand design, product design, web design, video, motion design, and frontend development.",
       },
       {
         name: "twitter:image",
@@ -112,8 +114,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
       },
       { property: "og:site_name", content: "Williams Olayemi Martins" },
+      { name: "metadataBase", content: SITE_URL },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
