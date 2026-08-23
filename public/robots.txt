@@ -1,6 +1,6 @@
-# Williams Olayemi Martins - Portfolio - robots.txt
-# https://willomarty.net.ng
-# Updated: August 2026
+# robots.txt — willomarty.net.ng
+# Williams Olayemi Martins — Brand Designer, Product Designer, Web Designer & Developer
+# Last updated: 2026-08-24
 
 # Allow all crawlers full access by default
 User-agent: *
