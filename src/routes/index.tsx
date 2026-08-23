@@ -17,47 +17,63 @@ const SITE_URL = "https://willomarty.net.ng";
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${SITE_URL}/#person`,
-  name: "Williams Olayemi Martins",
-  alternateName: ["Yẹmí", "Williams Martins"],
-  jobTitle: "Brand & Product Designer",
-  description:
-    "Nigerian brand & product designer building brand identities, digital products, and web tools from Lagos.",
-  url: SITE_URL,
-  email: "mailto:willomarty01@gmail.com",
-  telephone: "+2347026787353",
-  address: {
+  "name": "Williams Olayemi Martins",
+  "alternateName": "Willomarty",
+  "url": "https://willomarty.net.ng",
+  "email": "willomarty01@gmail.com",
+  "telephone": "+2347026787353",
+  "jobTitle": "Brand Designer, Product Designer & Web Designer",
+  "description": "Lagos-based brand and web designer specialising in visual identity systems, Webflow websites, UI/UX, and frontend development. Available for remote work with Nigerian and international clients.",
+  "address": {
     "@type": "PostalAddress",
-    addressLocality: "Lagos",
-    addressCountry: "NG",
+    "addressLocality": "Lagos",
+    "addressCountry": "NG"
   },
-  knowsAbout: [
-    "Brand Identity Design",
-    "Product Design",
-    "Frontend Development",
-    "UI/UX Design",
-    "Product Packaging Design",
-    "React",
-    "Copywriting",
-    "TypeScript",
-    "Motion Graphics",
-    "Video Editing",
-  ],
-  sameAs: [
+  "sameAs": [
     "https://www.behance.net/willomarty",
     "https://github.com/yeminimal",
+    "https://x.com/willomarty"
   ],
+  "knowsAbout": [
+    "Brand Identity Design",
+    "Logo Design",
+    "Web Design",
+    "Webflow",
+    "Framer",
+    "Figma",
+    "WordPress",
+    "UI/UX Design",
+    "Product Design",
+    "Frontend Development",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Video Production",
+    "Motion Graphics",
+    "Creative Direction"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Brand, Product, and Web Designer",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Lagos, Nigeria"
+    },
+    "skills": "Brand Identity, Webflow, Framer, Figma, WordPress, React, TypeScript, UI/UX Design, Video Production"
+  }
 };
 
 const WEBSITE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  url: SITE_URL,
-  name: "Williams Olayemi Martins — Portfolio",
-  inLanguage: "en",
-  author: { "@id": `${SITE_URL}/#person` },
-  publisher: { "@id": `${SITE_URL}/#person` },
+  "name": "Williams Olayemi Martins — Willomarty",
+  "url": "https://willomarty.net.ng",
+  "description": "Portfolio of Williams Olayemi Martins — brand designer, product designer, web designer, based in Lagos, Nigeria.",
+  "author": {
+    "@type": "Person",
+    "name": "Williams Olayemi Martins"
+  },
+  "inLanguage": "en"
 };
 
 const TOOLS_SCHEMA = {
@@ -75,54 +91,55 @@ const TOOLS_SCHEMA = {
 };
 
 export const Route = createFileRoute("/")(
-{
-  head: () => ({
-    meta: [
-      { title: "Williams Olayemi Martins — Brand & Product Designer" },
-      {
-        name: "description",
-        content:
-          "Williams Olayemi Martins — Lagos-based brand & product designer building visual identities, digital products and web tools for the global market.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Nigerian designer, brand identity Nigeria, product designer Lagos, product designer Nigeria, brand designer Africa, product designer Nigeria, Williams Martins, Olayemi",
-      },
-      { name: "author", content: "Williams Olayemi Martins" },
-      { property: "og:title", content: "Williams Olayemi Martins — Brand & Product Designer" },
-      {
-        property: "og:description",
-        content: "Brand & product designer from Lagos, Nigeria.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_NG" },
-      { property: "og:url", content: SITE_URL },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Williams Olayemi Martins — Designer & Developer" },
-      {
-        name: "twitter:description",
-        content: "Brand & product designer from Lagos, Nigeria.",
-      },
-    ],
-    links: [
-      { rel: "canonical", href: SITE_URL },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
-    ],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
-      { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
-      { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
-      { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
-    ],
-  }),
-  component: Index,
-}
+  {
+    head: () => ({
+      meta: [
+        { title: "Williams Olayemi Martins — Brand, Product & Web Designer" },
+        {
+          name: "description",
+          content:
+            "Williams Olayemi Martins — Lagos-based brand, product & web designer. Visual identities, Webflow sites, UI/UX, and frontend development for Nigerian and global clients.",
+        },
+        {
+          name: "keywords",
+          content:
+            "brand designer Lagos, brand designer Nigeria, product designer Nigeria, web designer Nigeria, Webflow designer Nigeria, UI UX designer Lagos, frontend developer Lagos, visual identity designer, logo designer Nigeria, creative director Lagos, Williams Olayemi Martins, Willomarty",
+        },
+        { name: "author", content: "Williams Olayemi Martins" },
+        { property: "og:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
+        {
+          property: "og:description",
+          content: "Portfolio of Williams Olayemi Martins — brand designer, product designer, web designer, based in Lagos, Nigeria.",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:locale", content: "en_NG" },
+        { property: "og:url", content: SITE_URL },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
+        {
+          name: "twitter:description",
+          content: "Portfolio of Williams Olayemi Martins — brand designer, product designer, web designer, based in Lagos, Nigeria.",
+        },
+        { name: "metadataBase", content: "https://willomarty.net.ng/" },
+      ],
+      links: [
+        { rel: "canonical", href: SITE_URL },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        },
+      ],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
+        { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
+        { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
+        { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
+      ],
+    }),
+    component: Index,
+  }
 );
 
 function Index() {
