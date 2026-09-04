@@ -1,5 +1,7 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
-import portrait from "@/assets/portrait.webp.asset.json";
+// [[PLACEHOLDER: replace with the wide landscape hero photo once uploaded —
+// the portrait is a stand-in so the layout and sizing are already final.]]
+import heroImage from "@/assets/portrait.webp.asset.json";
 import { MetricStrip } from "./MetricStrip";
 
 const STATS = [
@@ -10,51 +12,78 @@ const STATS = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-      {/* Subtle radial green glow */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-50"
-        style={{
-          background:
-            "radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--accent-green) 25%, transparent), transparent 60%)",
-        }}
-      />
-      <div className="relative mx-auto max-w-[1100px] px-6 md:px-10">
-        <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-accent-dim">
-          Brand & Product Designer
-        </div>
+    <section id="hero" className="relative">
+      {/* Full-bleed image stage — fixed height so nothing shifts while it loads */}
+      <div className="relative min-h-[92svh] flex items-end overflow-hidden">
+        <img
+          src={heroImage.url}
+          alt="Williams Olayemi Martins, brand and product designer, Lagos"
+          width={1600}
+          height={1000}
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+          className="absolute inset-0 h-full w-full object-cover object-[65%_20%] md:object-[70%_25%]"
+        />
 
-        <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-12 items-end">
-          <div>
-            <h1 className="display-serif leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[88px]">
-              <span className="text-foreground">i'm Williams,</span>
-              <br />
-              <span className="italic text-accent">i design</span>{" "}
-              <span className="italic text-foreground">!</span>
-              <span className="sr-only"> — Brand & Product Designer</span>
-            </h1>
-            <div className="mt-6 h-px w-32 bg-accent/40" />
-            <p className="mt-6 max-w-xl text-base md:text-lg text-muted leading-relaxed">
-              I help brands tell their story, curate their journery, and define their identity.
-              <br />
-              <span className="text-foreground/70">Lagos, Nigeria.</span>
-            </p>
+        {/* Scrim: keeps the copy readable over any photo, in both themes */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, color-mix(in oklab, var(--background) 96%, transparent) 0%, color-mix(in oklab, var(--background) 88%, transparent) 32%, color-mix(in oklab, var(--background) 55%, transparent) 62%, color-mix(in oklab, var(--background) 30%, transparent) 100%)",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            background:
+              "radial-gradient(ellipse at 85% 10%, color-mix(in oklab, var(--accent-green) 30%, transparent), transparent 62%)",
+          }}
+        />
+
+        <div className="relative w-full mx-auto max-w-[1100px] px-6 md:px-10 pt-36 pb-16 md:pt-44 md:pb-20">
+          <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-accent">
+            Brand &amp; Product Designer
           </div>
 
-          <div className="hidden md:block">
-            <div className="relative w-[260px] h-[260px] lg:w-[280px] lg:h-[280px] overflow-hidden border border-accent/30 shadow-[0_0_0_8px_color-mix(in_oklab,var(--accent)_8%,transparent)]">
-              <img
-                src={portrait.url}
-                alt="Portrait of Williams Olayemi Martins"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
+          <h1 className="display-serif mt-6 uppercase text-5xl sm:text-6xl md:text-7xl lg:text-[92px]">
+            <span className="text-foreground">i'm Williams,</span>
+            <br />
+            <span className="text-accent">i design</span>
+            <span className="text-foreground">!</span>
+            <span className="sr-only"> — Brand &amp; Product Designer</span>
+          </h1>
+
+          <div className="mt-6 h-px w-32 bg-accent/50" />
+
+          <p className="mt-6 max-w-xl text-base md:text-lg text-foreground/80 leading-relaxed">
+            I help brands tell their story, curate their journery, and define their identity.
+            <br />
+            <span className="text-foreground/60">Lagos, Nigeria.</span>
+          </p>
+
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-2 bg-accent text-background px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] hover:bg-accent-dim transition-colors"
+            >
+              See My Work
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 border border-foreground/25 bg-background/40 backdrop-blur-sm px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground hover:border-accent hover:text-accent transition-colors"
+            >
+              Get In Touch
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* Stat row */}
-        <div className="mt-16 grid grid-cols-3 gap-6 md:gap-12 max-w-2xl border-t border-border pt-8">
+      {/* Stat row */}
+      <div className="mx-auto max-w-[1100px] px-6 md:px-10">
+        <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-2xl border-t border-border pt-8">
           {STATS.map((s) => (
             <div key={s.value}>
               <div className="display-serif text-3xl md:text-5xl text-accent">{s.value}</div>
@@ -64,34 +93,10 @@ export function Hero() {
             </div>
           ))}
         </div>
-
-        {/* CTAs */}
-        <div className="mt-12 flex flex-wrap gap-4">
-          <a
-            href="#work"
-            className="group inline-flex items-center gap-2 bg-accent text-background px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] hover:bg-accent-dim transition-colors"
-          >
-            See My Work
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 border border-border px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground hover:border-accent hover:text-accent transition-colors"
-          >
-            Get In Touch
-          </a>
-        </div>
-
-        {/* Mobile portrait below */}
-        <div className="md:hidden mt-14 flex justify-center">
-          <div className="relative w-48 h-48 overflow-hidden border border-accent/30">
-            <img src={portrait.url} alt="Portrait of Williams Olayemi Martins" loading="lazy" width={192} height={192} className="w-full h-full object-cover" />
-          </div>
-        </div>
       </div>
 
       <MetricStrip />
-      
+
       <div className="mt-20 flex justify-center">
         <a href="#about" aria-label="Scroll to about" className="text-accent-dim animate-bounce">
           <ArrowDown size={18} />
