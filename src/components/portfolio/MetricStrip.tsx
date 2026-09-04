@@ -29,7 +29,7 @@ export function MetricStrip() {
               className={
                 item.type === "metric"
                   ? "font-mono text-[11px] uppercase tracking-[0.18em] text-accent whitespace-nowrap"
-                  : "display-serif italic text-lg md:text-xl text-foreground/60 whitespace-nowrap"
+                  : "display-serif text-lg md:text-xl text-foreground/60 whitespace-nowrap"
               }
             >
               {item.value}

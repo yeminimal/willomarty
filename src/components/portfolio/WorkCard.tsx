@@ -30,7 +30,7 @@ export function WorkCard({ w }: { w: Work }) {
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-tag">
-            <span className="display-serif italic text-5xl md:text-6xl text-accent-dim/60 select-none">
+            <span className="display-serif text-5xl md:text-6xl text-accent-dim/60 select-none">
               {initials(w.client)}
             </span>
           </div>
