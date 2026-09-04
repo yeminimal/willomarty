@@ -64,6 +64,8 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
               src={section.src}
               alt={section.alt}
               loading="lazy"
+              width={1280}
+              height={720}
               className="h-full w-full object-cover"
             />
           </div>
@@ -112,6 +114,8 @@ export function CaseStudyLayout({ study }: { study: CaseStudy }) {
                 src={study.image}
                 alt={`${study.client} — ${study.scope}`}
                 className="h-full w-full object-cover"
+                loading="eager"
+                fetchPriority="high"
                 width={1280}
                 height={720}
               />
