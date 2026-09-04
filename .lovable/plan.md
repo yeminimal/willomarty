@@ -1,58 +1,54 @@
-## 1. Featured projects → 4 only
+# Performance, Hero, Typography & Gallery Refactor
 
-In `src/data/work.ts`, keep `featured: true` on **Incash, Zamack Consults, Moon Republic, Frauwa** only. Remove the `featured` flag from Zaytrix Modeste and Caretaker Pro Inc. (they stay in `WORK`, so they appear on the `/work` archive page — no data loss).
+Four changes to willomarty.net.ng, in one pass. Everything else on the site stays as it is.
 
-`FEATURED_WORK` already derives from `w.featured`, so `Work.tsx` on the homepage will automatically render just the 4 case-study cards in the existing 2-col grid. The "See all work" button already links to `/work`.
+## 1. Speed
 
-The `/work` archive page (`src/routes/work.index.tsx`) already uses the simpler `WorkCard` layout (thumbnail, title, one-line description, link) and lists every entry in `WORK`, matching what you asked for.
+- Every picture gets a fixed width and height so the page stops jumping around while things load.
+- Pictures below the first screen load only when you scroll to them; the hero photo loads first, at top priority.
+- Fonts get self-hosted instead of pulled from Google on every visit, and only the weights actually used ship.
+- Text stays visible while fonts load instead of flashing blank.
+- Larger screens get larger images, phones get smaller ones.
 
-## 2. Resume download button
+A real Lighthouse run against the live site isn't possible from here, so I'll measure the local build, report those numbers honestly, and note that you should re-run PageSpeed Insights after deploy.
 
-Add a "Résumé" button to `src/components/portfolio/Nav.tsx`:
-- Desktop: inline in the nav row, just before the theme toggle. Styled like a subtle bordered pill using existing tokens (`border border-border hover:border-accent-dim/70`, same mono uppercase micro-caps as other links, `Download` icon from lucide) — matches the "See all work" button treatment already used elsewhere.
-- Mobile: appended to the open menu as the last item, full-width variant of the same style.
-- `href="/resume.pdf"`, `download`, opens in a new tab as fallback. You'll drop the actual PDF into `public/resume.pdf` later.
+## 2. New hero
 
-## 3. FAQ nav link + visible FAQ section
+The hero becomes a full-width photo with your name, role, tagline and buttons sitting on top of it, with a dark gradient behind the text so it stays readable. Copy and button links stay exactly as they are.
 
-Two coordinated changes:
-- **`src/components/portfolio/Faq.tsx`** — the section is currently `sr-only` (invisible, indexing-only). Promote it to a proper visible section that reuses the existing pattern from other sections (SectionLabel, display-serif heading, Reveal, border-top, matching padding). Keep the `id="faq"`, keep the same `FAQS` array so `FAQ_SCHEMA` and JSON-LD stay identical. Render as a simple stacked Q/A list (no accordion — matches the site's editorial tone).
-- **`src/components/portfolio/Nav.tsx`** — add `{ href: "/#faq", label: "FAQ" }` to `LINKS` after Education, before Contact (chronology matches how it'll read in the page).
-- **`src/routes/index.tsx`** — no order change needed; `<Faq />` already renders at the bottom of `<main>`.
+Since you're uploading a wider photo, I'll build the hero with your current portrait in place and a clearly marked placeholder note, then swap in the new landscape shot the moment you send it. The hero has a fixed height so nothing shifts when the image arrives, and contrast gets checked at phone, tablet and desktop widths.
 
-## 4. FAQ content expansion
+## 3. Typography — Poppins Black
 
-Extend the `FAQS` array in `Faq.tsx` with 3 new entries, in the same tone and length as the existing four:
+All large text (your name, every section heading, project titles, case-study headings) switches from the current serif to Poppins Black. Body copy, menu labels, buttons and small print keep the current font.
 
-- **"Does Williams work with international or remote clients?"** — Yes, remote-first from Lagos; has shipped work for clients in Canada (Zaytrix), the US, and across Africa; async-friendly workflow.
-- **"What industries has Williams designed for?"** — Fintech (Incash), real estate / proptech (Caretaker Pro, Getcrib), fashion / e-commerce (Zaytrix Modeste, Juliet Moses), Web3 / education (Moon Republic), legal services (Zamack Consults), construction / interiors (Frauwa), health (Mytherapist.ng), consumer packaged goods (Vana, Rebound).
-- **"Does Williams offer web development alongside design?"** — Yes; builds production frontends in React + TypeScript + Tailwind, and has shipped four browser-based tools end-to-end. Design and build stay in one hand when the project calls for it.
+This is a single change in one central place, so every heading across the site, the projects page and the case studies picks it up automatically. Heading letter-spacing gets tightened slightly where the heavier weight needs it.
 
-`FAQ_SCHEMA` regenerates from the array automatically, so JSON-LD stays in sync.
+## 4. Gallery page
 
-## 5. New thumbnails + Moon Republic process image
+A new `/gallery` page for sketches, explorations, work-in-progress and unused directions — deliberately lighter than the case-study pages: just images in a flexible grid that handles mixed shapes.
 
-Uploads mounted at `/mnt/user-uploads/`:
-- `frauwa.png` → replace `src/assets/work-frauwa.jpg.asset.json` (delete old asset, re-upload via `lovable-assets create --file /mnt/user-uploads/frauwa.png --filename work-frauwa.png`).
-- `moon_Republic.png` → replace `work-moon-republic.jpg.asset.json` (same swap).
-- `incash.png` → replace `work-incash.jpg.asset.json`.
-- `rebound.png` → replace `work-rebound.jpg.asset.json`.
-- `moon_Republic_prompt_engineering_process.png` → new asset `src/assets/work-moon-republic-process.png.asset.json`.
+- Tapping an image opens it full size; Esc or clicking outside closes it, arrow keys move between images.
+- Optional short caption, a tag (WIP / Exploration / Sketch), and an optional "part of: [project]" link back to a case study.
+- Tag filter chips appear only once there are enough items to justify them.
+- "Gallery" is added to the menu, and the page is added to the sitemap once at least one real image exists.
 
-In `src/data/case-studies.ts`, replace the Moon Republic `placeholder` section with a new `image` section kind:
-- Extend `CaseStudySection` union in `case-studies.ts` with `{ kind: "image"; heading?: string; src: string; alt: string; caption?: string }`.
-- Extend `CaseStudyLayout.tsx`'s `SectionBlock` to render the `image` variant (uses the same aspect-video framed container the header image uses, with optional caption in the mono/muted micro-caps style).
-- Moon Republic gets `{ kind: "image", heading: "Prompt Iterations", src: processImg.url, alt: "Detailed process of the prompt engineering, from starting reference to final result", caption: "Start reference → refined mid-state → final output." }` in place of the placeholder.
+Since you're uploading images right after, I'll ship it with the menu link live and placeholders marked, then populate it with your files.
 
-## Files touched
+## Technical notes
 
-- `src/data/work.ts` — remove `featured` from Zaytrix Modeste + Caretaker Pro.
-- `src/components/portfolio/Nav.tsx` — add FAQ link, add Résumé button (desktop + mobile).
-- `src/components/portfolio/Faq.tsx` — visible section styling + 3 new FAQ entries.
-- `src/components/case-study/CaseStudyLayout.tsx` — render new `image` section kind.
-- `src/data/case-studies.ts` — add `image` variant to union, swap Moon Republic placeholder for real image.
-- Assets: replace 4 thumbnails, add 1 new process image via `lovable-assets`.
+- Images: explicit dimensions + `loading="lazy"` everywhere except the hero (`eager`, `fetchpriority="high"`, plus a `rel=preload` if implemented as a CSS background).
+- Fonts: `@fontsource` Poppins 900 self-hosted, `font-display: swap`, preload for the hero H1 weight; `--font-display` token in `src/styles.css` repointed to Poppins so the `display-serif` utility carries it site-wide (the utility keeps its name or gets renamed to `display-heading` in one sweep).
+- Hero: rebuilt `src/components/portfolio/Hero.tsx` — absolutely-positioned `object-cover` image + gradient scrim layer + content layer, min-height in `svh`.
+- Gallery: `src/data/gallery.ts` with the `GalleryItem` interface as specified, `src/routes/gallery.tsx` with head metadata + `ImageGallery` JSON-LD, and a lightbox component. Empty/all-placeholder state renders a labelled empty state and hides the nav link, with a comment explaining the rule.
+- Sitemap: `/gallery` entry added only when real items exist.
+- Also fixing a small existing bug: the theme toggle icon mismatches between server and browser on first paint, which throws a hydration warning.
 
-## Out of scope (intentionally untouched)
+## Needs your input
 
-Canonical tags, LinkedIn URL, JSON-LD schemas apart from FAQ (which regenerates from the array), sitemap.xml, llms.txt, existing case study copy.
+- The wider hero photo, and the gallery images plus captions.
+- Confirming Poppins Black over Montserrat Black once you see it live.
+- Re-running PageSpeed Insights on the live URL after deploy.
+- Whether this font change should extend to print/social templates (out of scope here).
+
+All `[[PLACEHOLDER: ...]]` strings left in the code will be listed at the end of the build.
