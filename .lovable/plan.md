@@ -1,58 +1,41 @@
-## 1. Featured projects → 4 only
+# Articles System + Publish Page
 
-In `src/data/work.ts`, keep `featured: true` on **Incash, Zamack Consults, Moon Republic, Frauwa** only. Remove the `featured` flag from Zaytrix Modeste and Caretaker Pro Inc. (they stay in `WORK`, so they appear on the `/work` archive page — no data loss).
+Adds a writing/publishing system to the site: a public Articles section anyone can read and share, and a private page where you write and publish, protected by a passphrase. Visual style stays exactly as it is today.
 
-`FEATURED_WORK` already derives from `w.featured`, so `Work.tsx` on the homepage will automatically render just the 4 case-study cards in the existing 2-col grid. The "See all work" button already links to `/work`.
+## What you'll get
 
-The `/work` archive page (`src/routes/work.index.tsx`) already uses the simpler `WorkCard` layout (thumbnail, title, one-line description, link) and lists every entry in `WORK`, matching what you asked for.
+**Articles list (`/articles`)**
+- All published pieces, newest first, using the same card style as Work/Gallery.
+- Cover image, title, short description, date, tags.
+- New "Articles" link in the main menu.
 
-## 2. Resume download button
+**Article page (`/articles/your-title`)**
+- Cover image at the top, title, date, tags, formatted body.
+- Its own page title, description, and social preview image (the cover image doubles as the share image).
+- Search-friendly markup so Google can index each piece as its own page.
+- Unknown or unpublished addresses show the site's normal "not found" page.
 
-Add a "Résumé" button to `src/components/portfolio/Nav.tsx`:
-- Desktop: inline in the nav row, just before the theme toggle. Styled like a subtle bordered pill using existing tokens (`border border-border hover:border-accent-dim/70`, same mono uppercase micro-caps as other links, `Download` icon from lucide) — matches the "See all work" button treatment already used elsewhere.
-- Mobile: appended to the open menu as the last item, full-width variant of the same style.
-- `href="/resume.pdf"`, `download`, opens in a new tab as fallback. You'll drop the actual PDF into `public/resume.pdf` later.
+**Publish page (`/publish`, private)**
+- Asks for a passphrase first; the check happens on the server, so it can't be bypassed. Stays unlocked for a while, then asks again.
+- Lists every article, drafts included, with status badges, plus New / Edit / Delete (delete asks for confirmation).
+- Editing opens a dialog with: Title (address auto-fills as you type, editable until first publish then locked with an explanation), Meta description with a live character counter, Tags, and a drag-and-drop cover image upload with preview and a note that it's also the social preview image.
+- Body editor with Bold, Italic, Underline, Quote, and Link buttons, styled to match the site.
+- Two buttons: "Save Draft" (never blocks) and "Publish" (requires title, description, cover image and body, with inline messages for anything missing).
 
-## 3. FAQ nav link + visible FAQ section
+**Search engines**
+- `/articles` and every published article are added to the sitemap; drafts never are.
+- `/publish` is blocked in robots.txt and kept out of the sitemap.
 
-Two coordinated changes:
-- **`src/components/portfolio/Faq.tsx`** — the section is currently `sr-only` (invisible, indexing-only). Promote it to a proper visible section that reuses the existing pattern from other sections (SectionLabel, display-serif heading, Reveal, border-top, matching padding). Keep the `id="faq"`, keep the same `FAQS` array so `FAQ_SCHEMA` and JSON-LD stay identical. Render as a simple stacked Q/A list (no accordion — matches the site's editorial tone).
-- **`src/components/portfolio/Nav.tsx`** — add `{ href: "/#faq", label: "FAQ" }` to `LINKS` after Education, before Contact (chronology matches how it'll read in the page).
-- **`src/routes/index.tsx`** — no order change needed; `<Faq />` already renders at the bottom of `<main>`.
+## Technical notes
 
-## 4. FAQ content expansion
+- Enable Lovable Cloud (no backend exists yet) and create an `articles` table with the exact columns specified (id, title, slug unique, meta_description, cover_image_url, body_html, tags, status draft/published, published_at, created_at, updated_at) plus grants, RLS and an `updated_at` trigger. Public read policy limited to `status = 'published'` for anon; all writes go through server functions only.
+- Public storage bucket `article-covers` for cover images; only the public URL is stored on the row.
+- Editor: Tiptap (StarterKit + Underline + Link), output sanitized with DOMPurify (isomorphic build) both on save and on render.
+- Gate: `PUBLISH_ACCESS_CODE` secret, verified in a `createServerFn` that sets a short-lived signed HttpOnly session cookie; the publish page's data functions re-verify that cookie on every call. Nothing secret ships to the browser.
+- Reads: route loader + `ensureQueryData`/`useSuspenseQuery`, matching the existing pattern. Article `head()` supplies title, description, canonical, OG/Twitter tags with `cover_image_url`, and Article JSON-LD (author/publisher reuse the existing Person data).
+- Sitemap: `public/sitemap.xml` is static today, so `/articles` goes in statically and per-article entries are served from a dynamic `/sitemap-articles.xml` route referenced by a sitemap index — no rebuild needed when you publish.
+- Placeholders: `[[PLACEHOLDER: ...]]` for article content and cover images; embed auto-detection (pasting a YouTube link) is left as a marked placeholder — link insertion works fully now.
 
-Extend the `FAQS` array in `Faq.tsx` with 3 new entries, in the same tone and length as the existing four:
+## Needs from you
 
-- **"Does Williams work with international or remote clients?"** — Yes, remote-first from Lagos; has shipped work for clients in Canada (Zaytrix), the US, and across Africa; async-friendly workflow.
-- **"What industries has Williams designed for?"** — Fintech (Incash), real estate / proptech (Caretaker Pro, Getcrib), fashion / e-commerce (Zaytrix Modeste, Juliet Moses), Web3 / education (Moon Republic), legal services (Zamack Consults), construction / interiors (Frauwa), health (Mytherapist.ng), consumer packaged goods (Vana, Rebound).
-- **"Does Williams offer web development alongside design?"** — Yes; builds production frontends in React + TypeScript + Tailwind, and has shipped four browser-based tools end-to-end. Design and build stay in one hand when the project calls for it.
-
-`FAQ_SCHEMA` regenerates from the array automatically, so JSON-LD stays in sync.
-
-## 5. New thumbnails + Moon Republic process image
-
-Uploads mounted at `/mnt/user-uploads/`:
-- `frauwa.png` → replace `src/assets/work-frauwa.jpg.asset.json` (delete old asset, re-upload via `lovable-assets create --file /mnt/user-uploads/frauwa.png --filename work-frauwa.png`).
-- `moon_Republic.png` → replace `work-moon-republic.jpg.asset.json` (same swap).
-- `incash.png` → replace `work-incash.jpg.asset.json`.
-- `rebound.png` → replace `work-rebound.jpg.asset.json`.
-- `moon_Republic_prompt_engineering_process.png` → new asset `src/assets/work-moon-republic-process.png.asset.json`.
-
-In `src/data/case-studies.ts`, replace the Moon Republic `placeholder` section with a new `image` section kind:
-- Extend `CaseStudySection` union in `case-studies.ts` with `{ kind: "image"; heading?: string; src: string; alt: string; caption?: string }`.
-- Extend `CaseStudyLayout.tsx`'s `SectionBlock` to render the `image` variant (uses the same aspect-video framed container the header image uses, with optional caption in the mono/muted micro-caps style).
-- Moon Republic gets `{ kind: "image", heading: "Prompt Iterations", src: processImg.url, alt: "Detailed process of the prompt engineering, from starting reference to final result", caption: "Start reference → refined mid-state → final output." }` in place of the placeholder.
-
-## Files touched
-
-- `src/data/work.ts` — remove `featured` from Zaytrix Modeste + Caretaker Pro.
-- `src/components/portfolio/Nav.tsx` — add FAQ link, add Résumé button (desktop + mobile).
-- `src/components/portfolio/Faq.tsx` — visible section styling + 3 new FAQ entries.
-- `src/components/case-study/CaseStudyLayout.tsx` — render new `image` section kind.
-- `src/data/case-studies.ts` — add `image` variant to union, swap Moon Republic placeholder for real image.
-- Assets: replace 4 thumbnails, add 1 new process image via `lovable-assets`.
-
-## Out of scope (intentionally untouched)
-
-Canonical tags, LinkedIn URL, JSON-LD schemas apart from FAQ (which regenerates from the array), sitemap.xml, llms.txt, existing case study copy.
+- The passphrase you want for `/publish` (I'll store it as a secret, not in code).
