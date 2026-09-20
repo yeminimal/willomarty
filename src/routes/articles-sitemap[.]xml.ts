@@ -8,7 +8,7 @@ function escapeXml(value: string) {
   );
 }
 
-export const Route = createFileRoute("/articles-sitemap/xml")({
+export const Route = createFileRoute("/articles-sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
