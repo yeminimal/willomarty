@@ -9,11 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
+import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
+import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
+import { Route as ApiPublicArticleCoverSplatRouteImport } from './routes/api/public/article-cover/$'
 
+const ArticlesSitemapDotxmlRoute = ArticlesSitemapDotxmlRouteImport.update({
+  id: '/articles-sitemap.xml',
+  path: '/articles-sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AnalyticsRoute = AnalyticsRouteImport.update({
   id: '/analytics',
   path: '/analytics',
@@ -29,48 +39,124 @@ const WorkIndexRoute = WorkIndexRouteImport.update({
   path: '/work/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
+  id: '/articles/',
+  path: '/articles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkSlugRoute = WorkSlugRouteImport.update({
   id: '/work/$slug',
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
+  id: '/articles/$slug',
+  path: '/articles/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
+  id: '/api/article-cover-upload',
+  path: '/api/article-cover-upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicArticleCoverSplatRoute =
+  ApiPublicArticleCoverSplatRouteImport.update({
+    id: '/api/public/article-cover/$',
+    path: '/api/public/article-cover/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/articles': typeof ArticlesIndexRoute
   '/work': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/analytics' | '/work/$slug' | '/work/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/articles-sitemap.xml'
+    | '/api/article-cover-upload'
+    | '/articles/$slug'
+    | '/work/$slug'
+    | '/articles/'
+    | '/work/'
+    | '/api/public/article-cover/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/analytics' | '/work/$slug' | '/work'
-  id: '__root__' | '/' | '/analytics' | '/work/$slug' | '/work/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/articles-sitemap.xml'
+    | '/api/article-cover-upload'
+    | '/articles/$slug'
+    | '/work/$slug'
+    | '/articles'
+    | '/work'
+    | '/api/public/article-cover/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/articles-sitemap.xml'
+    | '/api/article-cover-upload'
+    | '/articles/$slug'
+    | '/work/$slug'
+    | '/articles/'
+    | '/work/'
+    | '/api/public/article-cover/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  ArticlesSitemapDotxmlRoute: typeof ArticlesSitemapDotxmlRoute
+  ApiArticleCoverUploadRoute: typeof ApiArticleCoverUploadRoute
+  ArticlesSlugRoute: typeof ArticlesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
+  ArticlesIndexRoute: typeof ArticlesIndexRoute
   WorkIndexRoute: typeof WorkIndexRoute
+  ApiPublicArticleCoverSplatRoute: typeof ApiPublicArticleCoverSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/articles-sitemap.xml': {
+      id: '/articles-sitemap.xml'
+      path: '/articles-sitemap.xml'
+      fullPath: '/articles-sitemap.xml'
+      preLoaderRoute: typeof ArticlesSitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/analytics': {
       id: '/analytics'
       path: '/analytics'
@@ -92,11 +178,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/articles/': {
+      id: '/articles/'
+      path: '/articles'
+      fullPath: '/articles/'
+      preLoaderRoute: typeof ArticlesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/$slug': {
       id: '/work/$slug'
       path: '/work/$slug'
       fullPath: '/work/$slug'
       preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/articles/$slug': {
+      id: '/articles/$slug'
+      path: '/articles/$slug'
+      fullPath: '/articles/$slug'
+      preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/article-cover-upload': {
+      id: '/api/article-cover-upload'
+      path: '/api/article-cover-upload'
+      fullPath: '/api/article-cover-upload'
+      preLoaderRoute: typeof ApiArticleCoverUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/article-cover/$': {
+      id: '/api/public/article-cover/$'
+      path: '/api/public/article-cover/$'
+      fullPath: '/api/public/article-cover/$'
+      preLoaderRoute: typeof ApiPublicArticleCoverSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -105,8 +219,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnalyticsRoute: AnalyticsRoute,
+  ArticlesSitemapDotxmlRoute: ArticlesSitemapDotxmlRoute,
+  ApiArticleCoverUploadRoute: ApiArticleCoverUploadRoute,
+  ArticlesSlugRoute: ArticlesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
+  ArticlesIndexRoute: ArticlesIndexRoute,
   WorkIndexRoute: WorkIndexRoute,
+  ApiPublicArticleCoverSplatRoute: ApiPublicArticleCoverSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
