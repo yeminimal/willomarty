@@ -13,6 +13,8 @@ import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
+import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
+import { Route as ApiPublicArticleCoverSplatRouteImport } from './routes/api/public/article-cover/$'
 
 const AnalyticsRoute = AnalyticsRouteImport.update({
   id: '/analytics',
@@ -34,39 +36,77 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
+  id: '/api/article-cover-upload',
+  path: '/api/article-cover-upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicArticleCoverSplatRoute =
+  ApiPublicArticleCoverSplatRouteImport.update({
+    id: '/api/public/article-cover/$',
+    path: '/api/public/article-cover/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/analytics': typeof AnalyticsRoute
+  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/analytics' | '/work/$slug' | '/work/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/api/article-cover-upload'
+    | '/work/$slug'
+    | '/work/'
+    | '/api/public/article-cover/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/analytics' | '/work/$slug' | '/work'
-  id: '__root__' | '/' | '/analytics' | '/work/$slug' | '/work/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/api/article-cover-upload'
+    | '/work/$slug'
+    | '/work'
+    | '/api/public/article-cover/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/api/article-cover-upload'
+    | '/work/$slug'
+    | '/work/'
+    | '/api/public/article-cover/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  ApiArticleCoverUploadRoute: typeof ApiArticleCoverUploadRoute
   WorkSlugRoute: typeof WorkSlugRoute
   WorkIndexRoute: typeof WorkIndexRoute
+  ApiPublicArticleCoverSplatRoute: typeof ApiPublicArticleCoverSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,14 +139,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/article-cover-upload': {
+      id: '/api/article-cover-upload'
+      path: '/api/article-cover-upload'
+      fullPath: '/api/article-cover-upload'
+      preLoaderRoute: typeof ApiArticleCoverUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/article-cover/$': {
+      id: '/api/public/article-cover/$'
+      path: '/api/public/article-cover/$'
+      fullPath: '/api/public/article-cover/$'
+      preLoaderRoute: typeof ApiPublicArticleCoverSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnalyticsRoute: AnalyticsRoute,
+  ApiArticleCoverUploadRoute: ApiArticleCoverUploadRoute,
   WorkSlugRoute: WorkSlugRoute,
   WorkIndexRoute: WorkIndexRoute,
+  ApiPublicArticleCoverSplatRoute: ApiPublicArticleCoverSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
