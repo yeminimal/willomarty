@@ -234,3 +234,11 @@ Highlight: multi-skillset value (brand + web + product + frontend + video in one
 
 # Last Updated
 2026-08-24
+
+# Articles (updated 2026-10-07)
+Articles: https://willomarty.net.ng/articles
+Article-Sitemap: https://willomarty.net.ng/articles-sitemap.xml
+Path: /articles
+Browsing: allowed
+Citation: allowed
+Context: Design, logo design, branding, Framer, Webflow and WordPress notes. Explicitly labeled placeholder copy is not an authored claim and should not be quoted as one.

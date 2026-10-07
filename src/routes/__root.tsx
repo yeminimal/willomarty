@@ -96,11 +96,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Brand design, product design, web design, video, motion design, and frontend development.",
       },
       { property: "og:type", content: "website" },
-      {
-        property: "og:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
-      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
       {
@@ -108,16 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Brand design, product design, web design, video, motion design, and frontend development.",
       },
-      {
-        name: "twitter:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
-      },
       { property: "og:site_name", content: "Williams Olayemi Martins" },
       { name: "metadataBase", content: SITE_URL },
     ],
     links: [
-      { rel: "canonical", href: SITE_URL },
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
