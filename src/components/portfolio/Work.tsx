@@ -17,12 +17,11 @@ export function Work() {
             <span className="italic text-accent">built with intent.</span>
           </h2>
           <p className="mt-6 max-w-xl text-foreground/70 leading-relaxed">
-            A tight cross-section of identity, product and marketing work — each with its own case
-            study. The full client list lives on the archive page.
+            Selected identities and digital experiences, from the first idea to the final detail.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5">
+        <div className="mt-14 grid md:grid-cols-3 gap-8">
           {FEATURED_WORK.map((w, i) => (
             <Reveal key={w.slug} delay={Math.min(i * 0.03, 0.2)}>
               <FeaturedWorkCard w={w} />

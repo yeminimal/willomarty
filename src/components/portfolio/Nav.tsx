@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon, Download } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
 const LINKS = [
@@ -33,11 +35,11 @@ export function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-[1100px] px-6 md:px-10 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-[1100px] px-6 md:px-10 min-h-16 flex items-center justify-between">
         <a href="/#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
           WOM
         </a>
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-4">
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -47,6 +49,7 @@ export function Nav() {
               {l.label}
             </a>
           ))}
+          <Link to="/articles" className="font-mono text-[11px] uppercase text-muted hover:text-accent">Articles</Link>
           <a
             href="/resume.pdf"
             download
@@ -57,33 +60,33 @@ export function Nav() {
             Résumé
             <Download size={11} className="group-hover:translate-y-0.5 transition-transform" />
           </a>
-          <button
+          <Button variant="ghost" size="icon"
             aria-label="Toggle theme"
             onClick={toggle}
             className="text-muted hover:text-accent transition-colors"
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
+          </Button>
         </nav>
-        <div className="md:hidden flex items-center gap-4">
-          <button
+        <div className="lg:hidden flex items-center gap-4">
+          <Button variant="ghost" size="icon"
             aria-label="Toggle theme"
             onClick={toggle}
             className="text-muted hover:text-accent transition-colors"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-          <button
+          </Button>
+          <Button variant="ghost" size="icon"
             aria-label="Toggle navigation"
             className="text-foreground"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          </Button>
         </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="mx-auto max-w-[1100px] px-6 py-6 flex flex-col gap-4">
             {LINKS.map((l) => (
               <a
@@ -95,6 +98,7 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
+            <Link to="/articles" onClick={() => setOpen(false)} className="font-mono text-xs uppercase text-muted hover:text-accent">Articles</Link>
             <a
               href="/resume.pdf"
               download
