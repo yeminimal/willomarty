@@ -10,6 +10,9 @@ import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
+import { LatestArticles } from "@/components/articles/LatestArticles";
+import { listPublishedArticles } from "@/lib/articles.functions";
+import heroAsset from "@/assets/featured-frauwa.png.asset.json";
 import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
@@ -92,6 +95,7 @@ const TOOLS_SCHEMA = {
 
 export const Route = createFileRoute("/")(
   {
+    loader: () => listPublishedArticles(),
     head: () => ({
       meta: [
         { title: "Williams Olayemi Martins — Brand, Product & Web Designer" },
@@ -123,6 +127,7 @@ export const Route = createFileRoute("/")(
         { name: "metadataBase", content: "https://willomarty.net.ng/" },
       ],
       links: [
+        { rel: "preload", as: "image", href: heroAsset.url },
         { rel: "canonical", href: SITE_URL },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -143,6 +148,7 @@ export const Route = createFileRoute("/")(
 );
 
 function Index() {
+  const articles = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
@@ -151,6 +157,7 @@ function Index() {
         <About />
         {/* <Experience /> */}
         <Work />
+        <LatestArticles articles={articles} />
         <Tools />
         <Skills />
         <Education />
