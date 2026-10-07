@@ -1,13 +1,13 @@
 import vanaImg from "@/assets/work-vana.jpg.asset.json";
-import frauwaImg from "@/assets/work-frauwa.png.asset.json";
-import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
+import frauwaImg from "@/assets/featured-frauwa.png.asset.json";
+import zamackImg from "@/assets/featured-zamack.png.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
 import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
 import reboundImg from "@/assets/work-rebound.png.asset.json";
 import mytherapistImg from "@/assets/work-mytherapistng.jpg.asset.json";
 import getcribImg from "@/assets/work-getcrib.jpg.asset.json";
-import incashImg from "@/assets/work-incash.png.asset.json";
+import incashImg from "@/assets/featured-incash.png.asset.json";
 import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
@@ -66,7 +66,7 @@ export const WORK: Work[] = [
       "Social content and ongoing marketing assets for a Web3 learning platform, built to deliberately avoid every visual cliché of the category.",
     link: "https://x.com/moonrepublic_",
     image: moonRepublicImg.url,
-    featured: true,
+    featured: false,
     caseStudySlug: "moon-republic",
     role: "Creative Direction / Marketing Design · Web3 / Education",
     outcomeLine:
@@ -183,4 +183,7 @@ export const WORK: Work[] = [
   },
 ];
 
-export const FEATURED_WORK = WORK.filter((w) => w.featured);
+export const FEATURED_WORK = ["incash", "frauwa", "zamack-consults"].flatMap((slug) => {
+  const project = WORK.find((w) => w.slug === slug && w.featured);
+  return project ? [project] : [];
+});
