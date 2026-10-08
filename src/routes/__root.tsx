@@ -39,7 +39,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -107,6 +107,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "metadataBase", content: SITE_URL },
     ],
     links: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        },
+
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
@@ -146,7 +153,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <HeadContent />
       </head>
-      <body>
+      <body id="top">
         {children}
         <Scripts />
       </body>

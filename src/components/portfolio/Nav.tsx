@@ -4,15 +4,18 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
+const PAGE_LINKS = [
+  { to: "/about", label: "About" },
+  { to: "/education", label: "Education" },
+  { to: "/contact", label: "Contact" },
+] as const;
+
 const LINKS = [
-  { href: "/#about", label: "About" },
   // { href: "/#experience", label: "Experience" },
   { href: "/#work", label: "Work" },
   { href: "/#tools", label: "Tools" },
   { href: "/#skills", label: "Skills" },
-  { href: "/#education", label: "Education" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -40,6 +43,7 @@ export function Nav() {
           WOM
         </a>
         <nav className="hidden lg:flex items-center gap-4">
+          {PAGE_LINKS.map((link) => <Link key={link.to} to={link.to} className="font-mono text-[11px] uppercase text-muted hover:text-accent">{link.label}</Link>)}
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -88,6 +92,7 @@ export function Nav() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="mx-auto max-w-[1100px] px-6 py-6 flex flex-col gap-4">
+            {PAGE_LINKS.map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)} className="font-mono text-xs uppercase text-muted hover:text-accent">{link.label}</Link>)}
             {LINKS.map((l) => (
               <a
                 key={l.href}

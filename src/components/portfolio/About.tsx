@@ -9,19 +9,20 @@ const FACTS: { icon: LucideIcon; label: string }[] = [
   { icon: Wrench, label: "Micro-Tool Builder (4 Live Tools)" },
 ];
 
-export function About() {
+export function About({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   return (
     <section id="about" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
         <Reveal>
           <SectionLabel>About Me</SectionLabel>
-          <h2 className="display-serif mt-6 text-3xl md:text-5xl leading-[1.1] max-w-3xl">
+          <Heading className="display-serif mt-6 text-3xl md:text-5xl leading-[1.1] max-w-3xl">
             Design that communicates.
             <br />
             Code that ships.
             <br />
             <span className="italic text-accent">Work that matters.</span>
-          </h2>
+          </Heading>
         </Reveal>
 
         <div className="mt-14 grid md:grid-cols-[1.4fr_1fr] gap-14">

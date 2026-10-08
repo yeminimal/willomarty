@@ -71,7 +71,7 @@ function CaseStudyPage() {
   return <CaseStudyLayout study={study} />;
 }
 
-function CaseStudyError({ error, reset }: { error: Error; reset: () => void }) {
+function CaseStudyError({ error, reset }: { error: unknown; reset: () => void }) {
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "work_slug_error" });
