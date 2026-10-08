@@ -82,7 +82,7 @@ function ArticlesArchive() {
               </p>
             </div>
           ) : (
-            <div className="mt-14 grid md:grid-cols-2 gap-5">
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 [&>div]:min-w-0">
               {visible.map((a, i) => (
                 <Reveal key={a.id} delay={Math.min(i * 0.02, 0.2)}>
                   <ArticleCard article={a} />
