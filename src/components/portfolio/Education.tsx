@@ -61,13 +61,14 @@ function Card({ e, i }: { e: EducationItem; i: number }) {
   );
 }
 
-export function Education() {
+export function Education({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   return (
     <section id="education" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
         <Reveal>
           <SectionLabel>Background</SectionLabel>
-          <h2 className="display-serif mt-6 text-3xl md:text-5xl">Learning never stopped.</h2>
+          <Heading className="display-serif mt-6 text-3xl md:text-5xl">Learning never stopped.</Heading>
         </Reveal>
 
         <div className="mt-14 grid md:grid-cols-2 gap-5">

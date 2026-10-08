@@ -51,13 +51,13 @@ Global-first. Best fit for teams who either know exactly what solution they're l
 
 ## Portfolio sections
 - [Home & Hero](https://willomarty.net.ng/): Introduction and positioning.
-- [About](https://willomarty.net.ng/#about): Background, philosophy and approach.
+- [About](https://willomarty.net.ng/about): Background, philosophy and approach.
 - [Experience](https://willomarty.net.ng/#experience): Roles across agency, in-house and freelance work.
 - [Selected Work](https://willomarty.net.ng/#work): Client and self-initiated projects with case links.
 - [Tools](https://willomarty.net.ng/#tools): Micro web tools built and shipped independently.
 - [Skills](https://willomarty.net.ng/#skills): Design, web, engineering, video and AI-workflow competencies.
-- [Education](https://willomarty.net.ng/#education): Academic background and certifications.
-- [Contact](https://willomarty.net.ng/#contact): Email, phone and social links.
+- [Education](https://willomarty.net.ng/education): Academic background and certifications.
+- [Contact](https://willomarty.net.ng/contact): Email, phone and social links.
 - [FAQ](https://willomarty.net.ng/#faq): Common questions about scope, pricing and process.
 
 ## Case studies

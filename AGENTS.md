@@ -11,3 +11,5 @@
 
 - Articles use the existing persistent article store; derive excerpts and reading time in shared helpers so layouts stay unchanged when content is added.
 - Homepage writing and related articles consume the same public published-article query as the archive, avoiding duplicate content sources.
+
+- About, education with certifications, and contact render their existing sections on dedicated public routes; homepage stays focused on work, and shared fonts live in the root head so direct visits retain typography.

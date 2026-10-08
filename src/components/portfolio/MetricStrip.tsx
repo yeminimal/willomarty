@@ -1,3 +1,5 @@
+import { Sparkle } from "lucide-react";
+
 const ITEMS: { type: "metric" | "brand"; value: string }[] = [
   { type: "metric", value: "7+ Years Experience" },
   { type: "brand", value: "Incash" },
@@ -17,7 +19,7 @@ export function MetricStrip() {
   const loop = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="relative mt-16 md:mt-20 border-y border-border overflow-hidden">
+    <div className="relative border-y border-border overflow-hidden">
       <div className="flex w-max motion-safe:animate-marquee motion-reduce:flex-wrap motion-reduce:w-full motion-reduce:justify-center motion-reduce:gap-4 motion-reduce:py-5">
         {loop.map((item, i) => (
           <div
@@ -34,7 +36,7 @@ export function MetricStrip() {
             >
               {item.value}
             </span>
-            <span className="text-accent-dim/50">✦</span>
+            <Sparkle size={14} className="text-accent-dim/50" aria-hidden="true" />
           </div>
         ))}
       </div>

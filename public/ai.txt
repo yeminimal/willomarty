@@ -195,7 +195,7 @@ Training: allowed
 Browsing: allowed
 Context: Independently shipped micro-tools (Scrapely, Screenshot Studio, ImageSqueeze, Tryseeqr).
 
-Path: /#about
+Path: /about
 Training: allowed
 Browsing: allowed
 Context: Background, philosophy and approach.
@@ -242,3 +242,7 @@ Path: /articles
 Browsing: allowed
 Citation: allowed
 Context: Design, logo design, branding, Framer, Webflow and WordPress notes. Explicitly labeled placeholder copy is not an authored claim and should not be quoted as one.
+
+About: https://willomarty.net.ng/about
+Education: https://willomarty.net.ng/education
+Contact-Page: https://willomarty.net.ng/contact

@@ -131,4 +131,7 @@
       <image:loc>https://willomarty.net.ng/__l5e/assets-v1/af6a886b-21f0-4832-b8c9-3c739a236a64/work-frauwa.jpg</image:loc>
     </image:image>
   </url>
+  <url><loc>https://willomarty.net.ng/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://willomarty.net.ng/education</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://willomarty.net.ng/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
