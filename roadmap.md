@@ -1,4 +1,6 @@
 # Homepage and articles
+- [ ] Populate the design-process article verbatim from the supplied PDF and verify all text.
+- [ ] Fix article card sizing and verify mobile archive and related articles.
 - [x] Simplify hero and place metric strip directly before Selected Work.
 - [x] Move About, Education/certifications, and Contact to dedicated pages and update links.
 - [x] Verify new pages and homepage ordering.
