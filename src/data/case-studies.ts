@@ -299,7 +299,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       {
         kind: "callout",
         heading: "Outcome",
-        body: "An ongoing engagement: a visually refined, more accessible website with new templated pages and improved navigation, with remaining items dependent on content and assets still to come from the client's team.",
+        body: "An ongoing engagement: a visually refined, more accessible website with new visually consitent pages and improved navigation.",
       },
     ],
   },
