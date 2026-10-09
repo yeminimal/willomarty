@@ -69,10 +69,10 @@ Global-first. Best fit for teams who either know exactly what solution they're l
 - [Webflow Development — Website redesign and optimization for a fintech platform](https://willomarty.net.ng/work/webflow-development): Improved visual direction, stronger typographic contrast and accessibility, reorganized footer navigation, and new templated pages including a blog listing and article template. Client and product specifics withheld under a confidentiality agreement.
 
 ## Micro-tools shipped
-- [Scrapely](https://scrapely-ai.vercel.app/): Turn any webpage into clean JSON with AI-assisted extraction.
-- [Screenshot Studio](https://screen-shot-studio.vercel.app/): Device-framed screenshots of any URL for design reviews.
-- [ImageSqueeze](https://image-squeeze-lite.vercel.app/): Privacy-first, in-browser JPEG/PNG/WebP compression.
 - [Tryseeqr](https://tryseeqr.vercel.app/): Scan QR codes from the browser, no install.
+- [Scrapely](https://scrapely-ai.vercel.app/): Turn any webpage into clean JSON with AI-assisted extraction.
+- [ImageSqueeze](https://image-squeeze-lite.vercel.app/): Privacy-first, in-browser JPEG/PNG/WebP compression.
+- [Screenshot Studio](https://screen-shot-studio.vercel.app/): Device-framed screenshots of any URL for design reviews.
 
 ## Selected Client Work
  
