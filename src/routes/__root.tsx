@@ -39,7 +39,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -96,6 +96,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Brand design, product design, web design, video, motion design, and frontend development.",
       },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Williams Olayemi Martins — Brand, Product & Web Designer" },
       {
@@ -103,17 +108,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Brand design, product design, web design, video, motion design, and frontend development.",
       },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/LPU1PGzZ90SaY0DDFWPErU95WJI3/social-images/social-1782278882070-1001108578.webp",
+      },
       { property: "og:site_name", content: "Williams Olayemi Martins" },
       { name: "metadataBase", content: SITE_URL },
     ],
     links: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
-        },
-
+      { rel: "canonical", href: SITE_URL },
       { rel: "icon", type: "image/webp", href: portraitAsset.url },
       { rel: "apple-touch-icon", href: portraitAsset.url },
       { rel: "stylesheet", href: appCss },
@@ -153,7 +157,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <HeadContent />
       </head>
-      <body id="top">
+      <body>
         {children}
         <Scripts />
       </body>

@@ -17,10 +17,6 @@ export const Route = createFileRoute("/analytics")({
         content:
           "Public, privacy-first Plausible analytics dashboard for this portfolio. Cookieless, no personal data collected.",
       },
-      { property: "og:title", content: "Analytics — Williams Olayemi Martins" },
-      { property: "og:description", content: "Privacy-first portfolio traffic analytics." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
