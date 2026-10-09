@@ -8,7 +8,7 @@ export function Footer() {
           © 2026 Williams Olayemi Martins · Lagos, Nigeria
         </div>
         <a
-          href="#top"
+          href="#hero"
           className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dim hover:text-accent transition-colors"
         >
           Back to Top

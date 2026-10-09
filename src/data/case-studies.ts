@@ -3,7 +3,6 @@ import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
 import frauwaImg from "@/assets/work-frauwa.png.asset.json";
-const webflowDevImg = { url: "/webflow-development.jpg" };
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[] }
@@ -254,52 +253,6 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         kind: "prose",
         heading: "Outcome",
         body: "Delivered as a full package — brand identity, marketing materials, a promo reel used for ads, and a company website. No formal metrics tracked, but the deliverables represent a complete identity system, including a client conversation won on reasoning, not just execution.",
-      },
-    ],
-  },
-
-"webflow-development": {
-    slug: "webflow-development",
-    client: "Webflow Development",
-    role: "Brand, Web, & Product Designer",
-    scope: "Website redesign & optimization",
-    industry: "Fintech",
-    image: webflowDevImg.url,
-    metaTitle: "Webflow Development — Case Study | Williams Olayemi Martins",
-    metaDescription:
-      "Website redesign and optimization for a fintech platform — improved visual direction, stronger typographic contrast and accessibility, and clearer navigation across key pages.",
-    sections: [
-      {
-        kind: "prose",
-        heading: "The Brief",
-        body: "The brief was to improve the visual direction of an existing fintech website, refine the user experience across key pages, and strengthen accessibility and overall presentation without disrupting a live product. Client and product specifics are withheld under a confidentiality agreement.",
-      },
-      {
-        kind: "list",
-        heading: "The Work",
-        items: [
-          {
-            label: "UI & Layout Refinements",
-            body: "Rebalanced hero sections across the site for stronger visual hierarchy and responsiveness, refined the spacing and alignment of core interface components, and improved the structure of key feature and informational pages for cleaner presentation.",
-          },
-          {
-            label: "Typography & Accessibility",
-            body: "Raised typographic contrast across key sections to improve readability and meet accessibility standards, and resolved legibility issues within support and help-center content.",
-          },
-          {
-            label: "Navigation & Component Improvements",
-            body: "Reorganized footer navigation for clearer wayfinding, and corrected alignment and spacing across key product-page components.",
-          },
-          {
-            label: "Page-Specific Enhancements",
-            body: "Repositioned key visual elements for stronger hierarchy, built a new blog listing page and article template, completed several new feature and informational pages, and restructured legal and policy content for clarity.",
-          },
-        ],
-      },
-      {
-        kind: "callout",
-        heading: "Outcome",
-        body: "An ongoing engagement: a visually refined, more accessible website with new visually consitent pages and improved navigation.",
       },
     ],
   },
