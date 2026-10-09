@@ -1,0 +1,11 @@
+# Homepage and articles
+- [x] Add YDPay as the fourth homepage featured project with case study, archive entry and search metadata.
+- [x] Populate the design-process article verbatim from the supplied PDF and verify all text.
+- [x] Fix article card sizing and verify mobile archive and related articles.
+- [x] Simplify hero and place metric strip directly before Selected Work.
+- [x] Move About, Education/certifications, and Contact to dedicated pages and update links.
+- [x] Verify new pages and homepage ordering.
+- [x] Rebuild project-led hero, three square featured cards, and linked capabilities.
+- [x] Add latest writing and extend article archive/detail from existing persistence with labeled placeholders.
+- [x] Update article discovery and search metadata.
+- [x] Verify homepage and article navigation, and apply required package update.

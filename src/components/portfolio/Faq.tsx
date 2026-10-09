@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "What industries has Williams designed for?",
-    a: "Fintech (Incash, YDPay), real estate and proptech (Caretaker Pro, Getcrib), fashion and e-commerce (Zaytrix Modeste, Juliet Moses), Web3 and education (Moon Republic), legal and business services (Zamack Consults), construction and interiors (Frauwa), health (Mytherapist.ng) and consumer packaged goods (Vana, Rebound).",
+    a: "Fintech (Incash), real estate and proptech (Caretaker Pro, Getcrib), fashion and e-commerce (Zaytrix Modeste, Juliet Moses), Web3 and education (Moon Republic), legal and business services (Zamack Consults), construction and interiors (Frauwa), health (Mytherapist.ng) and consumer packaged goods (Vana, Rebound).",
   },
   {
     q: "Does Williams offer web design alongside branding?",

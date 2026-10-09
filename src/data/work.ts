@@ -1,17 +1,18 @@
 import vanaImg from "@/assets/work-vana.jpg.asset.json";
-import frauwaImg from "@/assets/work-frauwa.png.asset.json";
-import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
+import frauwaImg from "@/assets/featured-frauwa.png.asset.json";
+import zamackImg from "@/assets/featured-zamack.png.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
 import julietMosesImg from "@/assets/work-juliet-moses.jpg.asset.json";
 import reboundImg from "@/assets/work-rebound.png.asset.json";
 import mytherapistImg from "@/assets/work-mytherapistng.jpg.asset.json";
 import getcribImg from "@/assets/work-getcrib.jpg.asset.json";
-import incashImg from "@/assets/work-incash.png.asset.json";
+import incashImg from "@/assets/featured-incash.png.asset.json";
 import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
 import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
+const webflowDevImg = { url: "/webflow-development.jpg" };
 
 export type Work = {
   slug: string;
@@ -45,6 +46,19 @@ export const WORK: Work[] = [
       "Shipped from scratch across three surfaces under a fixed timeline, with usability testing shaping onboarding for a three-sided user base.",
   },
   {
+    slug: "webflow-development",
+    client: "Webflow Development",
+    discipline: "Website Improvements",
+    description:
+      "Website redesign and optimization for a fintech platform — refined visual direction, stronger accessibility and clearer navigation across key pages. Client and product specifics withheld under a confidentiality agreement.",
+    image: webflowDevImg.url,
+    featured: true,
+    caseStudySlug: "webflow-development",
+    role: "Brand, Web, & Product Designer · Website Redesign & Optimization · Fintech",
+    outcomeLine:
+      "An ongoing engagement: a visually refined, more accessible website with new templated pages and improved navigation.",
+  },
+  {
     slug: "zamack-consults",
     client: "Zamack Consults",
     discipline: "Brand Refresh · Logo",
@@ -66,7 +80,7 @@ export const WORK: Work[] = [
       "Social content and ongoing marketing assets for a Web3 learning platform, built to deliberately avoid every visual cliché of the category.",
     link: "https://x.com/moonrepublic_",
     image: moonRepublicImg.url,
-    featured: true,
+    featured: false,
     caseStudySlug: "moon-republic",
     role: "Creative Direction / Marketing Design · Web3 / Education",
     outcomeLine:
@@ -183,4 +197,7 @@ export const WORK: Work[] = [
   },
 ];
 
-export const FEATURED_WORK = WORK.filter((w) => w.featured);
+export const FEATURED_WORK = ["incash", "webflow-development", "frauwa", "zamack-consults"].flatMap((slug) => {
+  const project = WORK.find((w) => w.slug === slug && w.featured);
+  return project ? [project] : [];
+});

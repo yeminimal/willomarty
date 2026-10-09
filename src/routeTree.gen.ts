@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as EducationRouteImport } from './routes/education'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
@@ -19,6 +22,16 @@ import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
 import { Route as ApiPublicArticleCoverSplatRouteImport } from './routes/api/public/article-cover/$'
 
+const EducationRoute = EducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArticlesSitemapDotxmlRoute = ArticlesSitemapDotxmlRouteImport.update({
   id: '/articles-sitemap.xml',
   path: '/articles-sitemap.xml',
@@ -27,6 +40,11 @@ const ArticlesSitemapDotxmlRoute = ArticlesSitemapDotxmlRouteImport.update({
 const AnalyticsRoute = AnalyticsRouteImport.update({
   id: '/analytics',
   path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -68,8 +86,11 @@ const ApiPublicArticleCoverSplatRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/contact': typeof ContactRoute
+  '/education': typeof EducationRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -79,8 +100,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/contact': typeof ContactRoute
+  '/education': typeof EducationRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -91,8 +115,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
+  '/contact': typeof ContactRoute
+  '/education': typeof EducationRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -104,8 +131,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/analytics'
     | '/articles-sitemap.xml'
+    | '/contact'
+    | '/education'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -115,8 +145,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/analytics'
     | '/articles-sitemap.xml'
+    | '/contact'
+    | '/education'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -126,8 +159,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/analytics'
     | '/articles-sitemap.xml'
+    | '/contact'
+    | '/education'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -138,8 +174,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AnalyticsRoute: typeof AnalyticsRoute
   ArticlesSitemapDotxmlRoute: typeof ArticlesSitemapDotxmlRoute
+  ContactRoute: typeof ContactRoute
+  EducationRoute: typeof EducationRoute
   ApiArticleCoverUploadRoute: typeof ApiArticleCoverUploadRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
@@ -150,6 +189,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/education': {
+      id: '/education'
+      path: '/education'
+      fullPath: '/education'
+      preLoaderRoute: typeof EducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/articles-sitemap.xml': {
       id: '/articles-sitemap.xml'
       path: '/articles-sitemap.xml'
@@ -162,6 +215,13 @@ declare module '@tanstack/react-router' {
       path: '/analytics'
       fullPath: '/analytics'
       preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -218,8 +278,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AnalyticsRoute: AnalyticsRoute,
   ArticlesSitemapDotxmlRoute: ArticlesSitemapDotxmlRoute,
+  ContactRoute: ContactRoute,
+  EducationRoute: EducationRoute,
   ApiArticleCoverUploadRoute: ApiArticleCoverUploadRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
