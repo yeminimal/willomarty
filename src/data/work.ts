@@ -197,7 +197,7 @@ export const WORK: Work[] = [
   },
 ];
 
-export const FEATURED_WORK = ["incash", "ydpay", "frauwa", "zamack-consults"].flatMap((slug) => {
+export const FEATURED_WORK = ["incash", "webflow-development", "frauwa", "zamack-consults"].flatMap((slug) => {
   const project = WORK.find((w) => w.slug === slug && w.featured);
   return project ? [project] : [];
 });
