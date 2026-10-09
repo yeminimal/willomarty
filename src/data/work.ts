@@ -12,7 +12,7 @@ import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
 import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
-import ydpayImg from "@/assets/work-ydpay.png.asset.json";
+const webflowDevImg = { url: "/webflow-development.jpg" };
 
 export type Work = {
   slug: string;
@@ -46,14 +46,14 @@ export const WORK: Work[] = [
       "Shipped from scratch across three surfaces under a fixed timeline, with usability testing shaping onboarding for a three-sided user base.",
   },
   {
-    slug: "ydpay",
-    client: "YDPay",
+    slug: "webflow-development",
+    client: "Webflow Development",
     discipline: "Website Improvements",
     description:
       "Website redesign and optimization for a fintech platform — refined visual direction, stronger accessibility and clearer navigation across key pages. Client and product specifics withheld under a confidentiality agreement.",
-    image: ydpayImg.url,
+    image: webflowDevImg.url,
     featured: true,
-    caseStudySlug: "ydpay",
+    caseStudySlug: "webflow-development",
     role: "Brand, Web, & Product Designer · Website Redesign & Optimization · Fintech",
     outcomeLine:
       "An ongoing engagement: a visually refined, more accessible website with new templated pages and improved navigation.",
@@ -197,7 +197,7 @@ export const WORK: Work[] = [
   },
 ];
 
-export const FEATURED_WORK = ["incash", "ydpay", "frauwa", "zamack-consults"].flatMap((slug) => {
+export const FEATURED_WORK = ["incash", "webflow-development", "frauwa", "zamack-consults"].flatMap((slug) => {
   const project = WORK.find((w) => w.slug === slug && w.featured);
   return project ? [project] : [];
 });

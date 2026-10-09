@@ -3,7 +3,7 @@ import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
 import frauwaImg from "@/assets/work-frauwa.png.asset.json";
-import ydpayImg from "@/assets/work-ydpay.png.asset.json";
+const webflowDevImg = { url: "/webflow-development.jpg" };
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[] }
@@ -258,14 +258,14 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
   },
 
-  ydpay: {
-    slug: "ydpay",
-    client: "YDPay",
+"webflow-development": {
+    slug: "webflow-development",
+    client: "Webflow Development",
     role: "Brand, Web, & Product Designer",
     scope: "Website redesign & optimization",
     industry: "Fintech",
-    image: ydpayImg.url,
-    metaTitle: "YDPay — Case Study | Williams Olayemi Martins",
+    image: webflowDevImg.url,
+    metaTitle: "Webflow Development — Case Study | Williams Olayemi Martins",
     metaDescription:
       "Website redesign and optimization for a fintech platform — improved visual direction, stronger typographic contrast and accessibility, and clearer navigation across key pages.",
     sections: [

@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import type { Work } from "@/data/work";
 const OUTCOMES: Record<string, string> = {
   incash: "One fintech experience across web, mobile and marketing.",
-  ydpay: "An ongoing engagement: a visually refined, more accessible website.",
+  "webflow-development": "An ongoing engagement: a visually refined, more accessible website.",
   frauwa: "One identity connecting roofing and interior decor.",
   "zamack-consults": "A refreshed identity built on clarity and trust.",
 };
