@@ -52,6 +52,10 @@
     </image:image>
 
     <image:image>
+      <image:loc>https://willomarty.net.ng/__l5e/assets-v1/e3714c0c-98a0-40c6-905b-50069c05376b/work-ydpay.png</image:loc>
+    </image:image>
+
+    <image:image>
       <image:loc>https://willomarty.net.ng/__l5e/assets-v1/d1096e1f-492c-4514-9981-422fd739fb7b/work-zaytrix-modeste.jpg</image:loc>
     </image:image>
 
@@ -99,6 +103,16 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://willomarty.net.ng/__l5e/assets-v1/e76433d9-44d6-4df6-81a0-fdfdc74faaff/work-incash.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://willomarty.net.ng/work/ydpay</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://willomarty.net.ng/__l5e/assets-v1/e3714c0c-98a0-40c6-905b-50069c05376b/work-ydpay.png</image:loc>
     </image:image>
   </url>
 
