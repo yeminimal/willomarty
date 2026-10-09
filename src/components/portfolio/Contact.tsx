@@ -10,17 +10,18 @@ const ITEMS = [
   { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "#" },
 ];
 
-export function Contact() {
+export function Contact({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   return (
     <section id="contact" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
         <Reveal>
           <SectionLabel>Let's Work Together</SectionLabel>
-          <h2 className="display-serif mt-6 text-4xl md:text-6xl leading-[1.05]">
+          <Heading className="display-serif mt-6 text-4xl md:text-6xl leading-[1.05]">
             Got a project?
             <br />
             <span className="italic text-accent">Let's talk.</span>
-          </h2>
+          </Heading>
           <p className="mt-6 max-w-xl text-foreground/70 leading-relaxed">
             Available for brand design, frontend development, creative consulting and collaborations.
             Based in Nigeria — comfortable working with clients globally.

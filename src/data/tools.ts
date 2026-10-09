@@ -15,6 +15,16 @@ export type Tool = {
 
 export const TOOLS: Tool[] = [
   {
+    name: "SeeQR",
+    tagline: "Upload a photo and we'll read the QR for you.",
+    description:
+      "Upload a photo from your device media and we'll read the QR for you. Everything happens on your device — no uploads, no accounts, no tracking.",
+    tags: ["QR Code", "Offline", "Camera API", "Mobile-first", "React", "Vercel"],
+    url: "https://tryseeqr.vercel.app/",
+    status: "Live",
+    image: seeqrImg,
+  },
+  {
     name: "Scrapely",
     tagline: "Turn any webpage into clean JSON.",
     description:
@@ -23,16 +33,6 @@ export const TOOLS: Tool[] = [
     url: "https://scrapely-ai.vercel.app/",
     status: "Live",
     image: scrapelyImg.url,
-  },
-  {
-    name: "Screenshot Studio",
-    tagline: "See your site on any screen.",
-    description:
-      "Paste a URL, pick a device, and get a pixel-perfect screenshot wrapped in a device mockup. Built for designers who need quick visual checks without a full testing suite.",
-    tags: ["Puppeteer", "Node.js", "Railway", "Mockup", "React"],
-    url: "https://screen-shot-studio.vercel.app/",
-    status: "Live",
-    image: screenshotImg.url,
   },
   {
     name: "ImageSqueeze",
@@ -45,13 +45,13 @@ export const TOOLS: Tool[] = [
     image: imagesqueezeImg.url,
   },
   {
-    name: "SeeQR",
-    tagline: "Upload a photo and we'll read the QR for you.",
+    name: "Screenshot Studio",
+    tagline: "See your site on any screen.",
     description:
-      "Upload a photo from your device media and we'll read the QR for you. Everything happens on your device — no uploads, no accounts, no tracking.",
-    tags: ["QR Code", "Offline", "Camera API", "Mobile-first", "React", "Vercel"],
-    url: "https://tryseeqr.vercel.app/",
+      "Paste a URL, pick a device, and get a pixel-perfect screenshot wrapped in a device mockup. Built for designers who need quick visual checks without a full testing suite.",
+    tags: ["Puppeteer", "Node.js", "Railway", "Mockup", "React"],
+    url: "https://screen-shot-studio.vercel.app/",
     status: "Live",
-    image: seeqrImg,
+    image: screenshotImg.url,
   },
 ];

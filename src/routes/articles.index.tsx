@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
@@ -33,6 +35,10 @@ export const Route = createFileRoute("/articles/")({
 
 function ArticlesArchive() {
   const articles = Route.useLoaderData();
+  const [tag, setTag] = useState("All");
+  const [sort, setSort] = useState("newest");
+  const tags = [...new Set(articles.flatMap((article) => article.tags))];
+  const visible = articles.filter((article) => tag === "All" || article.tags.includes(tag)).sort((a, b) => sort === "title" ? a.title.localeCompare(b.title) : sort === "oldest" ? (a.published_at ?? "").localeCompare(b.published_at ?? "") : (b.published_at ?? "").localeCompare(a.published_at ?? ""));
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -62,6 +68,10 @@ function ArticlesArchive() {
             </div>
           </Reveal>
 
+          {articles.length > 6 && <div className="mt-10 flex flex-wrap items-center gap-2">
+            {["All", ...tags].map((item) => <Button key={item} size="sm" variant={tag === item ? "default" : "outline"} onClick={() => setTag(item)}>{item}</Button>)}
+            <label className="ml-auto flex items-center gap-2 text-sm text-muted">Sort <select aria-label="Sort articles" value={sort} onChange={(event) => setSort(event.target.value)} className="border border-border bg-background p-2 text-foreground"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+          </div>}
           {articles.length === 0 ? (
             <div className="mt-14 border border-border bg-surface p-10 text-center">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim">
@@ -72,8 +82,8 @@ function ArticlesArchive() {
               </p>
             </div>
           ) : (
-            <div className="mt-14 grid md:grid-cols-2 gap-5">
-              {articles.map((a, i) => (
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 [&>div]:min-w-0">
+              {visible.map((a, i) => (
                 <Reveal key={a.id} delay={Math.min(i * 0.02, 0.2)}>
                   <ArticleCard article={a} />
                 </Reveal>
