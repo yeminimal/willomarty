@@ -12,7 +12,7 @@ import zaytrixModesteImg from "@/assets/work-zaytrix-modeste.jpg.asset.json";
 import caretakerImg from "@/assets/work-caretaker-pro.jpg.asset.json";
 import zaytrixMgmtImg from "@/assets/work-zaytrix-management.jpg.asset.json";
 import endsarsImg from "@/assets/work-endsars.jpg.asset.json";
-import ydpayImg from "@/assets/work-ydpay.png.asset.json";
+const ydpayImg = { url: "/webflow-development.jpg" };
 
 export type Work = {
   slug: string;
@@ -46,8 +46,8 @@ export const WORK: Work[] = [
       "Shipped from scratch across three surfaces under a fixed timeline, with usability testing shaping onboarding for a three-sided user base.",
   },
   {
-    slug: "ydpay",
-    client: "YDPay",
+    slug: "webflow-development",
+    client: "Webflow Development",
     discipline: "Website Improvements",
     description:
       "Website redesign and optimization for a fintech platform — refined visual direction, stronger accessibility and clearer navigation across key pages. Client and product specifics withheld under a confidentiality agreement.",
