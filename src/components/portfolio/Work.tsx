@@ -21,7 +21,7 @@ export function Work() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-8">
+        <div className="mt-14 grid md:grid-cols-2 gap-8">
           {FEATURED_WORK.map((w, i) => (
             <Reveal key={w.slug} delay={Math.min(i * 0.03, 0.2)}>
               <FeaturedWorkCard w={w} />

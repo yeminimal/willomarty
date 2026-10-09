@@ -3,6 +3,7 @@ import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
 import frauwaImg from "@/assets/work-frauwa.png.asset.json";
+import ydpayImg from "@/assets/work-ydpay.png.asset.json";
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[] }
