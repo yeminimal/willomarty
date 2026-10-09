@@ -1,4 +1,5 @@
 # Homepage and articles
+- [ ] Add YDPay as the fourth homepage featured project with case study, archive entry and search metadata.
 - [x] Populate the design-process article verbatim from the supplied PDF and verify all text.
 - [x] Fix article card sizing and verify mobile archive and related articles.
 - [x] Simplify hero and place metric strip directly before Selected Work.
