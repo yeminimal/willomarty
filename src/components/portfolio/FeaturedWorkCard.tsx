@@ -1,73 +1,25 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { Work } from "@/data/work";
-
+const OUTCOMES: Record<string, string> = {
+  incash: "One fintech experience across web, mobile and marketing.",
+  "webflow-development": "An ongoing engagement: a visually refined, more accessible website.",
+  frauwa: "One identity connecting roofing and interior decor.",
+  "zamack-consults": "A refreshed identity built on clarity and trust.",
+};
 export function FeaturedWorkCard({ w }: { w: Work }) {
-  const hasCaseStudy = Boolean(w.caseStudySlug);
-  const externalHref = w.link ?? "https://www.behance.net/willomarty";
-
-  const inner = (
-    <>
-      <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-background">
-        {w.image && (
-          <img
-            src={w.image}
-            alt={`${w.client} — ${w.discipline}`}
-            loading="lazy"
-            width={1280}
-            height={720}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-          />
-        )}
-        {hasCaseStudy && (
-          <span className="absolute top-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent border border-accent/40 bg-background/80 backdrop-blur px-2 py-1 whitespace-nowrap">
-            ✦ Case Study
-          </span>
-        )}
-      </div>
-
-      <div className="p-7 md:p-9 flex-1 flex flex-col">
-        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-dim">
-          {w.discipline}
-        </div>
-        <h3 className="display-serif mt-4 text-2xl md:text-3xl text-foreground group-hover:text-accent transition-colors">
-          {w.client}
-        </h3>
-        {w.role && (
-          <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-            {w.role}
-          </p>
-        )}
-        <p className="mt-5 text-[15px] leading-relaxed text-foreground/75">{w.description}</p>
-        {w.outcomeLine && (
-          <p className="mt-4 pl-4 border-l border-accent/40 italic text-[14px] leading-relaxed text-foreground/65">
-            {w.outcomeLine}
-          </p>
-        )}
-        <div className="mt-7 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dim group-hover:text-accent transition-colors">
-          {hasCaseStudy ? "Read case study" : "View live"}
-          <ArrowUpRight
-            size={12}
-            className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
-          />
-        </div>
-      </div>
-    </>
-  );
-
-  const cls =
-    "group flex flex-col border border-border bg-surface h-full border-l-2 border-l-transparent hover:border-l-accent transition-all duration-300 overflow-hidden";
-
-  if (hasCaseStudy) {
-    return (
-      <Link to="/work/$slug" params={{ slug: w.caseStudySlug! }} className={cls}>
-        {inner}
-      </Link>
-    );
-  }
+  const slug = w.caseStudySlug;
+  if (!slug) return null;
   return (
-    <a href={externalHref} target="_blank" rel="noopener noreferrer" className={cls}>
-      {inner}
-    </a>
+    <Link to="/work/$slug" params={{ slug }} className="group block h-full">
+      <div className="aspect-square overflow-hidden border border-border bg-surface">
+        <img src={w.image} alt={`${w.client} — project mockup`} width={768} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+      </div>
+      <div className="mt-5 flex items-start justify-between gap-3">
+        <h3 className="display-serif text-2xl text-foreground transition-colors group-hover:text-accent">{w.client}</h3>
+        <ArrowUpRight size={18} className="mt-1 shrink-0 text-accent" />
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-muted">{OUTCOMES[w.slug] ?? w.outcomeLine}</p>
+    </Link>
   );
 }

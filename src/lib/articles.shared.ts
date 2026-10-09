@@ -51,3 +51,14 @@ export function excerptFromHtml(html: string, length = 160): string {
     .trim();
   return text.length > length ? `${text.slice(0, length - 1)}…` : text;
 }
+
+/** Derived from saved content so future articles need no layout changes. */
+export function articleReadTime(article: Article): string {
+  if (article.body_html.includes("[[PLACEHOLDER:")) return "Read time pending";
+  const words = article.body_html.replace(/<[^>]*>/g, " ").trim().split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 200))} min read`;
+}
+
+export function articleExcerpt(article: Article): string {
+  return article.meta_description.trim() || excerptFromHtml(article.body_html);
+}
