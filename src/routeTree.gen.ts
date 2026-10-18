@@ -9,19 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
-import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as WorkIndexRouteImport } from './routes/work.index'
-import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
-import { Route as WorkSlugRouteImport } from './routes/work.$slug'
-import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
+import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
+import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
+import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 import { Route as ApiPublicArticleCoverSplatRouteImport } from './routes/api/public/article-cover/$'
 
-const ArticlesSitemapDotxmlRoute = ArticlesSitemapDotxmlRouteImport.update({
-  id: '/articles-sitemap.xml',
-  path: '/articles-sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnalyticsRoute = AnalyticsRouteImport.update({
@@ -29,14 +29,14 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ArticlesSitemapDotxmlRoute = ArticlesSitemapDotxmlRouteImport.update({
+  id: '/articles-sitemap.xml',
+  path: '/articles-sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkIndexRoute = WorkIndexRouteImport.update({
-  id: '/work/',
-  path: '/work/',
+const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
+  id: '/api/article-cover-upload',
+  path: '/api/article-cover-upload',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
@@ -44,19 +44,19 @@ const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
   path: '/articles/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkSlugRoute = WorkSlugRouteImport.update({
-  id: '/work/$slug',
-  path: '/work/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
   id: '/articles/$slug',
   path: '/articles/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
-  id: '/api/article-cover-upload',
-  path: '/api/article-cover-upload',
+const WorkIndexRoute = WorkIndexRouteImport.update({
+  id: '/work/',
+  path: '/work/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/work/$slug',
+  path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicArticleCoverSplatRoute =
@@ -150,11 +150,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/articles-sitemap.xml': {
-      id: '/articles-sitemap.xml'
-      path: '/articles-sitemap.xml'
-      fullPath: '/articles-sitemap.xml'
-      preLoaderRoute: typeof ArticlesSitemapDotxmlRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/analytics': {
@@ -164,18 +164,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/articles-sitemap.xml': {
+      id: '/articles-sitemap.xml'
+      path: '/articles-sitemap.xml'
+      fullPath: '/articles-sitemap.xml'
+      preLoaderRoute: typeof ArticlesSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/': {
-      id: '/work/'
-      path: '/work'
-      fullPath: '/work/'
-      preLoaderRoute: typeof WorkIndexRouteImport
+    '/api/article-cover-upload': {
+      id: '/api/article-cover-upload'
+      path: '/api/article-cover-upload'
+      fullPath: '/api/article-cover-upload'
+      preLoaderRoute: typeof ApiArticleCoverUploadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/articles/': {
@@ -185,13 +185,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/$slug': {
-      id: '/work/$slug'
-      path: '/work/$slug'
-      fullPath: '/work/$slug'
-      preLoaderRoute: typeof WorkSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/articles/$slug': {
       id: '/articles/$slug'
       path: '/articles/$slug'
@@ -199,11 +192,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/article-cover-upload': {
-      id: '/api/article-cover-upload'
-      path: '/api/article-cover-upload'
-      fullPath: '/api/article-cover-upload'
-      preLoaderRoute: typeof ApiArticleCoverUploadRouteImport
+    '/work/': {
+      id: '/work/'
+      path: '/work'
+      fullPath: '/work/'
+      preLoaderRoute: typeof WorkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/work/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/article-cover/$': {
