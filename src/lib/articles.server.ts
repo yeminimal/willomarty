@@ -1,5 +1,5 @@
 import sanitizeHtml from "sanitize-html";
-import { useSession } from "@tanstack/react-start/server";
+import { getSession } from "@tanstack/react-start/server";
 import { createHash, timingSafeEqual } from "node:crypto";
 
 export const PUBLISH_SESSION_NAME = "wom-publish";
@@ -23,7 +23,7 @@ export function getPublishSessionConfig() {
 }
 
 export async function isPublishUnlocked(): Promise<boolean> {
-  const session = await useSession<PublishSession>(getPublishSessionConfig());
+  const session = await getSession<PublishSession>(getPublishSessionConfig());
   return session.data.unlocked === true;
 }
 

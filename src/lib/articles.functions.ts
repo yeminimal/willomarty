@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { useSession } from "@tanstack/react-start/server";
+import { clearSession, updateSession } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
 import type { Article } from "./articles.shared";
@@ -78,15 +78,13 @@ export const unlockPublish = createServerFn({ method: "POST" })
     if (!data.passphrase || !passphraseMatches(data.passphrase, expected)) {
       return { ok: false as const };
     }
-    const session = await useSession<{ unlocked?: boolean }>(getPublishSessionConfig());
-    await session.update({ unlocked: true });
+    await updateSession<{ unlocked?: boolean }>(getPublishSessionConfig(), { unlocked: true });
     return { ok: true as const };
   });
 
 export const lockPublish = createServerFn({ method: "POST" }).handler(async () => {
   const { getPublishSessionConfig } = await import("./articles.server");
-  const session = await useSession<{ unlocked?: boolean }>(getPublishSessionConfig());
-  await session.clear();
+  await clearSession(getPublishSessionConfig());
   return { ok: true as const };
 });
 
