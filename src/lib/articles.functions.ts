@@ -46,7 +46,7 @@ export const listPublishedArticles = createServerFn({ method: "GET" }).handler(a
 });
 
 export const getPublishedArticle = createServerFn({ method: "GET" })
-  .inputValidator((data: { slug: string }) => data)
+  .validator((data: { slug: string }) => data)
   .handler(async ({ data }) => {
     const { sanitizeArticleHtml } = await import("./articles.server");
     const { data: row, error } = await publicClient()
@@ -70,7 +70,7 @@ export const getPublishGateState = createServerFn({ method: "GET" }).handler(asy
 });
 
 export const unlockPublish = createServerFn({ method: "POST" })
-  .inputValidator((data: { passphrase: string }) => data)
+  .validator((data: { passphrase: string }) => data)
   .handler(async ({ data }) => {
     const { getPublishSessionConfig, passphraseMatches } = await import("./articles.server");
     const expected = process.env["PUBLISH_ACCESS_CODE"];
@@ -116,7 +116,7 @@ export interface ArticleInput {
 }
 
 export const saveArticle = createServerFn({ method: "POST" })
-  .inputValidator((data: ArticleInput) => data)
+  .validator((data: ArticleInput) => data)
   .handler(async ({ data }) => {
     const { requirePublishUnlocked, sanitizeArticleHtml } = await import("./articles.server");
     await requirePublishUnlocked();
@@ -158,7 +158,7 @@ export const saveArticle = createServerFn({ method: "POST" })
   });
 
 export const unpublishArticle = createServerFn({ method: "POST" })
-  .inputValidator((data: { id: string }) => data)
+  .validator((data: { id: string }) => data)
   .handler(async ({ data }) => {
     const { requirePublishUnlocked } = await import("./articles.server");
     await requirePublishUnlocked();
@@ -172,7 +172,7 @@ export const unpublishArticle = createServerFn({ method: "POST" })
   });
 
 export const deleteArticle = createServerFn({ method: "POST" })
-  .inputValidator((data: { id: string }) => data)
+  .validator((data: { id: string }) => data)
   .handler(async ({ data }) => {
     const { requirePublishUnlocked } = await import("./articles.server");
     await requirePublishUnlocked();
