@@ -24,7 +24,7 @@ export function getPublishSessionConfig() {
 
 export async function isPublishUnlocked(): Promise<boolean> {
   const session = await getSession<PublishSession>(getPublishSessionConfig());
-  return session.data.unlocked === true;
+  return session?.data?.unlocked === true;
 }
 
 export async function requirePublishUnlocked(): Promise<void> {
