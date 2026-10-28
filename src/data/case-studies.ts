@@ -107,7 +107,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       {
         kind: "prose",
         heading: "Outcome",
-        body: "No usage metrics available. Concretely: Incash was delivered as a complete product across web app, mobile app and website, from scratch, under a fixed timeline and brand system, with usability testing directly shaping onboarding for a three-sided user base.",
+        body: "Google Play lists Incash in the Finance category, with 50K+ downloads and an average rating of 4.0 out of 5 from 123 reviews. Beyond the numbers, Incash was delivered as a complete product across web app, mobile app and website, from scratch, under a fixed timeline and brand system, with usability testing directly shaping onboarding for a three-sided user base.",
       },
     ],
   },
