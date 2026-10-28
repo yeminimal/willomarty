@@ -303,12 +303,13 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
 
 "webflow-development": {
     slug: "webflow-development",
-    client: "Webflow Development",
+    client: "YDPay",
     role: "Brand, Web, & Product Designer",
     scope: "Website redesign & optimization",
-    industry: "Fintech",
+    industry: "Fintech · YDPay",
+    liveLink: { label: "ydpay.webflow.io", url: "https://ydpay.webflow.io/" },
     image: webflowDevImg.url,
-    metaTitle: "Webflow Development — Case Study | Williams Olayemi Martins",
+    metaTitle: "YDPay Case Study | Williams Olayemi Martins",
     metaDescription:
       "Website redesign and optimization for a fintech platform — improved visual direction, stronger typographic contrast and accessibility, and clearer navigation across key pages.",
     sections: [
@@ -324,10 +325,20 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
           {
             label: "UI & Layout Refinements",
             body: "Rebalanced hero sections across the site for stronger visual hierarchy and responsiveness, refined the spacing and alignment of core interface components, and improved the structure of key feature and informational pages for cleaner presentation.",
+            visuals: [{
+              src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F7deb340724ba48e8a636706cfda31aac?format=webp&width=800&height=1200",
+              alt: "YDPay homepage hero section",
+              caption: "Rebalanced hero section, homepage.",
+            }],
           },
           {
             label: "Typography & Accessibility",
             body: "Raised typographic contrast across key sections to improve readability and meet accessibility standards, and resolved legibility issues within support and help-center content.",
+            visuals: [{
+              src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F0f2641c5f2fe41e89dd90e01c56b41a9?format=webp&width=800&height=1200",
+              alt: "YDPay support and FAQ page",
+              caption: "Support and FAQ content, improved for legibility.",
+            }],
           },
           {
             label: "Navigation & Component Improvements",
@@ -336,13 +347,18 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
           {
             label: "Page-Specific Enhancements",
             body: "Repositioned key visual elements for stronger hierarchy, built a new blog listing page and article template, completed several new feature and informational pages, and restructured legal and policy content for clarity.",
+            visuals: [{
+              src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F4fe7446f91ec44ed95534bbe650e4c47?format=webp&width=800&height=1200",
+              alt: "YDPay page screenshot",
+              caption: "New feature page, built as part of the engagement.",
+            }],
           },
         ],
       },
       {
         kind: "callout",
         heading: "Outcome",
-        body: "An ongoing engagement: a visually refined, more accessible website with new visually consitent pages and improved navigation.",
+        body: "An ongoing engagement: a visually refined, more accessible website with new visually consistent pages and improved navigation.",
       },
     ],
   },
