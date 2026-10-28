@@ -6,13 +6,22 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 
-function SectionVisuals({ visuals }: { visuals?: { src: string; alt: string; caption?: string }[] }) {
+function SectionVisuals({
+  visuals,
+  layout,
+  caption,
+}: {
+  visuals?: { src: string; alt: string; caption?: string }[];
+  layout?: "grid";
+  caption?: string;
+}) {
   if (!visuals?.length) return null;
   const supporting = visuals.some((visual) => visual.caption);
+  const grid = visuals.length > 1 && (layout === "grid" || !supporting);
   return (
-    <div className={`mt-6 ${visuals.length > 1 && !supporting ? "grid gap-4 sm:grid-cols-2" : "space-y-5"}`}>
+    <div className={`mt-6 ${grid ? "grid gap-4 sm:grid-cols-2" : "space-y-5"}`}>
       {visuals.map((visual) => (
-        <figure key={visual.src} className={visual.caption && visuals.length > 1 ? "max-w-xs" : ""}>
+        <figure key={visual.src} className={supporting && visuals.length > 1 ? "max-w-xs" : ""}>
           <img src={visual.src} alt={visual.alt} loading="lazy" className="block w-full border border-border" />
           {visual.caption && (
             <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
@@ -21,6 +30,11 @@ function SectionVisuals({ visuals }: { visuals?: { src: string; alt: string; cap
           )}
         </figure>
       ))}
+      {caption && (
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted sm:col-span-2">
+          {caption}
+        </p>
+      )}
     </div>
   );
 }
@@ -53,7 +67,7 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
               </dt>
               <dd className="text-[15px] leading-relaxed text-foreground/80 max-w-[62ch]">
                 <p>{it.body}</p>
-                <SectionVisuals visuals={it.visuals} />
+                <SectionVisuals visuals={it.visuals} layout={it.visualLayout} caption={it.visualsCaption} />
               </dd>
             </div>
           ))}

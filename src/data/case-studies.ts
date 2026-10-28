@@ -14,7 +14,7 @@ type SectionVisual = { src: string; alt: string; caption?: string };
 
 export type CaseStudySection =
   | { kind: "prose"; heading: string; body: string | string[]; visuals?: SectionVisual[] }
-  | { kind: "list"; heading: string; items: { label: string; body: string; visuals?: SectionVisual[] }[] }
+  | { kind: "list"; heading: string; items: { label: string; body: string; visuals?: SectionVisual[]; visualLayout?: "grid"; visualsCaption?: string }[] }
   | { kind: "callout"; heading: string; body: string; visuals?: SectionVisual[] }
   | { kind: "placeholder"; heading: string; note: string }
   | { kind: "image"; heading?: string; src: string; alt: string; caption?: string };
@@ -157,13 +157,38 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
           {
             label: "System, not just a mark",
             body: "The identity was built modular and scalable from the start — logo, color and type all function independently across social, print and digital, not just on one flagship application.",
+            visuals: [
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Ff6b69d5eb0824fb98afbc7a08321f879?format=webp&width=800&height=1200",
+                alt: "Zamack social post about creating an effective business ad",
+              },
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F04fc10ffc98e45388a063ca625730a2a?format=webp&width=800&height=1200",
+                alt: "Zamack Happy New Month social post",
+              },
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F18449695e8574c6680cc72e767b8adaf?format=webp&width=800&height=1200",
+                alt: "Zamack tax policy social post with gold accents",
+              },
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F563959cb10f94e9b98e22e096f586e4a?format=webp&width=800&height=1200",
+                alt: "Zamack New Month Lore social post",
+              },
+            ],
+            visualLayout: "grid",
+            visualsCaption: "The identity applied across recurring social campaigns.",
           },
         ],
       },
       {
         kind: "callout",
-        heading: "Trade-off — dropping the purple gradient",
-        body: "The initial logo concept used a purple gradient. It was dropped for a black-and-white version for practical reasons: legibility and scalability at small sizes (Instagram profile photo, Twitter avatar), and reliable contrast across every background color the brand would appear on. Visual ambition gave way to functional consistency.",
+        heading: "Trade-off: monochrome logo, gradient marketing",
+        body: "The initial logo concept used two solid colors. It was replaced with a monochrome version for practical reasons: legibility and scalability at small sizes such as Instagram profile photos and Twitter avatars, and reliable contrast across the backgrounds the brand would appear on. The purple gradient did not disappear. It moved into the marketing system, where it was used across social templates and campaign materials. The logo stayed monochrome so it could sit clearly on any background, including the gradient. Visual ambition gave way to functional consistency at the mark level, while the system remained expressive.",
+        visuals: [{
+          src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F45a560d6efec45f0ba6a2f6056448f6b?format=webp&width=800&height=1200",
+          alt: "Zamack tax policy social post with a monochrome logo and purple-gradient coin accents",
+          caption: "Monochrome logo on a purple-gradient marketing template.",
+        }],
       },
       {
         kind: "prose",
