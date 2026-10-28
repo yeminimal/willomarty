@@ -2,8 +2,8 @@ import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { t as SectionLabel } from "./SectionLabel-D9JpdkKt.mjs";
 import { t as Reveal } from "./Reveal-DyVWGN_r.mjs";
 import { _ as createFileRoute, g as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-import { n as listPublishedArticles } from "./articles.functions-BBI7SurF.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-rcpteAE-.js
+import { r as listPublishedArticles } from "./articles.functions-CWdfKmly.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DmGIgNiq.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/components/portfolio/Faq.tsx";
 var FAQS = [
@@ -224,7 +224,7 @@ var TOOLS = [
 		}.url
 	}
 ];
-var $$splitComponentImporter = () => import("./routes-CqQVW9Ph.mjs");
+var $$splitComponentImporter = () => import("./routes-DC8s6Cu5.mjs");
 var SITE_URL = "https://willomarty.net.ng";
 var PERSON_SCHEMA = {
 	"@context": "https://schema.org",

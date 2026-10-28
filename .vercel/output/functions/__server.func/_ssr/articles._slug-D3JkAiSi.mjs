@@ -3,9 +3,9 @@ import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { k as ArrowLeft } from "../_libs/lucide-react.mjs";
 import { n as Footer, r as Nav } from "./Footer-pXqaVCHB.mjs";
 import { a as formatDate, i as articleReadTime } from "./articles.shared-DtbdIfsT.mjs";
-import { n as portrait_webp_asset_default, t as Route } from "./articles._slug-DNFdiH84.mjs";
+import { n as portrait_webp_asset_default, t as Route } from "./articles._slug-CqdPziNa.mjs";
 import { t as ArticleCard } from "./ArticleCard-Bi6rlrJx.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-CXJe1706.js
+//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-D3JkAiSi.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/routes/articles.$slug.tsx?tsr-split=component";
 function ArticlePage() {

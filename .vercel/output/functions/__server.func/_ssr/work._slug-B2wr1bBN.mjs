@@ -1,7 +1,7 @@
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as Route } from "./work._slug-Bp5u52Kt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/work._slug-R1vSXaCK.js
+import { t as Route } from "./work._slug-Dn301Z7d.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/work._slug-B2wr1bBN.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/routes/work.$slug.tsx?tsr-split=notFoundComponent";
 function CaseStudyNotFound() {

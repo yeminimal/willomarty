@@ -7,8 +7,8 @@ import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { k as ArrowLeft } from "../_libs/lucide-react.mjs";
 import { n as Footer, r as Nav, t as Button } from "./Footer-pXqaVCHB.mjs";
 import { t as ArticleCard } from "./ArticleCard-Bi6rlrJx.mjs";
-import { t as Route } from "./articles.index-7KXPjAeM.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-CBu2ykvO.js
+import { t as Route } from "./articles.index-Bia0hCnF.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-CbChwLHm.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/routes/articles.index.tsx?tsr-split=component";

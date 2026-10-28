@@ -5,9 +5,9 @@ import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { D as ArrowUpRight, O as ArrowRight, S as CodeXml, a as Sparkle, c as PenTool, d as Monitor, h as Layers, i as Sparkles, w as Clapperboard } from "../_libs/lucide-react.mjs";
 import { n as Footer, r as Nav, t as Button } from "./Footer-pXqaVCHB.mjs";
 import { t as ArticleCard } from "./ArticleCard-Bi6rlrJx.mjs";
-import { n as Route, r as TOOLS, t as Faq } from "./routes-rcpteAE-.mjs";
+import { n as Route, r as TOOLS, t as Faq } from "./routes-DmGIgNiq.mjs";
 import { t as FEATURED_WORK } from "./work-Bex4Vnww.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CqQVW9Ph.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DC8s6Cu5.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName$7 = "/root/app/code/src/components/portfolio/Hero.tsx";
 function Hero() {

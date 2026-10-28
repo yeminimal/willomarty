@@ -1,7 +1,7 @@
 import { _ as createFileRoute, g as lazyRouteComponent, q as notFound } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as absoluteUrl, t as SITE_URL } from "./articles.shared-DtbdIfsT.mjs";
-import { n as listPublishedArticles, t as getPublishedArticle } from "./articles.functions-BBI7SurF.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-DNFdiH84.js
+import { n as getPublishedArticle, r as listPublishedArticles } from "./articles.functions-CWdfKmly.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-CqdPziNa.js
 var portrait_webp_asset_default = {
 	version: 1,
 	asset_id: "e2e28b92-b762-4b20-94eb-e994c6f516b5",
@@ -14,7 +14,7 @@ var portrait_webp_asset_default = {
 	created_at: "2026-06-21T08:05:19Z"
 };
 var $$splitNotFoundComponentImporter = () => import("./articles._slug-DuenTqmf.mjs");
-var $$splitComponentImporter = () => import("./articles._slug-CXJe1706.mjs");
+var $$splitComponentImporter = () => import("./articles._slug-D3JkAiSi.mjs");
 var Route = createFileRoute("/articles/$slug")({
 	loader: async ({ params }) => {
 		const article = await getPublishedArticle({ data: { slug: params.slug } });

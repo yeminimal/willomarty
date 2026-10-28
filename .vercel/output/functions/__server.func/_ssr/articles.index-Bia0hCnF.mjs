@@ -1,8 +1,8 @@
 import { _ as createFileRoute, g as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as SITE_URL } from "./articles.shared-DtbdIfsT.mjs";
-import { n as listPublishedArticles } from "./articles.functions-BBI7SurF.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-7KXPjAeM.js
-var $$splitComponentImporter = () => import("./articles.index-CBu2ykvO.mjs");
+import { r as listPublishedArticles } from "./articles.functions-CWdfKmly.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-Bia0hCnF.js
+var $$splitComponentImporter = () => import("./articles.index-CbChwLHm.mjs");
 var TITLE = "Articles — Williams Olayemi Martins";
 var DESCRIPTION = "Essays and notes on brand identity, product design, web design and building small tools, by Williams Olayemi Martins.";
 var Route = createFileRoute("/articles/")({

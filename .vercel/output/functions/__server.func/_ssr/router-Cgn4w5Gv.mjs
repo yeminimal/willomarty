@@ -4,18 +4,19 @@ import { t as QueryClientProvider } from "../_libs/react+tanstack__react-query.m
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as absoluteUrl, t as SITE_URL$2 } from "./articles.shared-DtbdIfsT.mjs";
-import { n as listPublishedArticles } from "./articles.functions-BBI7SurF.mjs";
-import { n as portrait_webp_asset_default, t as Route$9 } from "./articles._slug-DNFdiH84.mjs";
-import { t as Route$10 } from "./articles.index-7KXPjAeM.mjs";
+import { r as listPublishedArticles } from "./articles.functions-CWdfKmly.mjs";
+import { n as portrait_webp_asset_default, t as Route$9 } from "./articles._slug-CqdPziNa.mjs";
+import { t as Route$10 } from "./articles.index-Bia0hCnF.mjs";
+import { t as Route$11 } from "./publish-DmvxBXmf.mjs";
 import { t as reportLovableError } from "./lovable-error-reporting-4GCzfVkY.mjs";
-import { n as Route$11 } from "./routes-rcpteAE-.mjs";
-import { t as Route$12 } from "./work._slug-Bp5u52Kt.mjs";
+import { n as Route$12 } from "./routes-DmGIgNiq.mjs";
+import { t as Route$13 } from "./work._slug-Dn301Z7d.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Analytics } from "../_libs/vercel__analytics.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CNouP-wx.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Cgn4w5Gv.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
-var styles_default = "/assets/styles-CyYZd3Ye.css";
+var styles_default = "/assets/styles-Cm-jrr6i.css";
 var _jsxFileName = "/root/app/code/src/routes/__root.tsx";
 var SITE_URL$1 = "https://willomarty.net.ng";
 function NotFoundComponent() {
@@ -548,7 +549,7 @@ var Route = createFileRoute("/api/public/article-cover/$")({ server: { handlers:
 		"cache-control": "public, max-age=31536000, immutable"
 	} });
 } } } });
-var IndexRoute = Route$11.update({
+var IndexRoute = Route$12.update({
 	id: "/",
 	path: "/",
 	getParentRoute: () => Route$8
@@ -578,6 +579,11 @@ var EducationRoute = Route$3.update({
 	path: "/education",
 	getParentRoute: () => Route$8
 });
+var PublishRoute = Route$11.update({
+	id: "/publish",
+	path: "/publish",
+	getParentRoute: () => Route$8
+});
 var ApiArticleCoverUploadRoute = Route$2.update({
 	id: "/api/article-cover-upload",
 	path: "/api/article-cover-upload",
@@ -605,9 +611,10 @@ var rootRouteChildren = {
 	ArticlesSitemapDotxmlRoute,
 	ContactRoute,
 	EducationRoute,
+	PublishRoute,
 	ApiArticleCoverUploadRoute,
 	ArticlesSlugRoute,
-	WorkSlugRoute: Route$12.update({
+	WorkSlugRoute: Route$13.update({
 		id: "/work/$slug",
 		path: "/work/$slug",
 		getParentRoute: () => Route$8

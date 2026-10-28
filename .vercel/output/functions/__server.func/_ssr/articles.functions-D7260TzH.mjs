@@ -2,7 +2,7 @@ import { o as slugify } from "./articles.shared-DtbdIfsT.mjs";
 import { a as TSS_SERVER_FUNCTION, l as createServerFn } from "./createServerFn-yTfeHp1H.mjs";
 import { r as useSession$1 } from "./request-response-5koI5ADI.mjs";
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles.functions-Daj22oVf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/articles.functions-D7260TzH.js
 var createServerRpc = (serverFnMeta, splitImportFn) => {
 	const url = "/_serverFn/" + serverFnMeta.id;
 	return Object.assign(splitImportFn, {
@@ -80,7 +80,12 @@ var unlockPublish_createServerFn_handler = createServerRpc({
 var unlockPublish = createServerFn({ method: "POST" }).validator((data) => data).handler(unlockPublish_createServerFn_handler, async ({ data }) => {
 	const { getPublishSessionConfig, passphraseMatches } = await import("./articles.server-Q4MjEcVg.mjs");
 	const expected = process.env["PUBLISH_ACCESS_CODE"];
-	if (!expected) throw new Error("PUBLISH_ACCESS_CODE is not set");
+	const publicKey = process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["SUPABASE_ANON_KEY"];
+	const serviceKey = process.env["SUPABASE_SERVICE_ROLE_KEY"];
+	if (!expected || expected === publicKey || expected === serviceKey) return {
+		ok: false,
+		reason: "misconfigured"
+	};
 	if (!data.passphrase || !passphraseMatches(data.passphrase, expected)) return { ok: false };
 	await (await useSession$1(getPublishSessionConfig())).update({ unlocked: true });
 	return { ok: true };
