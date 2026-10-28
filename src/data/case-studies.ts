@@ -2,13 +2,20 @@ import incashImg from "@/assets/work-incash.png.asset.json";
 import zamackImg from "@/assets/work-zamack-consults.jpg.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import moonRepublicProcessImg from "@/assets/work-moon-republic-process.png.asset.json";
-import frauwaImg from "@/assets/work-frauwa.png.asset.json";
+import { FRAUWA_COVER } from "@/data/work";
+
+const frauwaBoard = "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F97c3dd71844b4aeb82b75495c4620262?format=webp&width=800&height=1200";
+const frauwaPattern = "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F51076b1c49eb4dde8525efa4204bc56a?format=webp&width=800&height=1200";
+const frauwaPatch = "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fe1399860e24d4f3b9675891ad8092e1e?format=webp&width=800&height=1200";
+const frauwaWordmark = "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fa396f45b57504103a325c7da3e544a87?format=webp&width=800&height=1200";
 const webflowDevImg = { url: "/webflow-development.jpg" };
 
+type SectionVisual = { src: string; alt: string; caption?: string };
+
 export type CaseStudySection =
-  | { kind: "prose"; heading: string; body: string | string[] }
-  | { kind: "list"; heading: string; items: { label: string; body: string }[] }
-  | { kind: "callout"; heading: string; body: string }
+  | { kind: "prose"; heading: string; body: string | string[]; visuals?: SectionVisual[] }
+  | { kind: "list"; heading: string; items: { label: string; body: string; visuals?: SectionVisual[] }[] }
+  | { kind: "callout"; heading: string; body: string; visuals?: SectionVisual[] }
   | { kind: "placeholder"; heading: string; note: string }
   | { kind: "image"; heading?: string; src: string; alt: string; caption?: string };
 
@@ -211,7 +218,7 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     scope: "Brand identity, promo reel, website",
     industry: "Construction / Interior Decor",
     liveLink: { label: "Watch promo reel", url: "https://www.instagram.com/reel/DZ0_BfwM33F/?igsh=dm01eXJhb2Y0eXM4" },
-    image: frauwaImg.url,
+    image: FRAUWA_COVER,
     metaTitle: "Frauwa Roofs & Interior Decor — Case Study | Williams Olayemi Martins",
     metaDescription:
       "Full identity, promo reel and website for a construction-to-interiors brand. One arch that reads as both a roofline and a window sill — built to stand out in a category of sameness.",
@@ -233,10 +240,15 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
           {
             label: "Logo",
             body: "The core design challenge was the company's own history. Frauwa started as a roofing company and later expanded into interior decor — two services that don't obviously share a visual language. The solution was an arch: a form that reads simultaneously as a roofline (construction) and a window sill (interior decor), letting one mark represent both halves of the business instead of forcing a compromise.",
+            visuals: [
+              { src: frauwaBoard, alt: "Frauwa brand board with wordmark, arch icons and supporting pattern" },
+              { src: frauwaPattern, alt: "Repeating Frauwa arch pattern in cream on green", caption: "Supporting pattern" },
+            ],
           },
           {
             label: "Color and typography",
             body: "Chosen specifically to break from the sameness identified in the competitive research, rather than to fit inside the conventions of the construction category.",
+            visuals: [{ src: frauwaWordmark, alt: "Frauwa cream serif wordmark on a deep green background" }],
           },
         ],
       },
@@ -244,16 +256,28 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         kind: "callout",
         heading: "Holding the line against the conventional direction",
         body: "The client initially wanted the conventional route — the same generic construction-logo style every competitor uses. That request was pushed back on directly: the entire point was to stand out, not blend in, and the generic path would make it far harder to build a distinct name in a crowded category. Holding that position was as much a part of the work as the design itself.",
+        visuals: [{ src: frauwaBoard, alt: "Frauwa identity system with arch marks and pattern" }],
+      },
+      {
+        kind: "prose",
+        heading: "In Application",
+        body: "The identity needed to work beyond a screen, on uniforms, hard hats and site signage as well as a website.",
+        visuals: [
+          { src: frauwaPatch, alt: "Frauwa logo patch on deep green fabric" },
+          { src: FRAUWA_COVER, alt: "Frauwa branding on green and white hard hats" },
+        ],
       },
       {
         kind: "prose",
         heading: "The Promo Reel",
         body: "Built to showcase Frauwa's offerings and past work, used to run promotional ad campaigns — a moving, campaign-ready extension of the new brand system rather than a one-off.",
+        visuals: [{ src: frauwaWordmark, alt: "Frauwa wordmark in cream on green", caption: "The identity behind the promo reel" }],
       },
       {
         kind: "prose",
         heading: "Outcome",
         body: "Delivered as a full package — brand identity, marketing materials, a promo reel used for ads, and a company website. No formal metrics tracked, but the deliverables represent a complete identity system, including a client conversation won on reasoning, not just execution.",
+        visuals: [{ src: frauwaBoard, alt: "Frauwa's finished wordmark, arch icon and supporting pattern" }],
       },
     ],
   },

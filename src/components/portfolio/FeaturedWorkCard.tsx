@@ -13,7 +13,7 @@ export function FeaturedWorkCard({ w }: { w: Work }) {
   return (
     <Link to="/work/$slug" params={{ slug }} className="group block h-full">
       <div className="aspect-square overflow-hidden border border-border bg-surface">
-        <img src={w.image} alt={`${w.client} — project mockup`} width={768} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+        <img src={w.image} alt={w.imageAlt ?? `${w.client} — project mockup`} width={768} height={768} loading="lazy" className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.02] ${w.slug === "frauwa" ? "object-contain bg-[#eaeaea]" : "object-cover"}`} />
       </div>
       <div className="mt-5 flex items-start justify-between gap-3">
         <h3 className="display-serif text-2xl text-foreground transition-colors group-hover:text-accent">{w.client}</h3>

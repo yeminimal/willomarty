@@ -6,6 +6,25 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 
+function SectionVisuals({ visuals }: { visuals?: { src: string; alt: string; caption?: string }[] }) {
+  if (!visuals?.length) return null;
+  const supporting = visuals.some((visual) => visual.caption);
+  return (
+    <div className={`mt-6 ${visuals.length > 1 && !supporting ? "grid gap-4 sm:grid-cols-2" : "space-y-5"}`}>
+      {visuals.map((visual) => (
+        <figure key={visual.src} className={visual.caption && visuals.length > 1 ? "max-w-xs" : ""}>
+          <img src={visual.src} alt={visual.alt} loading="lazy" className="block w-full border border-border" />
+          {visual.caption && (
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+              {visual.caption}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 function SectionBlock({ section }: { section: CaseStudySection }) {
   if (section.kind === "prose") {
     const paras = Array.isArray(section.body) ? section.body : [section.body];
@@ -17,6 +36,7 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
             <p key={i}>{p}</p>
           ))}
         </div>
+        <SectionVisuals visuals={section.visuals} />
       </div>
     );
   }
@@ -32,7 +52,8 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
                 {it.label}
               </dt>
               <dd className="text-[15px] leading-relaxed text-foreground/80 max-w-[62ch]">
-                {it.body}
+                <p>{it.body}</p>
+                <SectionVisuals visuals={it.visuals} />
               </dd>
             </div>
           ))}
@@ -50,6 +71,7 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
         <p className="mt-4 text-[16px] leading-relaxed text-foreground/80 max-w-[62ch]">
           {section.body}
         </p>
+        <SectionVisuals visuals={section.visuals} />
       </div>
     );
   }
@@ -111,7 +133,7 @@ export function CaseStudyLayout({ study }: { study: CaseStudy }) {
               <img
                 src={study.image}
                 alt={`${study.client} — ${study.scope}`}
-                className="h-full w-full object-cover"
+                className={`h-full w-full ${study.slug === "frauwa" ? "object-contain bg-[#eaeaea]" : "object-cover"}`}
                 width={1280}
                 height={720}
               />

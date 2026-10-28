@@ -1,5 +1,5 @@
 import vanaImg from "@/assets/work-vana.jpg.asset.json";
-import frauwaImg from "@/assets/featured-frauwa.png.asset.json";
+export const FRAUWA_COVER = "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fd1df7ebe9fdf4bc8925da59d8284b806?format=webp&width=800&height=1200";
 import zamackImg from "@/assets/featured-zamack.png.asset.json";
 import moonRepublicImg from "@/assets/work-moon-republic.png.asset.json";
 import activatePilotImg from "@/assets/work-activate-pilot.jpg.asset.json";
@@ -21,6 +21,7 @@ export type Work = {
   description: string;
   link?: string;
   image?: string;
+  imageAlt?: string;
   /** Featured on the homepage Selected Work grid (larger card). */
   featured?: boolean;
   /** Slug of a matching case study under /work/$slug. When present, the card links there. */
@@ -93,7 +94,8 @@ export const WORK: Work[] = [
     description:
       "Full identity, promo reel and website for a company that grew from roofing into interior decor — one mark carrying both halves of the business.",
     link: "https://vt.tiktok.com/ZSQKPaKbA/",
-    image: frauwaImg.url,
+    image: FRAUWA_COVER,
+    imageAlt: "Frauwa Roofs & Interior Decor — Brand identity, promo reel, website",
     featured: true,
     caseStudySlug: "frauwa",
     role: "Lead Visual Designer · Construction / Interior Decor",
