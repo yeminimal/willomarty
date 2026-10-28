@@ -22,11 +22,11 @@ export function WorkCard({ w }: { w: Work }) {
         {w.image ? (
           <img
             src={w.image}
-            alt={`${w.client} — ${w.discipline}`}
+            alt={w.imageAlt ?? `${w.client} — ${w.discipline}`}
             loading="lazy"
             width={1280}
             height={720}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.02] ${w.slug === "frauwa" ? "object-contain bg-[#eaeaea]" : "object-cover"}`}
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-tag">
