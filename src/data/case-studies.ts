@@ -51,6 +51,13 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         kind: "prose",
         heading: "The Brief",
         body: "Incash was built from scratch to give employees access to salary advances, repaid in installments or in full, removing the wait between need and payday. Built under three constraints: a fixed delivery timeline across three surfaces at once, an already-established brand system (color and typography set before design work began), and a small team — one UI/UX designer working directly with the UX Lead.",
+        visuals: [
+          {
+            src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F6ba48c1a7e234bacb1059167e0f54be9?format=webp&width=800&height=1200",
+            alt: "Incash About Us, Contact Us and Request Demo website pages",
+            caption: "Marketing website and employer-facing pages.",
+          },
+        ],
       },
       {
         kind: "prose",
@@ -72,6 +79,18 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
           {
             label: "Onboarding",
             body: "Onboarding and interface introduction were designed directly, since three different user types on one platform made a clear first-run experience critical rather than cosmetic.",
+            visuals: [
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F4460192f69c24b12bc70229ef269d5f3?format=webp&width=800&height=1200",
+                alt: "Incash mobile standee showing the salary advance landing screen",
+                caption: "First-run marketing screen, mobile.",
+              },
+              {
+                src: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F774d5e3bbad54de9a27c8796b1f2c6bb?format=webp&width=800&height=1200",
+                alt: "Incash employee dashboard standee with balance, request button and recent requests",
+                caption: "Employee dashboard to request and track salary advances.",
+              },
+            ],
           },
         ],
       },
