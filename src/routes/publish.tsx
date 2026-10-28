@@ -58,10 +58,15 @@ function PublishPage() {
     setMessage("");
     try {
       const result = await unlockPublish({ data: { passphrase } });
-      if (result.ok) setUnlocked(true);
-      else setMessage("reason" in result ? "Set a unique PUBLISH_ACCESS_CODE that is different from every Supabase key." : "That passphrase did not match.");
+      if (result.ok) {
+        const session = await getPublishGateState();
+        if (session.unlocked) setUnlocked(true);
+        else setMessage("Your browser did not retain the publishing session. Open /publish in a new tab and unlock again.");
+      } else {
+        setMessage("reason" in result ? "Set a unique PUBLISH_ACCESS_CODE that is different from every Supabase key." : "That passphrase did not match.");
+      }
     } catch {
-      setMessage("Publishing is not configured yet. Set PUBLISH_ACCESS_CODE in the project environment.");
+      setMessage("Could not confirm the publishing session. Open /publish in a new tab and unlock again.");
     } finally {
       setPending(false);
     }
