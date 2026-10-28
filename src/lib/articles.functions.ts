@@ -74,7 +74,11 @@ export const unlockPublish = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { getPublishSessionConfig, passphraseMatches } = await import("./articles.server");
     const expected = process.env["PUBLISH_ACCESS_CODE"];
-    if (!expected) throw new Error("PUBLISH_ACCESS_CODE is not set");
+    const publicKey = process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["SUPABASE_ANON_KEY"];
+    const serviceKey = process.env["SUPABASE_SERVICE_ROLE_KEY"];
+    if (!expected || expected === publicKey || expected === serviceKey) {
+      return { ok: false as const, reason: "misconfigured" as const };
+    }
     if (!data.passphrase || !passphraseMatches(data.passphrase, expected)) {
       return { ok: false as const };
     }

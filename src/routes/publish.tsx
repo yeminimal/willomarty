@@ -59,7 +59,7 @@ function PublishPage() {
     try {
       const result = await unlockPublish({ data: { passphrase } });
       if (result.ok) setUnlocked(true);
-      else setMessage("That passphrase did not match.");
+      else setMessage("reason" in result ? "Set a unique PUBLISH_ACCESS_CODE that is different from every Supabase key." : "That passphrase did not match.");
     } catch {
       setMessage("Publishing is not configured yet. Set PUBLISH_ACCESS_CODE in the project environment.");
     } finally {
