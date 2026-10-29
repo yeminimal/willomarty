@@ -3,27 +3,12 @@ import { Link } from "@tanstack/react-router";
 import type { Work } from "@/data/work";
 
 export function FeaturedWorkCard({ w }: { w: Work }) {
-  const hasCaseStudy = Boolean(w.caseStudySlug);
-  const externalHref = w.link ?? "https://www.behance.net/willomarty";
-
-  const inner = (
-    <>
-      <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-background">
-        {w.image && (
-          <img
-            src={w.image}
-            alt={`${w.client} — ${w.discipline}`}
-            loading="lazy"
-            width={1280}
-            height={720}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-          />
-        )}
-        {hasCaseStudy && (
-          <span className="absolute top-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent border border-accent/40 bg-background/80 backdrop-blur px-2 py-1 whitespace-nowrap">
-            ✦ Case Study
-          </span>
-        )}
+  const slug = w.caseStudySlug;
+  if (!slug) return null;
+  return (
+    <Link to="/work/$slug" params={{ slug }} className="group block h-full">
+      <div className="aspect-square overflow-hidden border border-border bg-surface">
+        <img src={w.image} alt={w.imageAlt ?? `${w.client} — project mockup`} width={768} height={768} loading="lazy" className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.02] ${w.slug === "frauwa" ? "object-contain bg-[#eaeaea]" : "object-cover"}`} />
       </div>
 
       <div className="p-7 md:p-9 flex-1 flex flex-col">

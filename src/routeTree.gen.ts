@@ -15,6 +15,7 @@ import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EducationRouteImport } from './routes/education'
+import { Route as PublishRouteImport } from './routes/publish'
 import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
@@ -50,6 +51,11 @@ const ContactRoute = ContactRouteImport.update({
 const EducationRoute = EducationRouteImport.update({
   id: '/education',
   path: '/education',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublishRoute = PublishRouteImport.update({
+  id: '/publish',
+  path: '/publish',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/publish': typeof PublishRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/publish': typeof PublishRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/publish': typeof PublishRoute
   '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/publish'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/publish'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/publish'
     | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   ArticlesSitemapDotxmlRoute: typeof ArticlesSitemapDotxmlRoute
   ContactRoute: typeof ContactRoute
   EducationRoute: typeof EducationRoute
+  PublishRoute: typeof PublishRoute
   ApiArticleCoverUploadRoute: typeof ApiArticleCoverUploadRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
@@ -229,6 +242,13 @@ declare module '@tanstack/react-router' {
       path: '/education'
       fullPath: '/education'
       preLoaderRoute: typeof EducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publish': {
+      id: '/publish'
+      path: '/publish'
+      fullPath: '/publish'
+      preLoaderRoute: typeof PublishRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/article-cover-upload': {
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArticlesSitemapDotxmlRoute: ArticlesSitemapDotxmlRoute,
   ContactRoute: ContactRoute,
   EducationRoute: EducationRoute,
+  PublishRoute: PublishRoute,
   ApiArticleCoverUploadRoute: ApiArticleCoverUploadRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
