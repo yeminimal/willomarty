@@ -166,7 +166,7 @@ export interface FileRouteTypes {
     | '/work/$slug'
     | '/articles'
     | '/work'
-    | '/api/public/article-cover/$'
+    | '/api/public article-cover/$'
   id:
     | '__root__'
     | '/'

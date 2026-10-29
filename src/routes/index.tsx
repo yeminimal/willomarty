@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
-import { MetricStrip } from "@/components/portfolio/MetricStrip";
+import { About } from "@/components/portfolio/About";
 // import { Experience } from "@/components/portfolio/Experience";
 import { Work } from "@/components/portfolio/Work";
 import { Tools } from "@/components/portfolio/Tools";
 import { Skills } from "@/components/portfolio/Skills";
+import { Education } from "@/components/portfolio/Education";
+import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
-import { LatestArticles } from "@/components/articles/LatestArticles";
-import { listPublishedArticles } from "@/lib/articles.functions";
 import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
@@ -92,7 +92,6 @@ const TOOLS_SCHEMA = {
 
 export const Route = createFileRoute("/")(
   {
-    loader: () => listPublishedArticles(),
     head: () => ({
       meta: [
         { title: "Williams Olayemi Martins — Brand, Product & Web Designer" },
@@ -125,6 +124,12 @@ export const Route = createFileRoute("/")(
       ],
       links: [
         { rel: "canonical", href: SITE_URL },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        },
       ],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
@@ -138,17 +143,18 @@ export const Route = createFileRoute("/")(
 );
 
 function Index() {
-  const articles = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
       <main>
         <Hero />
-        <MetricStrip />
+        <About />
+        {/* <Experience /> */}
         <Work />
-        <LatestArticles articles={articles} />
         <Tools />
         <Skills />
+        <Education />
+        <Contact />
         <Faq />
       </main>
       <Footer />
