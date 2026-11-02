@@ -1,13 +1,1 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "vite",
-  "buildCommand": "bun run build",
-  "outputDirectory": ".output",
-  "installCommand": "bun install --frozen-lockfile",
-  "rewrites": [
-    {
-      "source": "/__l5e/:path*",
-      "destination": "https://project--f1851375-a6e9-4675-b255-2aa4c603bacf.lovable.app/__l5e/:path*"
-    }
-  ]
-}
+{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "bun run build", "installCommand": "bun install --frozen-lockfile", "rewrites": [{"source": "/__l5e/:path*", "destination": "https://project--f1851375-a6e9-4675-b255-2aa4c603bacf.lovable.app/__l5e/:path*"}]}
