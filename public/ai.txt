@@ -161,7 +161,7 @@ Email:       willomarty01@gmail.com
 # -------------------------------------------------------
  
 Services:
-  - Brand identity and logo design
+  - Brand identity and visual design
   - Web design (Webflow, Framer, Figma, WordPress)
   - UI/UX and product design
   - Frontend development (React, TypeScript, Tailwind CSS)
