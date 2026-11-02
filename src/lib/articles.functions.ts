@@ -6,6 +6,9 @@ import type { Article } from "./articles.shared";
 import { slugify } from "./articles.shared";
 import { supabaseRuntimePublishableKey, supabaseRuntimeUrl } from "./supabase-runtime";
 
+const ARTICLE_COLUMNS =
+  "id, title, slug, meta_description, cover_image_url, body_html, tags, status, published_at, created_at, updated_at";
+
 function publicClient() {
   const key = supabaseRuntimePublishableKey();
   return createClient<Database>(supabaseRuntimeUrl(), key, {
@@ -72,7 +75,7 @@ export const unlockPublish = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { getPublishSessionConfig, passphraseMatches } = await import("./articles.server");
     const expected = process.env["PUBLISH_ACCESS_CODE"];
-    const publicKey = process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["SUPABASE_ANON_KEY"];
+    const publicKey = supabaseRuntimePublishableKey();
     const serviceKey = process.env["SUPABASE_SERVICE_ROLE_KEY"];
     if (!expected || expected === publicKey || expected === serviceKey) {
       return { ok: false as const, reason: "misconfigured" as const };
