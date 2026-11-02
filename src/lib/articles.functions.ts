@@ -4,13 +4,11 @@ import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
 import type { Article } from "./articles.shared";
 import { slugify } from "./articles.shared";
-
-const ARTICLE_COLUMNS =
-  "id, title, slug, meta_description, cover_image_url, body_html, tags, status, published_at, created_at, updated_at";
+import { supabaseRuntimePublishableKey, supabaseRuntimeUrl } from "./supabase-runtime";
 
 function publicClient() {
-  const key = process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["SUPABASE_ANON_KEY"]!;
-  return createClient<Database>(process.env["SUPABASE_URL"]!, key, {
+  const key = supabaseRuntimePublishableKey();
+  return createClient<Database>(supabaseRuntimeUrl(), key, {
     auth: { persistSession: false, autoRefreshToken: false },
     global: {
       fetch: (input, init) => {
