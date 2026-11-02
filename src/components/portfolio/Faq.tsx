@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 const FAQS = [
   {
     q: "Who is Williams Olayemi Martins?",
-    a: "Williams Olayemi Martins is a Nigerian brand & product designer based in Lagos. He works across brand identity, UI/UX, video production & motion design, and has built four browser-based micro-tools.",
+    a: "Williams Olayemi Martins is a Nigerian brand & product designer based in Lagos. He works across brand identity, web & product design, video production & motion design, and has built four browser-based micro-tools.",
   },
   {
     q: "What services does Williams Olayemi Martins offer?",
@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "What industries has Williams designed for?",
-    a: "Fintech (Incash), real estate and proptech (Caretaker Pro, Getcrib), fashion and e-commerce (Zaytrix Modeste, Juliet Moses), Web3 and education (Moon Republic), legal and business services (Zamack Consults), construction and interiors (Frauwa), health (Mytherapist.ng) and consumer packaged goods (Vana, Rebound).",
+    a: "Fintech (Incash, YDPay), real estate and proptech (Caretaker Pro, Getcrib), fashion and e-commerce (Zaytrix Modeste, Juliet Moses), Web3 and education (Moon Republic), legal and business services (Zamack Consults), construction, interiors and janitorial (Frauwa, Tutchonce), health (Mytherapist.ng) and consumer packaged goods (Vana, Rebound).",
   },
   {
     q: "Does Williams offer web design alongside branding?",
