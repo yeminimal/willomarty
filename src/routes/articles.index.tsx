@@ -17,8 +17,8 @@ const PER_PAGE = 4;
 
 export const Route = createFileRoute("/articles/")({
   validateSearch: (search: Record<string, unknown>) => ({
-    tag: typeof search.tag === "string" && search.tag ? search.tag : "All",
-    page: Math.max(1, Number(search.page) || 1),
+    tag: typeof search.tag === "string" && search.tag ? search.tag : undefined,
+    page: Number(search.page) || undefined,
   }),
   head: () => ({
     meta: [
@@ -39,7 +39,8 @@ export const Route = createFileRoute("/articles/")({
 
 function ArticlesArchive() {
   const articles = PUBLISHED_ARTICLES;
-  const { tag, page } = Route.useSearch();
+  const tag = Route.useSearch({ select: (s) => s.tag ?? "All" });
+  const page = Route.useSearch({ select: (s) => s.page ?? 1 });
   const navigate = useNavigate({ from: Route.fullPath });
 
   const tags = [...new Set(articles.flatMap((article) => article.tags))];
@@ -49,7 +50,12 @@ function ArticlesArchive() {
   const visible = grouped.slice((current - 1) * PER_PAGE, current * PER_PAGE);
 
   const goTo = (nextTag: string, nextPage: number) =>
-    navigate({ search: { tag: nextTag, page: nextPage } });
+    navigate({
+      search: {
+        tag: nextTag === "All" ? undefined : nextTag,
+        page: nextPage > 1 ? nextPage : undefined,
+      },
+    });
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
