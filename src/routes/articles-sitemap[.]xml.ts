@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SITE_URL, absoluteUrl } from "@/lib/articles.shared";
-import { listPublishedArticles } from "@/lib/articles.functions";
+import { PUBLISHED_ARTICLES } from "@/data/articles";
 
 function escapeXml(value: string) {
   return value.replace(/[<>&'"]/g, (c) =>
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/articles-sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const articles = await listPublishedArticles();
+        const articles = PUBLISHED_ARTICLES;
         const urls = articles
           .map((a) => {
             const image = absoluteUrl(a.cover_image_url);

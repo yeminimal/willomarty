@@ -1,21 +1,25 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { listPublishedArticles } from "@/lib/articles.functions";
+import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { SITE_URL } from "@/lib/articles.shared";
 
 const TITLE = "Articles — Williams Olayemi Martins";
 const DESCRIPTION =
   "Essays and notes on brand identity, product design, web design and building small tools, by Williams Olayemi Martins.";
 
+const PER_PAGE = 4;
+
 export const Route = createFileRoute("/articles/")({
-  loader: () => listPublishedArticles(),
+  validateSearch: (search: Record<string, unknown>) => ({
+    tag: typeof search.tag === "string" && search.tag ? search.tag : "All",
+    page: Math.max(1, Number(search.page) || 1),
+  }),
   head: () => ({
     meta: [
       { title: TITLE },
@@ -34,11 +38,18 @@ export const Route = createFileRoute("/articles/")({
 });
 
 function ArticlesArchive() {
-  const articles = Route.useLoaderData();
-  const [tag, setTag] = useState("All");
-  const [sort, setSort] = useState("newest");
+  const articles = PUBLISHED_ARTICLES;
+  const { tag, page } = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
+
   const tags = [...new Set(articles.flatMap((article) => article.tags))];
-  const visible = articles.filter((article) => tag === "All" || article.tags.includes(tag)).sort((a, b) => sort === "title" ? a.title.localeCompare(b.title) : sort === "oldest" ? (a.published_at ?? "").localeCompare(b.published_at ?? "") : (b.published_at ?? "").localeCompare(a.published_at ?? ""));
+  const grouped = tag === "All" ? articles : articles.filter((article) => article.tags.includes(tag));
+  const pageCount = Math.max(1, Math.ceil(grouped.length / PER_PAGE));
+  const current = Math.min(page, pageCount);
+  const visible = grouped.slice((current - 1) * PER_PAGE, current * PER_PAGE);
+
+  const goTo = (nextTag: string, nextPage: number) =>
+    navigate({ search: { tag: nextTag, page: nextPage } });
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -68,10 +79,21 @@ function ArticlesArchive() {
             </div>
           </Reveal>
 
-          {articles.length > 6 && <div className="mt-10 flex flex-wrap items-center gap-2">
-            {["All", ...tags].map((item) => <Button key={item} size="sm" variant={tag === item ? "default" : "outline"} onClick={() => setTag(item)}>{item}</Button>)}
-            <label className="ml-auto flex items-center gap-2 text-sm text-muted">Sort <select aria-label="Sort articles" value={sort} onChange={(event) => setSort(event.target.value)} className="border border-border bg-background p-2 text-foreground"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
-          </div>}
+          {articles.length > 0 && (
+            <div className="mt-10 flex flex-wrap items-center gap-2">
+              {["All", ...tags].map((item) => (
+                <Button
+                  key={item}
+                  size="sm"
+                  variant={tag === item ? "default" : "outline"}
+                  onClick={() => goTo(item, 1)}
+                >
+                  {item}
+                </Button>
+              ))}
+            </div>
+          )}
+
           {articles.length === 0 ? (
             <div className="mt-14 border border-border bg-surface p-10 text-center">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim">
@@ -82,13 +104,42 @@ function ArticlesArchive() {
               </p>
             </div>
           ) : (
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 [&>div]:min-w-0">
-              {visible.map((a, i) => (
-                <Reveal key={a.id} delay={Math.min(i * 0.02, 0.2)}>
-                  <ArticleCard article={a} />
-                </Reveal>
-              ))}
-            </div>
+            <>
+              <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 [&>div]:min-w-0">
+                {visible.map((a, i) => (
+                  <Reveal key={a.id} delay={Math.min(i * 0.02, 0.2)}>
+                    <ArticleCard article={a} />
+                  </Reveal>
+                ))}
+              </div>
+
+              {pageCount > 1 && (
+                <nav
+                  aria-label="Article pages"
+                  className="mt-12 flex items-center justify-center gap-4"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={current <= 1}
+                    onClick={() => goTo(tag, current - 1)}
+                  >
+                    <ChevronLeft size={14} /> Prev
+                  </Button>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                    Page {current} of {pageCount}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={current >= pageCount}
+                    onClick={() => goTo(tag, current + 1)}
+                  >
+                    Next <ChevronRight size={14} />
+                  </Button>
+                </nav>
+              )}
+            </>
           )}
         </div>
       </main>
