@@ -4,30 +4,28 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import portrait from "@/assets/portrait.webp.asset.json";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { getPublishedArticle, listPublishedArticles } from "@/lib/articles.functions";
+import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { SITE_URL, absoluteUrl, formatDate, articleReadTime } from "@/lib/articles.shared";
 
 export const Route = createFileRoute("/articles/$slug")({
-  loader: async ({ params }) => {
-    const article = await getPublishedArticle({ data: { slug: params.slug } });
-    if (!article) throw notFound();
-    const articles = await listPublishedArticles();
-    return { ...article, related: articles.filter((item) => item.id !== article.id).sort((a, b) => Number(b.tags.some((tag) => article.tags.includes(tag))) - Number(a.tags.some((tag) => article.tags.includes(tag)))).slice(0, 3) };
+  beforeLoad: ({ params }) => {
+    if (!PUBLISHED_ARTICLES.some((article) => article.slug === params.slug)) throw notFound();
   },
-  head: ({ params, loaderData }) => {
-    if (!loaderData) {
+  head: ({ params }) => {
+    const article = PUBLISHED_ARTICLES.find((a) => a.slug === params.slug);
+    if (!article) {
       return {
         meta: [{ title: "Article not found" }, { name: "robots", content: "noindex" }],
       };
     }
     const url = `${SITE_URL}/articles/${params.slug}`;
-    const image = absoluteUrl(loaderData.cover_image_url);
+    const image = absoluteUrl(article.cover_image_url);
     return {
       meta: [
-        { title: `${loaderData.title} — Williams Olayemi Martins` },
-        { name: "description", content: loaderData.meta_description },
-        { property: "og:title", content: loaderData.title },
-        { property: "og:description", content: loaderData.meta_description },
+        { title: `${article.title} — Williams Olayemi Martins` },
+        { name: "description", content: article.meta_description },
+        { property: "og:title", content: article.title },
+        { property: "og:description", content: article.meta_description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         ...(image
@@ -37,8 +35,8 @@ export const Route = createFileRoute("/articles/$slug")({
             ]
           : []),
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: loaderData.title },
-        { name: "twitter:description", content: loaderData.meta_description },
+        { name: "twitter:title", content: article.title },
+        { name: "twitter:description", content: article.meta_description },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -47,13 +45,13 @@ export const Route = createFileRoute("/articles/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: loaderData.title,
-            description: loaderData.meta_description,
+            headline: article.title,
+            description: article.meta_description,
             image: image || undefined,
-            datePublished: loaderData.published_at,
-            dateModified: loaderData.updated_at,
+            datePublished: article.published_at,
+            dateModified: article.updated_at,
             mainEntityOfPage: url,
-            keywords: loaderData.tags.join(", ") || undefined,
+            keywords: article.tags.join(", ") || undefined,
             author: {
               "@type": "Person",
               name: "Williams Olayemi Martins",
@@ -99,7 +97,15 @@ function ArticleNotFound() {
 }
 
 function ArticlePage() {
-  const article = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const article = PUBLISHED_ARTICLES.find((a) => a.slug === slug)!;
+  const related = PUBLISHED_ARTICLES.filter((item) => item.slug !== article.slug)
+    .sort(
+      (a, b) =>
+        Number(b.tags.some((tag) => article.tags.includes(tag))) -
+        Number(a.tags.some((tag) => article.tags.includes(tag))),
+    )
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -129,10 +135,9 @@ function ArticlePage() {
             ))}
           </div>
 
-
           <div
             className="prose-article mt-10"
-            // Sanitized server-side on save and again on read.
+            // Body HTML is authored directly in src/data/articles.ts.
             dangerouslySetInnerHTML={{ __html: article.body_html }}
           />
           <div className="mt-14 flex items-center gap-5 border-t border-border pt-8">
@@ -140,7 +145,7 @@ function ArticlePage() {
             <div><p className="display-serif text-xl">Williams Olayemi Martins</p><p className="mt-2 text-sm text-muted">Lagos-based brand, product & web designer.</p><Link to="/" className="mt-3 inline-block font-mono text-[10px] uppercase text-accent-dim hover:text-accent">Back to portfolio</Link></div>
           </div>
         </article>
-        {article.related.length > 0 && <section className="mx-auto mt-20 max-w-[1100px] border-t border-border px-6 pt-12 md:px-10"><h2 className="display-serif text-3xl">More articles</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{article.related.map((item) => <ArticleCard key={item.id} article={item} compact />)}</div></section>}
+        {related.length > 0 && <section className="mx-auto mt-20 max-w-[1100px] border-t border-border px-6 pt-12 md:px-10"><h2 className="display-serif text-3xl">More articles</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{related.map((item) => <ArticleCard key={item.id} article={item} compact />)}</div></section>}
       </main>
       <Footer />
     </div>
