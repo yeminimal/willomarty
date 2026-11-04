@@ -25,11 +25,20 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Yandex search and Webmaster crawlers: allow all public URLs,
-# including the Webmaster site-verification file.
+# --- Yandex search and Webmaster crawlers ---
+User-agent: Yandex
+Allow: /
+Allow: /yandex_3b1905dcd4c61560.html
+
 User-agent: YandexBot
 Allow: /
 Allow: /yandex_3b1905dcd4c61560.html
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: YandexMedia
+Allow: /
 
 # --- AI assistants / LLM crawlers ---
 User-agent: GPTBot
