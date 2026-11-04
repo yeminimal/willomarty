@@ -9,7 +9,7 @@ import { Skills } from "@/components/portfolio/Skills";
 import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { LatestArticles } from "@/components/articles/LatestArticles";
-import { listPublishedArticles } from "@/lib/articles.functions";
+import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
@@ -92,7 +92,6 @@ const TOOLS_SCHEMA = {
 
 export const Route = createFileRoute("/")(
   {
-    loader: () => listPublishedArticles(),
     head: () => ({
       meta: [
         { title: "Williams Olayemi Martins — Brand, Product & Web Designer" },
@@ -138,7 +137,7 @@ export const Route = createFileRoute("/")(
 );
 
 function Index() {
-  const articles = Route.useLoaderData();
+  const articles = PUBLISHED_ARTICLES;
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />

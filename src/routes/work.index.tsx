@@ -1,6 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
-import { WORK } from "@/data/work";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { WORK, workCategory, WORK_CATEGORY_ORDER } from "@/data/work";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
@@ -9,7 +10,13 @@ import { WorkCard } from "@/components/portfolio/WorkCard";
 
 const SITE_URL = "https://willomarty.net.ng";
 
+const PER_PAGE = 4;
+
 export const Route = createFileRoute("/work/")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    tag: typeof search.tag === "string" && search.tag ? search.tag : "All",
+    page: Math.max(1, Number(search.page) || 1),
+  }),
   head: () => ({
     meta: [
       { title: "Selected Work — Williams Olayemi Martins" },
@@ -40,6 +47,18 @@ export const Route = createFileRoute("/work/")({
 });
 
 function WorkArchive() {
+  const { tag, page } = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
+
+  const grouped =
+    tag === "All" ? WORK : WORK.filter((w) => workCategory(w) === tag);
+  const pageCount = Math.max(1, Math.ceil(grouped.length / PER_PAGE));
+  const current = Math.min(page, pageCount);
+  const visible = grouped.slice((current - 1) * PER_PAGE, current * PER_PAGE);
+
+  const goTo = (nextTag: string, nextPage: number) =>
+    navigate({ search: { tag: nextTag, page: nextPage } });
+
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
@@ -68,13 +87,50 @@ function WorkArchive() {
             </div>
           </Reveal>
 
+          <div className="mt-10 flex flex-wrap items-center gap-2">
+            {["All", ...WORK_CATEGORY_ORDER].map((item) => (
+              <Button
+                key={item}
+                size="sm"
+                variant={tag === item ? "default" : "outline"}
+                onClick={() => goTo(item, 1)}
+              >
+                {item}
+              </Button>
+            ))}
+          </div>
+
           <div className="mt-14 grid md:grid-cols-2 gap-5">
-            {WORK.map((w, i) => (
+            {visible.map((w, i) => (
               <Reveal key={w.slug} delay={Math.min(i * 0.02, 0.2)}>
                 <WorkCard w={w} />
               </Reveal>
             ))}
           </div>
+
+          {pageCount > 1 && (
+            <nav aria-label="Work pages" className="mt-12 flex items-center justify-center gap-4">
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={current <= 1}
+                onClick={() => goTo(tag, current - 1)}
+              >
+                <ChevronLeft size={14} /> Prev
+              </Button>
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                Page {current} of {pageCount}
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={current >= pageCount}
+                onClick={() => goTo(tag, current + 1)}
+              >
+                Next <ChevronRight size={14} />
+              </Button>
+            </nav>
+          )}
         </div>
       </main>
       <Footer />

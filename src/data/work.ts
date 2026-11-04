@@ -199,6 +199,39 @@ export const WORK: Work[] = [
   },
 ];
 
+/**
+ * Archive grouping: one category tag per project, shown as filter chips on /work.
+ * Every project should carry a category; unknown slugs fall back to "Other".
+ */
+export const WORK_CATEGORY_ORDER = [
+  "Brand Identity",
+  "Web & Product",
+  "Marketing",
+  "Video",
+] as const;
+
+const WORK_CATEGORIES: Record<string, string> = {
+  incash: "Web & Product",
+  "webflow-development": "Web & Product",
+  "zamack-consults": "Brand Identity",
+  "moon-republic": "Marketing",
+  frauwa: "Brand Identity",
+  "zaytrix-modeste": "Web & Product",
+  "caretaker-pro": "Web & Product",
+  vana: "Brand Identity",
+  getcrib: "Marketing",
+  "activate-pilot": "Brand Identity",
+  "juliet-moses": "Brand Identity",
+  rebound: "Brand Identity",
+  mytherapistng: "Marketing",
+  "zaytrix-mgmt": "Web & Product",
+  endsars: "Video",
+};
+
+export function workCategory(w: Work): string {
+  return WORK_CATEGORIES[w.slug] ?? "Other";
+}
+
 export const FEATURED_WORK = ["incash", "webflow-development", "frauwa", "zamack-consults"].flatMap((slug) => {
   const project = WORK.find((w) => w.slug === slug && w.featured);
   return project ? [project] : [];
