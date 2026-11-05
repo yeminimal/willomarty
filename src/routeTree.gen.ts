@@ -15,13 +15,10 @@ import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EducationRouteImport } from './routes/education'
-import { Route as PublishRouteImport } from './routes/publish'
-import { Route as ApiArticleCoverUploadRouteImport } from './routes/api/article-cover-upload'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
-import { Route as ApiPublicArticleCoverSplatRouteImport } from './routes/api/public/article-cover/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -53,16 +50,6 @@ const EducationRoute = EducationRouteImport.update({
   path: '/education',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublishRoute = PublishRouteImport.update({
-  id: '/publish',
-  path: '/publish',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiArticleCoverUploadRoute = ApiArticleCoverUploadRouteImport.update({
-  id: '/api/article-cover-upload',
-  path: '/api/article-cover-upload',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
   id: '/articles/',
   path: '/articles/',
@@ -83,12 +70,6 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicArticleCoverSplatRoute =
-  ApiPublicArticleCoverSplatRouteImport.update({
-    id: '/api/public/article-cover/$',
-    path: '/api/public/article-cover/$',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -97,13 +78,10 @@ export interface FileRoutesByFullPath {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
-  '/publish': typeof PublishRoute
-  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/work/': typeof WorkIndexRoute
-  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -112,13 +90,10 @@ export interface FileRoutesByTo {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
-  '/publish': typeof PublishRoute
-  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles': typeof ArticlesIndexRoute
   '/work': typeof WorkIndexRoute
-  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -128,13 +103,10 @@ export interface FileRoutesById {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
-  '/publish': typeof PublishRoute
-  '/api/article-cover-upload': typeof ApiArticleCoverUploadRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles/': typeof ArticlesIndexRoute
   '/work/': typeof WorkIndexRoute
-  '/api/public/article-cover/$': typeof ApiPublicArticleCoverSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -145,13 +117,10 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
-    | '/publish'
-    | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles/'
     | '/work/'
-    | '/api/public/article-cover/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -160,13 +129,10 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
-    | '/publish'
-    | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles'
     | '/work'
-    | '/api/public/article-cover/$'
   id:
     | '__root__'
     | '/'
@@ -175,13 +141,10 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
-    | '/publish'
-    | '/api/article-cover-upload'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles/'
     | '/work/'
-    | '/api/public/article-cover/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -191,13 +154,10 @@ export interface RootRouteChildren {
   ArticlesSitemapDotxmlRoute: typeof ArticlesSitemapDotxmlRoute
   ContactRoute: typeof ContactRoute
   EducationRoute: typeof EducationRoute
-  PublishRoute: typeof PublishRoute
-  ApiArticleCoverUploadRoute: typeof ApiArticleCoverUploadRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
   WorkIndexRoute: typeof WorkIndexRoute
-  ApiPublicArticleCoverSplatRoute: typeof ApiPublicArticleCoverSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -244,20 +204,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EducationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/publish': {
-      id: '/publish'
-      path: '/publish'
-      fullPath: '/publish'
-      preLoaderRoute: typeof PublishRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/article-cover-upload': {
-      id: '/api/article-cover-upload'
-      path: '/api/article-cover-upload'
-      fullPath: '/api/article-cover-upload'
-      preLoaderRoute: typeof ApiArticleCoverUploadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/articles/': {
       id: '/articles/'
       path: '/articles'
@@ -286,13 +232,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/article-cover/$': {
-      id: '/api/public/article-cover/$'
-      path: '/api/public/article-cover/$'
-      fullPath: '/api/public/article-cover/$'
-      preLoaderRoute: typeof ApiPublicArticleCoverSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -303,13 +242,10 @@ const rootRouteChildren: RootRouteChildren = {
   ArticlesSitemapDotxmlRoute: ArticlesSitemapDotxmlRoute,
   ContactRoute: ContactRoute,
   EducationRoute: EducationRoute,
-  PublishRoute: PublishRoute,
-  ApiArticleCoverUploadRoute: ApiArticleCoverUploadRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,
   WorkIndexRoute: WorkIndexRoute,
-  ApiPublicArticleCoverSplatRoute: ApiPublicArticleCoverSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
