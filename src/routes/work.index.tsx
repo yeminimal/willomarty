@@ -13,7 +13,7 @@ const SITE_URL = "https://willomarty.net.ng";
 const PER_PAGE = 4;
 
 export const Route = createFileRoute("/work/")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { tag?: string; page?: number } => ({
     tag: typeof search.tag === "string" && search.tag ? search.tag : undefined,
     page: Number(search.page) || undefined,
   }),
