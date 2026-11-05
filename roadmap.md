@@ -9,3 +9,7 @@
 - [x] Add latest writing and extend article archive/detail from existing persistence with labeled placeholders.
 - [x] Update article discovery and search metadata.
 - [x] Verify homepage and article navigation, and apply required package update.
+- [x] Make articles fully static in src/data/articles.ts; remove the publish page, passphrase gate, editor, upload endpoints and unused packages.
+- [x] Update llms.txt / ai.txt / AGENTS.md to match the static article source.
+- [x] Group the /work and /articles archives by tag with four cards per page.
+- [x] Verify archives, pagination and article page in the preview.

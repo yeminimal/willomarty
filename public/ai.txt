@@ -241,7 +241,7 @@ Article-Sitemap: https://willomarty.net.ng/articles-sitemap.xml
 Path: /articles
 Browsing: allowed
 Citation: allowed
-Context: Design, logo design, branding, Framer, Webflow and WordPress notes. Explicitly labeled placeholder copy is not an authored claim and should not be quoted as one.
+Context: Design, logo design, branding, Framer, Webflow and WordPress notes. Only completed, published essays are public; drafts stay off the site and should not be cited.
 
 About: https://willomarty.net.ng/about
 Education: https://willomarty.net.ng/education
