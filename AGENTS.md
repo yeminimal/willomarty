@@ -9,7 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Articles use the existing persistent article store; derive excerpts and reading time in shared helpers so layouts stay unchanged when content is added.
-- Homepage writing and related articles consume the same public published-article query as the archive, avoiding duplicate content sources.
+- Articles are static data in `src/data/articles.ts` (no backend); derive excerpts and reading time in shared helpers so layouts stay unchanged when content is added.
+- Homepage writing, the archive, detail pages and the article sitemap all consume the same `PUBLISHED_ARTICLES` list from that data file; adding an article is a data-only change.
 
 - About, education with certifications, and contact render their existing sections on dedicated public routes; homepage stays focused on work, and shared fonts live in the root head so direct visits retain typography.
