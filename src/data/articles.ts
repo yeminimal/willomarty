@@ -13,36 +13,54 @@ export const ARTICLES: Article[] = [
   {
     id: "57f82616-2611-4df0-ba50-c3bcae68b568",
     title: "When Your Webflow Mobile Text Layout Keeps Resetting Itself",
+    seo_title: "Webflow Mobile Layout Keeps Changing? Here's the Fix",
+    heading: "Why Your Webflow Mobile Text Layout Keeps Shifting (And How to Fix It)",
     slug: "when-your-webflow-mobile-text-layout-keeps-resetting-itself",
     meta_description:
-      "A personal account of a recurring Webflow mobile layout bug and how switching from Block to Flex stopped the hero text from resetting.",
+      "Fix a Webflow mobile layout that keeps shifting or resetting. Learn how Block layouts, Auto sizing and fixed minimum dimensions can affect responsive text positioning.",
     cover_image_url: webflowMobileLayoutCover,
-    body_html: `<p>I publish a site, check it on mobile, everything looks right. The hero text sitting exactly where it should, then I come back a few hours later, open the same page, and the text has drifted out of position again. Not after a scroll, not after some interaction, it's already wrong the second the page loads. I'd get into the Designer, nudge things back into place, it holds for a while, then quietly resets itself again without me touching anything.</p>
-<p>For a bit I genuinely wondered if someone else on the team was messing things up, but after reaching out, nobody had.</p>
-<h2>The diagnosis</h2>
-<p>A few details kept pointing in the same direction, even before I had an answer:</p>
-<p>It only ever showed up on mobile. Desktop and tablet never budged, which ruled out anything global, like a shared class gone wrong somewhere upstream.</p>
-<p>It happened on every mobile browser I tried, not just one, so it wasn't a rendering quirk tied to a specific engine.</p>
-<p>The layout was already broken the instant the page loaded. Nothing shifted after the fact, which took scripts and animations off the suspect list.</p>
-<p>And the part that actually cracked it open: the bug kept happening inside the Webflow Designer itself, with zero edits made in between. That one detail rules out publishing and CDN caching entirely. If a layout breaks with nothing changed, the problem isn't how the site is being served, it's how the element itself is set up.</p>
-<h2>How did i fix it?</h2>
-<p>The hero text was sitting inside a <strong>Block</strong> layout. I switched it to <strong>Flex</strong>, and the issue hasn't come back since.</p>
-<p>Looking back, it makes sense. Block layout behaves closer to normal document flow, and mine was paired with width and height both set to Auto, plus fixed px values for min-width and min-height. That combination leaves a little too much room for interpretation, especially on mobile, where elements are more likely to get resized against the viewport. Flex gives the browser a much more explicit set of rules to follow, so there's less ambiguity left for things to drift into.</p>
-<p>To be clear, Block layout isn't broken. I'd still use it for simple stacked content with nothing fancy going on. It's specifically that mix, Block plus Auto plus fixed minimums, that opens the door for this kind of thing.</p>
-<h2>Here are a few habits I've kept since this happened</h2>
-<p>Default to Flex or Grid for anything with more than one child element that needs to behave predictably, hero sections especially. Save Block for places where you genuinely just want simple stacked flow.</p>
-<p>Be careful mixing Auto sizing with fixed min-width or min-height values. It's not wrong, it just needs testing across every breakpoint, not only the one you happen to be staring at.</p>
-<p>Remember that breakpoint styles inherit downward. A change you made at desktop can quietly resurface on mobile even if you never touched mobile styles directly.</p>
-<p>Get in the habit of re-checking mobile after any desktop edit, even ones that feel completely unrelated. It costs almost nothing and catches this whole category of bug before it ships.</p>
-<p>And if something breaks inside the Designer itself with no edits made, stop looking at your publish pipeline. The problem is sitting in the layout settings, not in deployment.</p>
-<p>If you're seeing the same issue in your own project, the <a href="https://community.webflow.com/ask-answer/post/texts-on-my-website-returns-back-to-wrong-layout-after-a-while-M9I7JEPDg45qp4L?highlight=lvYrt80KHZtTarI" target="_blank" rel="noreferrer">Webflow Community thread</a> is a good place to compare notes and see other fixes people have tried.</p>
-<h2>Quick checklist</h2>
-<ul><li>Bug only on mobile, desktop/tablet fine → check inherited or mobile-specific styles first</li><li>Breaks on load, not after → rule out scripts and animations</li><li>Reappears in the Designer with zero edits → it's a layout setting, not a caching issue</li><li>Block layout plus Auto sizing plus fixed minimums → prime suspect, try Flex</li><li>Confirm the fix holds after a fresh Designer reload, not just right after applying it</li></ul>`,
+    cover_image_alt: "Illustration of text layout shifting between desktop and mobile screens",
+    cover_image_width: 1536,
+    cover_image_height: 1024,
+    body_html: `<p>I published a site and checked it on mobile. Everything looked right: the hero text sat exactly where it should. A few hours later, I opened the same page and found it out of position again. It was already wrong when the page loaded, not after a scroll or interaction. I'd adjust it in the Designer, it would hold for a while, and then quietly reset without me touching anything.</p>
+<p>When your Webflow mobile layout keeps changing like that, it can be frustrating to know where to start. I even wondered whether someone else on the team had changed it, but nobody had. In my case, switching the text container from Block to Flex stopped the problem. Understanding the sizing around it helped me think more carefully about responsive layouts.</p>
+<h2>Why Your Webflow Mobile Layout Keeps Shifting</h2>
+<p>There isn't one cause for every mobile layout issue. Styles set at the desktop breakpoint cascade down through tablet and mobile unless they're overridden, so an inherited width, spacing or alignment setting can have an unexpected effect on a smaller screen.</p>
+<p>Fixed dimensions and minimum width or height can also keep an element larger than the available space. A parent container's size, padding or display settings affect its children, while font size, line height and text wrapping can change how much room a heading needs. Block and Flex arrange children differently, so the display setting is worth checking alongside those constraints.</p>
+<h2>Understanding the Layout Problem</h2>
+<p>A few details narrowed down my investigation. The issue showed up on mobile while desktop and tablet stayed in place. It happened in every mobile browser I tried, and the layout was already wrong when the page loaded. It also kept happening inside the Webflow Designer with no edits in between.</p>
+<p>That made a browser-specific quirk, a later animation or a publishing issue less convincing as explanations, and pushed me toward the layout settings. Those clues don't rule out scripts, inherited styles or caching in every project, though; they're a starting point for investigation, not a universal diagnosis.</p>
+<p>My hero text sat in a <strong>Block</strong> layout with width and height set to Auto and fixed pixel values for minimum width and height. Auto lets the browser calculate a dimension from the layout; a minimum still puts a floor under that calculation. On a narrow mobile viewport, a minimum width can restrict how far a container shrinks, and a minimum height can affect the space available for alignment. The parent container and its child elements all play a part.</p>
+<p>Block generally follows normal document flow. Flex, on the other hand, gives a parent controls for arranging and aligning its children along an axis. I suspect the combination of layout and sizing contributed to what I saw, but I didn't isolate each setting in a controlled test, so I can't claim those minimums alone caused the reset.</p>
+<h2>How I Fixed the Webflow Mobile Text Layout</h2>
+<p>The change that worked for me was straightforward:</p>
+<ol><li>I checked the mobile layout in the Designer and looked at the container holding the hero text.</li><li>I noted that it used Block, with Auto width and height and fixed minimum dimensions.</li><li>I changed the text container's display from Block to Flex. The issue hasn't come back since.</li></ol>
+<p>That's my reported fix, not a reason to switch every Block element to Flex. Block remains useful for simple content in normal flow; Flex is helpful when you need its controls for arranging and aligning children. If you try it, check the direction, alignment and wrapping at each breakpoint, and reload the Designer to see whether the result holds.</p>
+<h2>How to Prevent Webflow Mobile Layout Issues</h2>
+<p>I now pay closer attention to responsive breakpoints while building, rather than treating mobile as a final adjustment. After a desktop change, I recheck tablet and both mobile views: inherited styles can affect a smaller breakpoint even when I haven't edited it directly.</p>
+<p>Avoid fixed dimensions where the content needs room to adapt, and review minimum width and height against the smallest viewport you support. Inspect the parent container as well as the text element: padding, width and layout can all constrain a child. Then check font size, line height and wrapping at several viewport widths, not just one device preset.</p>
+<p>Choose Block, Flex or Grid for the layout you actually need. Auto sizing and fixed minimums aren't inherently wrong, but their combination deserves testing with real content across breakpoints.</p>
+<h2>Webflow Mobile Layout Troubleshooting Checklist</h2>
+<ul><li>Check the affected element's display setting and how it arranges its children.</li><li>Inspect parent containers for width, padding, alignment and overflow constraints.</li><li>Review width and height values, including fixed dimensions.</li><li>Check whether minimum width or height prevents the layout from adapting.</li><li>Compare inherited and breakpoint-specific styles on desktop, tablet and mobile.</li><li>Review font size, line height and text wrapping with the actual content.</li><li>Test several mobile viewport widths and check child sizing and positioning.</li><li>Reload the Designer and verify the change holds; if the published site differs, investigate publishing and caching too.</li></ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Why does my Webflow mobile layout keep changing?</h3>
+<p>Start with inherited breakpoint styles, parent container settings and fixed or minimum dimensions. A layout may also look different as text wraps at a narrower width. If the issue appears in the Designer as well as the published site, investigate the layout there; if it appears only on the published site, check publishing, caching and scripts too.</p>
+<h3>Why does my Webflow text move when I switch to mobile view?</h3>
+<p>The mobile viewport gives text less room, which can change wrapping and the height of its container. Inherited spacing, alignment or positioning may also have a different effect at that width. Inspect both the text and its parent at the mobile breakpoint before changing individual offsets.</p>
+<h3>Should I use Block or Flex in Webflow?</h3>
+<p>Use Block when normal document flow suits the content; use Flex when you need more control over the direction, alignment or wrapping of children. Neither is automatically better for mobile. Flex helped in my particular hero layout, but the right choice depends on the structure and sizing of your own design.</p>
+<h3>How do I stop text from overflowing in Webflow mobile view?</h3>
+<p>Check the text element and its parents for fixed widths, minimum widths and excessive padding. Allow the container to fit the viewport, and review font size and wrapping at narrow widths. Long unbroken words or links may also need a wrapping rule; test with the actual content rather than hiding overflow without finding its cause.</p>
+<h3>Why does my Webflow design look different on mobile and desktop?</h3>
+<p>Different viewport widths change the space available for containers and text, while breakpoint overrides can intentionally change styling. Desktop styles also cascade down unless replaced at a smaller breakpoint. Compare the parent and child settings across views, then resize between presets to catch problems at widths you might otherwise miss.</p>
+<h2>What I Took Away</h2>
+<p>My fix wasn't a magic setting; it was a reminder to understand how the layout and its constraints behave together. If your Webflow text is shifting on mobile, start with the evidence and test the container rather than assuming the same fix will work everywhere.</p>
+<p>For another perspective, there's a <a href="https://community.webflow.com/ask-answer/post/texts-on-my-website-returns-back-to-wrong-layout-after-a-while-M9I7JEPDg45qp4L?highlight=lvYrt80KHZtTarI">Webflow Community discussion about text returning to the wrong layout</a>. You can also explore <a href="/work/webflow-development">my Webflow website design and development work</a> or <a href="/articles">more articles on design</a>.</p>`,
     tags: ["Webflow", "Web Design", "Troubleshooting"],
     status: "published",
     published_at: "2026-11-07T14:50:00.000Z",
     created_at: "2026-11-07T14:50:00.000Z",
-    updated_at: "2026-11-07T14:50:00.000Z",
+    updated_at: "2026-11-07T22:17:13.000Z",
   },
   {
     id: "3448cd3e-a530-458b-a42b-8cc762986b40",

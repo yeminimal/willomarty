@@ -22,9 +22,9 @@ export const Route = createFileRoute("/articles/$slug")({
     const image = absoluteUrl(article.cover_image_url);
     return {
       meta: [
-        { title: `${article.title} — Williams Olayemi Martins` },
+        { title: article.seo_title ?? `${article.title} — Williams Olayemi Martins` },
         { name: "description", content: article.meta_description },
-        { property: "og:title", content: article.title },
+        { property: "og:title", content: article.seo_title ?? article.title },
         { property: "og:description", content: article.meta_description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/articles/$slug")({
             ]
           : []),
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: article.title },
+        { name: "twitter:title", content: article.seo_title ?? article.title },
         { name: "twitter:description", content: article.meta_description },
       ],
       links: [{ rel: "canonical", href: url }],
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/articles/$slug")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: article.title,
+            headline: article.heading ?? article.title,
             description: article.meta_description,
             image: image || undefined,
             datePublished: article.published_at,
@@ -120,9 +120,19 @@ function ArticlePage() {
             All articles
           </Link>
 
-          {article.cover_image_url && <img src={article.cover_image_url} alt={article.title} width={1200} height={630} loading="eager" fetchPriority="high" className="mt-10 aspect-[1.9] w-full border border-border object-cover" />}
+          {article.cover_image_url && (
+            <img
+              src={article.cover_image_url}
+              alt={article.cover_image_alt ?? article.title}
+              width={article.cover_image_width ?? 1200}
+              height={article.cover_image_height ?? 630}
+              loading="eager"
+              fetchPriority="high"
+              className="mt-10 aspect-[1.9] w-full border border-border object-cover"
+            />
+          )}
           <h1 className="display-serif mt-10 text-4xl md:text-5xl leading-[1.05]">
-            {article.title}
+            {article.heading ?? article.title}
           </h1>
 
           <div className="mt-5 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-accent-dim">

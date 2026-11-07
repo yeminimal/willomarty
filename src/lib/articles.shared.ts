@@ -5,6 +5,11 @@ export type ArticleStatus = "draft" | "published";
 export interface Article {
   id: string;
   title: string;
+  seo_title?: string;
+  heading?: string;
+  cover_image_alt?: string;
+  cover_image_width?: number;
+  cover_image_height?: number;
   slug: string;
   meta_description: string;
   cover_image_url: string;
