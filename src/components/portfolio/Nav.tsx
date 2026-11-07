@@ -3,7 +3,6 @@ import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
-import portrait from "@/assets/portrait.webp.asset.json";
 
 const PAGE_LINKS = [
   { to: "/about", label: "About" },
@@ -41,7 +40,7 @@ export function Nav() {
     >
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6 md:px-8 lg:px-10 min-h-16 flex items-center justify-between">
         <a href="/#hero" aria-label="Williams Olayemi Martins, home" className="shrink-0">
-          <img src={portrait.url} alt="Williams Olayemi Martins" width={40} height={40} className="h-9 w-9 rounded-full border border-border object-cover sm:h-10 sm:w-10" />
+          <img src="https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F4888ee5509e94c989ae74721d6a98e43?format=webp&width=800&height=1200" alt="Williams Olayemi Martins" width={40} height={40} className="h-9 w-9 rounded-md border border-border object-cover sm:h-10 sm:w-10" />
         </a>
         <nav className="hidden lg:flex items-center gap-3">
           {PAGE_LINKS.map((link) => <Link key={link.to} to={link.to} className="font-mono text-[11px] uppercase text-muted hover:text-accent">{link.label}</Link>)}
