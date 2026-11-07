@@ -4,13 +4,10 @@ import { Hero } from "@/components/portfolio/Hero";
 import { MetricStrip } from "@/components/portfolio/MetricStrip";
 // import { Experience } from "@/components/portfolio/Experience";
 import { Work } from "@/components/portfolio/Work";
-import { Tools } from "@/components/portfolio/Tools";
-import { Skills } from "@/components/portfolio/Skills";
 import { Footer } from "@/components/portfolio/Footer";
 import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
 import { LatestArticles } from "@/components/articles/LatestArticles";
 import { PUBLISHED_ARTICLES } from "@/data/articles";
-import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
 
@@ -76,20 +73,6 @@ const WEBSITE_SCHEMA = {
   "inLanguage": "en"
 };
 
-const TOOLS_SCHEMA = {
-  "@context": "https://schema.org",
-  "@graph": TOOLS.map((t) => ({
-    "@type": "SoftwareApplication",
-    name: t.name,
-    description: t.description,
-    url: t.url,
-    applicationCategory: "WebApplication",
-    operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    author: { "@id": `${SITE_URL}/#person` },
-  })),
-};
-
 export const Route = createFileRoute("/")(
   {
     head: () => ({
@@ -129,7 +112,6 @@ export const Route = createFileRoute("/")(
         { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
         { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
         { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
-        { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
       ],
     }),
     component: Index,
@@ -146,8 +128,6 @@ function Index() {
         <MetricStrip />
         <Work />
         <LatestArticles articles={articles} />
-        <Tools />
-        <Skills />
         <Faq />
       </main>
       <Footer />

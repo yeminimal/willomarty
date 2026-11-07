@@ -3,18 +3,19 @@ import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
+import portrait from "@/assets/portrait.webp.asset.json";
 
 const PAGE_LINKS = [
   { to: "/about", label: "About" },
-  { to: "/education", label: "Education" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 const LINKS = [
   // { href: "/#experience", label: "Experience" },
   { href: "/#work", label: "Work" },
-  { href: "/#tools", label: "Tools" },
-  { href: "/#skills", label: "Skills" },
+  { href: "/projects", label: "Personal projects" },
+  { href: "/about#skills", label: "Skills" },
+  { href: "/about#education", label: "Education" },
   { href: "/#faq", label: "FAQ" },
 ];
 
@@ -38,11 +39,11 @@ export function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-[1100px] px-6 md:px-10 min-h-16 flex items-center justify-between">
-        <a href="/#hero" className="font-mono text-accent text-sm tracking-[0.25em]">
-          WOM
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6 md:px-8 lg:px-10 min-h-16 flex items-center justify-between">
+        <a href="/#hero" aria-label="Williams Olayemi Martins, home" className="shrink-0">
+          <img src={portrait.url} alt="Williams Olayemi Martins" width={40} height={40} className="h-9 w-9 rounded-full border border-border object-cover sm:h-10 sm:w-10" />
         </a>
-        <nav className="hidden lg:flex items-center gap-4">
+        <nav className="hidden lg:flex items-center gap-3">
           {PAGE_LINKS.map((link) => <Link key={link.to} to={link.to} className="font-mono text-[11px] uppercase text-muted hover:text-accent">{link.label}</Link>)}
           {LINKS.map((l) => (
             <a

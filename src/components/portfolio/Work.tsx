@@ -12,9 +12,7 @@ export function Work() {
         <Reveal>
           <SectionLabel>Selected Work</SectionLabel>
           <h2 className="display-serif mt-6 text-3xl md:text-5xl max-w-2xl">
-            Brands, products, and stories
-            <br />
-            <span className="italic text-accent">built with intent.</span>
+            Brands, products, and stories <span className="italic text-accent">built with intent.</span>
           </h2>
           <p className="mt-6 max-w-xl text-foreground/70 leading-relaxed">
             Selected identities and digital experiences, from the first idea to the final detail.
