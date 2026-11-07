@@ -35,6 +35,7 @@ export const ARTICLES: Article[] = [
 <p>Remember that breakpoint styles inherit downward. A change you made at desktop can quietly resurface on mobile even if you never touched mobile styles directly.</p>
 <p>Get in the habit of re-checking mobile after any desktop edit, even ones that feel completely unrelated. It costs almost nothing and catches this whole category of bug before it ships.</p>
 <p>And if something breaks inside the Designer itself with no edits made, stop looking at your publish pipeline. The problem is sitting in the layout settings, not in deployment.</p>
+<p>If you're seeing the same issue in your own project, the <a href="https://community.webflow.com/ask-answer/post/texts-on-my-website-returns-back-to-wrong-layout-after-a-while-M9I7JEPDg45qp4L?highlight=lvYrt80KHZtTarI" target="_blank" rel="noreferrer">Webflow Community thread</a> is a good place to compare notes and see other fixes people have tried.</p>
 <h2>Quick checklist</h2>
 <ul><li>Bug only on mobile, desktop/tablet fine → check inherited or mobile-specific styles first</li><li>Breaks on load, not after → rule out scripts and animations</li><li>Reappears in the Designer with zero edits → it's a layout setting, not a caching issue</li><li>Block layout plus Auto sizing plus fixed minimums → prime suspect, try Flex</li><li>Confirm the fix holds after a fresh Designer reload, not just right after applying it</li></ul>`,
     tags: ["Webflow", "Web Design", "Troubleshooting"],
