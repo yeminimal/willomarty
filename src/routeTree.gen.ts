@@ -15,6 +15,7 @@ import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as ArticlesSitemapDotxmlRouteImport } from './routes/articles-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EducationRouteImport } from './routes/education'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ArticlesIndexRouteImport } from './routes/articles.index'
 import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
@@ -50,6 +51,11 @@ const EducationRoute = EducationRouteImport.update({
   path: '/education',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
   id: '/articles/',
   path: '/articles/',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/projects': typeof ProjectsRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles/': typeof ArticlesIndexRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/projects': typeof ProjectsRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles': typeof ArticlesIndexRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/articles-sitemap.xml': typeof ArticlesSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/education': typeof EducationRoute
+  '/projects': typeof ProjectsRoute
   '/articles/$slug': typeof ArticlesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/articles/': typeof ArticlesIndexRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/projects'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles/'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/projects'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/articles-sitemap.xml'
     | '/contact'
     | '/education'
+    | '/projects'
     | '/articles/$slug'
     | '/work/$slug'
     | '/articles/'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   ArticlesSitemapDotxmlRoute: typeof ArticlesSitemapDotxmlRoute
   ContactRoute: typeof ContactRoute
   EducationRoute: typeof EducationRoute
+  ProjectsRoute: typeof ProjectsRoute
   ArticlesSlugRoute: typeof ArticlesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   ArticlesIndexRoute: typeof ArticlesIndexRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EducationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/articles/': {
       id: '/articles/'
       path: '/articles'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArticlesSitemapDotxmlRoute: ArticlesSitemapDotxmlRoute,
   ContactRoute: ContactRoute,
   EducationRoute: EducationRoute,
+  ProjectsRoute: ProjectsRoute,
   ArticlesSlugRoute: ArticlesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   ArticlesIndexRoute: ArticlesIndexRoute,

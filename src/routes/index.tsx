@@ -4,26 +4,26 @@ import { Hero } from "@/components/portfolio/Hero";
 import { MetricStrip } from "@/components/portfolio/MetricStrip";
 // import { Experience } from "@/components/portfolio/Experience";
 import { Work } from "@/components/portfolio/Work";
-import { Tools } from "@/components/portfolio/Tools";
-import { Skills } from "@/components/portfolio/Skills";
 import { Footer } from "@/components/portfolio/Footer";
-import { Faq, FAQ_SCHEMA } from "@/components/portfolio/Faq";
+import { Faq } from "@/components/portfolio/Faq";
+import portrait from "@/assets/portrait.webp.asset.json";
 import { LatestArticles } from "@/components/articles/LatestArticles";
 import { PUBLISHED_ARTICLES } from "@/data/articles";
-import { TOOLS } from "@/data/tools";
 
 const SITE_URL = "https://willomarty.net.ng";
 
 const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
   "name": "Williams Olayemi Martins",
   "alternateName": "Willomarty",
-  "url": "https://willomarty.net.ng",
+  "url": SITE_URL,
+  "image": `${SITE_URL}${portrait.url}`,
   "email": "willomarty01@gmail.com",
   "telephone": "+2347026787353",
-  "jobTitle": "Brand Designer, Product Designer & Web Designer",
-  "description": "Lagos-based brand and web designer specialising in visual identity systems, Webflow websites, UI/UX, and frontend development. Available for remote work with Nigerian and international clients.",
+  "jobTitle": "Brand, Product & Web Designer",
+  "description": "Lagos-based brand, product and web designer with over seven years of experience creating visual identities, digital products and tailored web experiences.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Lagos",
@@ -71,23 +71,9 @@ const WEBSITE_SCHEMA = {
   "description": "Portfolio of Williams Olayemi Martins — brand designer, product designer, web designer, based in Lagos, Nigeria.",
   "author": {
     "@type": "Person",
-    "name": "Williams Olayemi Martins"
+    "@id": `${SITE_URL}/#person`
   },
   "inLanguage": "en"
-};
-
-const TOOLS_SCHEMA = {
-  "@context": "https://schema.org",
-  "@graph": TOOLS.map((t) => ({
-    "@type": "SoftwareApplication",
-    name: t.name,
-    description: t.description,
-    url: t.url,
-    applicationCategory: "WebApplication",
-    operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    author: { "@id": `${SITE_URL}/#person` },
-  })),
 };
 
 export const Route = createFileRoute("/")(
@@ -128,8 +114,6 @@ export const Route = createFileRoute("/")(
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(PERSON_SCHEMA) },
         { type: "application/ld+json", children: JSON.stringify(WEBSITE_SCHEMA) },
-        { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
-        { type: "application/ld+json", children: JSON.stringify(TOOLS_SCHEMA) },
       ],
     }),
     component: Index,
@@ -146,8 +130,6 @@ function Index() {
         <MetricStrip />
         <Work />
         <LatestArticles articles={articles} />
-        <Tools />
-        <Skills />
         <Faq />
       </main>
       <Footer />

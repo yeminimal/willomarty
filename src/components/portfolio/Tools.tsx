@@ -5,15 +5,15 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Tools() {
   return (
-    <section id="tools" className="py-24 md:py-32 border-t border-border">
+    <section id="personal-projects" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
         <Reveal>
-          <SectionLabel>What I've Built</SectionLabel>
-          <h2 className="display-serif mt-6 text-3xl md:text-5xl max-w-3xl">
-            Micro-tools for
+          <SectionLabel>Personal projects</SectionLabel>
+          <h1 className="display-serif mt-6 text-3xl md:text-5xl max-w-3xl">
+            Small tools for
             <br />
             <span className="italic text-accent">real friction points.</span>
-          </h2>
+          </h1>
           <p className="mt-6 max-w-xl text-foreground/70 leading-relaxed">
             Small, sharp, browser-based tools built to solve problems I kept bumping into. No sign-up.
             No bloat. Just the thing that needs doing.
@@ -60,7 +60,7 @@ export function Tools() {
                     ))}
                   </div>
                   <div className="mt-7 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dim group-hover:text-accent transition-colors">
-                    Visit Tool
+                    Visit Project
                     <ArrowUpRight size={12} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
