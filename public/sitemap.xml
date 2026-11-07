@@ -169,7 +169,7 @@
 
   <url>
     <loc>https://willomarty.net.ng/articles</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -182,5 +182,12 @@
     <image:image>
       <image:loc>https://willomarty.net.ng/__l5e/assets-v1/2b0dc75e-d140-43e4-bca1-cb78bdbd3a72/article-design-process.jpg</image:loc>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://willomarty.net.ng/articles/when-your-webflow-mobile-text-layout-keeps-resetting-itself</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
