@@ -1,6 +1,7 @@
 import designProcessCover from "@/assets/article-design-process.jpg.asset.json";
 import webDesignCover from "@/assets/article-web-design.jpg.asset.json";
 import brandingCover from "@/assets/article-branding.jpg.asset.json";
+import webflowMobileLayoutCover from "@/assets/article-webflow-mobile-layout.jpg";
 import type { Article } from "@/lib/articles.shared";
 
 /**
@@ -9,6 +10,39 @@ import type { Article } from "@/lib/articles.shared";
  * hidden). The archive, homepage, detail pages and sitemap all read from this list.
  */
 export const ARTICLES: Article[] = [
+  {
+    id: "57f82616-2611-4df0-ba50-c3bcae68b568",
+    title: "When Your Webflow Mobile Text Layout Keeps Resetting Itself",
+    slug: "when-your-webflow-mobile-text-layout-keeps-resetting-itself",
+    meta_description:
+      "A personal account of a recurring Webflow mobile layout bug and how switching from Block to Flex stopped the hero text from resetting.",
+    cover_image_url: webflowMobileLayoutCover,
+    body_html: `<p>I publish a site, check it on mobile, everything looks right. The hero text sitting exactly where it should, then I come back a few hours later, open the same page, and the text has drifted out of position again. Not after a scroll, not after some interaction, it's already wrong the second the page loads. I'd get into the Designer, nudge things back into place, it holds for a while, then quietly resets itself again without me touching anything.</p>
+<p>For a bit I genuinely wondered if someone else on the team was messing things up, but after reaching out, nobody had.</p>
+<h2>The diagnosis</h2>
+<p>A few details kept pointing in the same direction, even before I had an answer:</p>
+<p>It only ever showed up on mobile. Desktop and tablet never budged, which ruled out anything global, like a shared class gone wrong somewhere upstream.</p>
+<p>It happened on every mobile browser I tried, not just one, so it wasn't a rendering quirk tied to a specific engine.</p>
+<p>The layout was already broken the instant the page loaded. Nothing shifted after the fact, which took scripts and animations off the suspect list.</p>
+<p>And the part that actually cracked it open: the bug kept happening inside the Webflow Designer itself, with zero edits made in between. That one detail rules out publishing and CDN caching entirely. If a layout breaks with nothing changed, the problem isn't how the site is being served, it's how the element itself is set up.</p>
+<h2>How did i fix it?</h2>
+<p>The hero text was sitting inside a <strong>Block</strong> layout. I switched it to <strong>Flex</strong>, and the issue hasn't come back since.</p>
+<p>Looking back, it makes sense. Block layout behaves closer to normal document flow, and mine was paired with width and height both set to Auto, plus fixed px values for min-width and min-height. That combination leaves a little too much room for interpretation, especially on mobile, where elements are more likely to get resized against the viewport. Flex gives the browser a much more explicit set of rules to follow, so there's less ambiguity left for things to drift into.</p>
+<p>To be clear, Block layout isn't broken. I'd still use it for simple stacked content with nothing fancy going on. It's specifically that mix, Block plus Auto plus fixed minimums, that opens the door for this kind of thing.</p>
+<h2>Here are a few habits I've kept since this happened</h2>
+<p>Default to Flex or Grid for anything with more than one child element that needs to behave predictably, hero sections especially. Save Block for places where you genuinely just want simple stacked flow.</p>
+<p>Be careful mixing Auto sizing with fixed min-width or min-height values. It's not wrong, it just needs testing across every breakpoint, not only the one you happen to be staring at.</p>
+<p>Remember that breakpoint styles inherit downward. A change you made at desktop can quietly resurface on mobile even if you never touched mobile styles directly.</p>
+<p>Get in the habit of re-checking mobile after any desktop edit, even ones that feel completely unrelated. It costs almost nothing and catches this whole category of bug before it ships.</p>
+<p>And if something breaks inside the Designer itself with no edits made, stop looking at your publish pipeline. The problem is sitting in the layout settings, not in deployment.</p>
+<h2>Quick checklist</h2>
+<ul><li>Bug only on mobile, desktop/tablet fine → check inherited or mobile-specific styles first</li><li>Breaks on load, not after → rule out scripts and animations</li><li>Reappears in the Designer with zero edits → it's a layout setting, not a caching issue</li><li>Block layout plus Auto sizing plus fixed minimums → prime suspect, try Flex</li><li>Confirm the fix holds after a fresh Designer reload, not just right after applying it</li></ul>`,
+    tags: ["Webflow", "Web Design", "Troubleshooting"],
+    status: "published",
+    published_at: "2026-11-07T14:50:00.000Z",
+    created_at: "2026-11-07T14:50:00.000Z",
+    updated_at: "2026-11-07T14:50:00.000Z",
+  },
   {
     id: "3448cd3e-a530-458b-a42b-8cc762986b40",
     title: "Design is a process, not the result.",
