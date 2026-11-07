@@ -1,4 +1,5 @@
 # Homepage and articles
+- [x] Publish the new Webflow mobile-layout article with a custom cover and update sitemap/crawler references.
 - [x] Add YDPay as the fourth homepage featured project with case study, archive entry and search metadata.
 - [x] Populate the design-process article verbatim from the supplied PDF and verify all text.
 - [x] Fix article card sizing and verify mobile archive and related articles.
