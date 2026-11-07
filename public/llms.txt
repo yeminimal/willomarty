@@ -151,5 +151,6 @@ Fintech, real estate and proptech, fashion and e-commerce, Web3 and education, l
 ## Articles — Notes & Essays
 - [Articles](https://willomarty.net.ng/articles): Published notes on design, branding and web design.
 - [Design is a process, not the result](https://willomarty.net.ng/articles/design-is-a-process-not-the-result)
+- [When Your Webflow Mobile Text Layout Keeps Resetting Itself](https://willomarty.net.ng/articles/when-your-webflow-mobile-text-layout-keeps-resetting-itself)
 - [Live article sitemap](https://willomarty.net.ng/articles-sitemap.xml): Discover newly published articles here.
 - Only completed, published essays are listed. Unpublished drafts stay off the site and must not be cited.
