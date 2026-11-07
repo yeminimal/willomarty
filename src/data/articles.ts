@@ -12,9 +12,9 @@ import type { Article } from "@/lib/articles.shared";
 export const ARTICLES: Article[] = [
   {
     id: "57f82616-2611-4df0-ba50-c3bcae68b568",
-    title: "When Your Webflow Mobile Text Layout Keeps Resetting Itself",
+    title: "Why Your Webflow Mobile Text Layout Keeps Shifting",
     seo_title: "Webflow Mobile Layout Keeps Changing? Here's the Fix",
-    heading: "Why Your Webflow Mobile Text Layout Keeps Shifting (And How to Fix It)",
+    heading: "Why Your Webflow Mobile Text Layout Keeps Shifting",
     slug: "when-your-webflow-mobile-text-layout-keeps-resetting-itself",
     meta_description:
       "Fix a Webflow mobile layout that keeps shifting or resetting. Learn how Block layouts, Auto sizing and fixed minimum dimensions can affect responsive text positioning.",
