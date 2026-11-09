@@ -1,8 +1,8 @@
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { T as Clock3, j as ArrowUpRight } from "../_libs/lucide-react.mjs";
-import { a as articleReadTime, i as articleExcerpt, o as formatDate } from "./articles-Dkrj6I_s.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/ArticleCard-31hI3_xB.js
+import { a as articleReadTime, i as articleExcerpt, o as formatDate } from "./articles-DU8fYnd3.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/ArticleCard-UXaMcIU3.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/components/articles/ArticleCard.tsx";
 function ArticleCard({ article, compact = false }) {

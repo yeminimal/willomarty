@@ -195,6 +195,16 @@
   </url>
 
   <url>
+    <loc>https://willomarty.net.ng/articles/why-your-business-still-needs-a-real-website</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F2edbf6bcb25d49a2b0f34356e30c62fc?format=webp&amp;width=800&amp;height=1200</image:loc>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://willomarty.net.ng/articles/designing-with-webflow-framer-and-wordpress</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>

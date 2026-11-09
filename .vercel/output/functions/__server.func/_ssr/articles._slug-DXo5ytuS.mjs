@@ -1,6 +1,6 @@
 import { J as notFound, _ as createFileRoute, g as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-import { n as SITE_URL, r as absoluteUrl, t as PUBLISHED_ARTICLES } from "./articles-Dkrj6I_s.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-D3P4vOjL.js
+import { n as SITE_URL, r as absoluteUrl, t as PUBLISHED_ARTICLES } from "./articles-DU8fYnd3.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-DXo5ytuS.js
 var portrait_webp_asset_default = {
 	version: 1,
 	asset_id: "e2e28b92-b762-4b20-94eb-e994c6f516b5",
@@ -13,7 +13,7 @@ var portrait_webp_asset_default = {
 	created_at: "2026-06-21T08:05:19Z"
 };
 var $$splitNotFoundComponentImporter = () => import("./articles._slug-DPb1uSP1.mjs");
-var $$splitComponentImporter = () => import("./articles._slug-BSXdCM7e.mjs");
+var $$splitComponentImporter = () => import("./articles._slug-DDuJzpdK.mjs");
 var Route = createFileRoute("/articles/$slug")({
 	beforeLoad: ({ params }) => {
 		if (!PUBLISHED_ARTICLES.some((article) => article.slug === params.slug)) throw notFound();

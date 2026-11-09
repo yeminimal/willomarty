@@ -2,10 +2,10 @@ import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as require_jsx_dev_runtime } from "../_libs/react.mjs";
 import { N as ArrowLeft } from "../_libs/lucide-react.mjs";
 import { n as Footer, r as Nav } from "./Footer-WEbJGU8w.mjs";
-import { a as articleReadTime, o as formatDate, t as PUBLISHED_ARTICLES } from "./articles-Dkrj6I_s.mjs";
-import { n as portrait_webp_asset_default, t as Route } from "./articles._slug-D3P4vOjL.mjs";
-import { t as ArticleCard } from "./ArticleCard-31hI3_xB.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-BSXdCM7e.js
+import { a as articleReadTime, o as formatDate, t as PUBLISHED_ARTICLES } from "./articles-DU8fYnd3.mjs";
+import { n as portrait_webp_asset_default, t as Route } from "./articles._slug-DXo5ytuS.mjs";
+import { t as ArticleCard } from "./ArticleCard-UXaMcIU3.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-DDuJzpdK.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/routes/articles.$slug.tsx?tsr-split=component";
 function ArticlePage() {

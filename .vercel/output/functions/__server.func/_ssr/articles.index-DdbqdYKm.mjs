@@ -4,10 +4,10 @@ import { D as ChevronRight, N as ArrowLeft, O as ChevronLeft } from "../_libs/lu
 import { n as Footer, r as Nav, t as Button } from "./Footer-WEbJGU8w.mjs";
 import { t as SectionLabel } from "./SectionLabel-D9JpdkKt.mjs";
 import { t as Reveal } from "./Reveal-DyVWGN_r.mjs";
-import { t as PUBLISHED_ARTICLES } from "./articles-Dkrj6I_s.mjs";
-import { t as ArticleCard } from "./ArticleCard-31hI3_xB.mjs";
-import { t as Route } from "./articles.index-BPCjc5_f.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-CP9bvNM-.js
+import { t as PUBLISHED_ARTICLES } from "./articles-DU8fYnd3.mjs";
+import { t as ArticleCard } from "./ArticleCard-UXaMcIU3.mjs";
+import { t as Route } from "./articles.index-uYnxKIE_.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-DdbqdYKm.js
 var import_jsx_dev_runtime = require_jsx_dev_runtime();
 var _jsxFileName = "/root/app/code/src/routes/articles.index.tsx?tsr-split=component";
 var PER_PAGE = 4;

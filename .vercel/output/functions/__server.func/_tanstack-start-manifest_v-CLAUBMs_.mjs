@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DlgVRbl0.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CLAUBMs_.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/root/app/code/src/routes/__root.tsx",
@@ -15,22 +15,22 @@ var tsrStartManifest = () => ({ routes: {
 			"/articles/",
 			"/work/"
 		],
-		preloads: ["/assets/index-D6aKodw-.js", "/assets/jsx-dev-runtime-BXuQ4uzV.js"],
+		preloads: ["/assets/index-DRekhm13.js", "/assets/jsx-dev-runtime-BXuQ4uzV.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-D6aKodw-.js"
+			src: "/assets/index-DRekhm13.js"
 		} }]
 	},
 	"/": {
 		filePath: "/root/app/code/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-D3huZOKf.js",
+			"/assets/routes-BpruH3aI.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-right-ispmD2UO.js",
 			"/assets/arrow-up-right-C8w-rNSR.js",
-			"/assets/ArticleCard-CssvGV6v.js",
+			"/assets/ArticleCard-1jPv7kl4.js",
 			"/assets/SectionLabel-GH1HHrWm.js",
 			"/assets/Reveal-D2gE6oZl.js"
 		]
@@ -74,7 +74,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/root/app/code/src/routes/projects.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/projects-BM3SkJyy.js",
+			"/assets/projects-hKtaEXYx.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-up-right-C8w-rNSR.js",
 			"/assets/SectionLabel-GH1HHrWm.js",
@@ -85,36 +85,36 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/root/app/code/src/routes/articles.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/articles._slug-C-NnNYOs.js",
+			"/assets/articles._slug-BnsIgGS6.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-left-DgQzG2M_.js",
-			"/assets/articles._slug-CqH1-vid.js",
-			"/assets/ArticleCard-CssvGV6v.js"
+			"/assets/ArticleCard-1jPv7kl4.js",
+			"/assets/articles._slug-C-NnNYOs.js"
 		]
 	},
 	"/work/$slug": {
 		filePath: "/root/app/code/src/routes/work.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/work._slug-Bo07etwB.js",
+			"/assets/work._slug-B9QJRpn5.js",
+			"/assets/work._slug-CYoVE3se.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-left-DgQzG2M_.js",
 			"/assets/arrow-up-right-C8w-rNSR.js",
 			"/assets/SectionLabel-GH1HHrWm.js",
 			"/assets/Reveal-D2gE6oZl.js",
-			"/assets/work._slug-CR4IIraw.js",
-			"/assets/work._slug-DrsLM0w3.js"
+			"/assets/work._slug-F0JlryRB.js"
 		]
 	},
 	"/articles/": {
 		filePath: "/root/app/code/src/routes/articles.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/articles.index-BZuPZmT5.js",
+			"/assets/articles.index-pAzH18Hr.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-left-DgQzG2M_.js",
 			"/assets/chevron-right-CfB0zoVf.js",
-			"/assets/ArticleCard-CssvGV6v.js",
+			"/assets/ArticleCard-1jPv7kl4.js",
 			"/assets/SectionLabel-GH1HHrWm.js",
 			"/assets/Reveal-D2gE6oZl.js"
 		]
@@ -123,7 +123,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/root/app/code/src/routes/work.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/work.index-BUxgKeE7.js",
+			"/assets/work.index-DtwhjC0v.js",
 			"/assets/Footer-Hk8XhMWZ.js",
 			"/assets/arrow-left-DgQzG2M_.js",
 			"/assets/arrow-up-right-C8w-rNSR.js",
