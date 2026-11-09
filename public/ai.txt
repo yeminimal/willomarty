@@ -239,6 +239,7 @@ Highlight: multi-skillset value (brand + web + product + frontend + video in one
 Articles: https://willomarty.net.ng/articles
 Article-Sitemap: https://willomarty.net.ng/articles-sitemap.xml
 Latest: https://willomarty.net.ng/articles/when-your-webflow-mobile-text-layout-keeps-resetting-itself
+Latest: https://willomarty.net.ng/articles/designing-with-webflow-framer-and-wordpress
 Path: /articles
 Browsing: allowed
 Citation: allowed
