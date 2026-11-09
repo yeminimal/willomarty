@@ -2,7 +2,6 @@ import designProcessCover from "@/assets/article-design-process.jpg.asset.json";
 import webDesignCover from "@/assets/article-web-design.jpg.asset.json";
 import brandingCover from "@/assets/article-branding.jpg.asset.json";
 import webflowMobileLayoutCover from "@/assets/article-webflow-mobile-layout.jpg";
-import websitePlatformsCover from "@/assets/article-webflow-framer-wordpress.jpg";
 import type { Article } from "@/lib/articles.shared";
 
 /**
@@ -12,12 +11,46 @@ import type { Article } from "@/lib/articles.shared";
  */
 export const ARTICLES: Article[] = [
   {
+    id: "3bc70f01-934f-4357-85bd-c84faaf99ec4",
+    title: "Why Your Business Still Needs a Real Website (And Why \"One-Shotting\" One With AI Isn't the Shortcut You Think It Is)",
+    slug: "why-your-business-still-needs-a-real-website",
+    meta_description:
+      "Why a professional website still matters for business credibility, and why AI works best when guided by experience and oversight.",
+    cover_image_url: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F2edbf6bcb25d49a2b0f34356e30c62fc?format=webp&width=800&height=1200",
+    cover_image_alt: "Why businesses need websites: build credibility, reach more people, and grow your business",
+    body_html: `<p>There's a conversation happening right now among small business owners and founders that goes something like this: "Why pay a designer or developer when I can just prompt an AI to build me a website in twenty minutes?"</p>
+<p>It's a fair question. And the honest answer is more nuanced than either side of that argument wants to admit.</p>
+<h2>A website is not a URL</h2>
+<p>A lot of people think of a website as a destination, a link you can share. It's not. A website is your storefront, your handshake, your first impression, your sales rep working at 2am, and your credibility signal, all running at once, for every single visitor who lands on it.</p>
+<p>Stanford's research on web credibility found that people judge whether a company is trustworthy based on its site's design more than anything else on the page. Not the copy. Not even what the business actually does. The design, judged in seconds, before the visitor has processed a word of content. That judgment happens almost instantly, a rapid, largely subconscious read on layout, typography, and color, before anyone engages with what the site is actually saying.</p>
+<p>That's the part people miss when they're deciding between a website and just running their business entirely off Facebook or WhatsApp. It's not really a decision about convenience. It's a decision about what kind of first impression you're willing to let a stranger form about your business in the first two seconds, with no say in the matter.</p>
+<h2>AI is not the problem. Delegating without understanding is</h2>
+<p>I want to be clear about something, because this isn't an anti-AI take. Integrating AI into how you work or build is not a bad thing. I use AI tools regularly. The issue was never the tool. It's the intent and the oversight behind how it's used.</p>
+<p>If you know how a website works, if you understand what good information architecture looks like, what makes a layout convert instead of confuse, what technical SEO actually does behind the scenes, then using AI to move faster is a genuinely smart call. You know what to check. You know when the output is wrong. You know what "good" looks like, so you can tell when the AI has handed you something that isn't.</p>
+<p>But if you have no idea how a website works, no idea what you're looking at when the AI hands you a finished page, and no way to tell whether what you just "one-shotted" is structurally sound, accessible, fast, or discoverable on Google at all, then you haven't built a website. You've generated something that looks like one. And in that specific scenario, you'd genuinely be better off just running your business from a WhatsApp Business number or a Facebook page, because at least there you're not pretending to have something you don't actually have control over.</p>
+<h2>The kitchen analogy</h2>
+<p>Think about a chef. You don't throw every ingredient into one pot at once and expect something good to come out of it. Good food is sequence, technique, and judgment, applied by someone who knows what they're doing, at every stage.</p>
+<p>Here's the part people don't think about: someone who has never worked in a kitchen often can't tell when food hasn't been prepared properly. It still looks like food. It might even taste fine to an untrained palate. But an investor walking through that kitchen, watching how carelessly the staff handles prep, storage, and process, isn't going to invest in that franchise. Not because the food tasted bad to them personally. Because they recognized, from experience, what careless process looks like, and they know what it predicts about everything else downstream.</p>
+<p>That's exactly what happens with a website built entirely by someone who doesn't know what a website needs. It might look fine to the person who built it. It might even look fine to their friends. But to a professional, a partner, an investor, or a discerning customer, the cracks are visible immediately: broken technical SEO, inaccessible navigation, slow load times, a structure that confuses rather than guides. The person who built it often can't see those cracks, because they don't know what they're looking for. The people whose trust actually matters to the business can.</p>
+<h2>What's actually happening behind a professional website</h2>
+<p>A website isn't just the page people see. There's technical SEO, the structural work that determines whether Google can even find and understand your site in the first place. There's performance, how fast it loads, whether it holds up on mobile, whether it breaks under real-world conditions. There's how it's presented, the actual design decisions that signal competence or carelessness in the first few seconds. And there's the ongoing operational layer: analytics, accessibility, security, maintenance, all the background work that keeps a site functioning as a business asset instead of slowly rotting into something broken, slow, and unindexed.</p>
+<p>None of that is visible in a finished-looking page. All of it is the actual difference between a site that grows a business and one that quietly undermines it.</p>
+<h2>Hire the professional, especially when it matters</h2>
+<p>If you're running a business you want people to take seriously, a company you want to be seen as reputable, this is exactly where you need someone who actually understands how all of this fits together. Not because AI can't help build it. Because someone needs to be the one who knows what good looks like, who can direct the tools with intent, and who can catch what's wrong before a customer, a partner, or an investor does it for you.</p>
+<p>A website built with real oversight, whether that oversight comes from a professional using AI deliberately or building by hand, is still fundamentally different from one generated with none. The tool isn't the variable that matters. The judgment behind it is.</p>`,
+    tags: ["Web Design", "Business", "AI"],
+    status: "published",
+    published_at: "2026-11-09T22:40:25.000Z",
+    created_at: "2026-11-09T22:40:25.000Z",
+    updated_at: "2026-11-09T22:40:25.000Z",
+  },
+  {
     id: "0f9f67d9-a6bb-4960-8c79-4b0aab8e0fe9",
     title: "Designing with Webflow, Framer and WordPress: My Workflow, Experience and Recommendations",
     slug: "designing-with-webflow-framer-and-wordpress",
     meta_description:
       "My website design workflow, experience with Webflow, Framer and WordPress, and recommendations for choosing the right platform for a project.",
-    cover_image_url: websitePlatformsCover,
+    cover_image_url: "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F4e3e06c0cfb5466bb5c089c2313811a1?format=webp&width=800&height=1200",
     body_html: `<p>There isn't a single way to build a great website, and there certainly isn't one platform that gets everything right.</p>
 <p>Over the years, I've worked with different website-building tools, each offering its own approach to translating ideas into functional digital experiences. Three platforms I've particularly worked with are Webflow, Framer and WordPress.</p>
 <p>I've used Webflow for marketing and fintech websites, Framer for business websites, and WordPress for business-focused web projects. While they can sometimes achieve similar results, the experience of designing, building and managing websites with each platform is quite different.</p>
