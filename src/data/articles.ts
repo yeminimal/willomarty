@@ -2,6 +2,7 @@ import designProcessCover from "@/assets/article-design-process.jpg.asset.json";
 import webDesignCover from "@/assets/article-web-design.jpg.asset.json";
 import brandingCover from "@/assets/article-branding.jpg.asset.json";
 import webflowMobileLayoutCover from "@/assets/article-webflow-mobile-layout.jpg";
+import websitePlatformsCover from "@/assets/article-webflow-framer-wordpress.jpg";
 import type { Article } from "@/lib/articles.shared";
 
 /**
@@ -10,6 +11,174 @@ import type { Article } from "@/lib/articles.shared";
  * hidden). The archive, homepage, detail pages and sitemap all read from this list.
  */
 export const ARTICLES: Article[] = [
+  {
+    id: "0f9f67d9-a6bb-4960-8c79-4b0aab8e0fe9",
+    title: "Designing with Webflow, Framer and WordPress: My Workflow, Experience and Recommendations",
+    slug: "designing-with-webflow-framer-and-wordpress",
+    meta_description:
+      "My website design workflow, experience with Webflow, Framer and WordPress, and recommendations for choosing the right platform for a project.",
+    cover_image_url: websitePlatformsCover,
+    body_html: `<p>There isn't a single way to build a great website, and there certainly isn't one platform that gets everything right.</p>
+<p>Over the years, I've worked with different website-building tools, each offering its own approach to translating ideas into functional digital experiences. Three platforms I've particularly worked with are Webflow, Framer and WordPress.</p>
+<p>I've used Webflow for marketing and fintech websites, Framer for business websites, and WordPress for business-focused web projects. While they can sometimes achieve similar results, the experience of designing, building and managing websites with each platform is quite different.</p>
+<p>For me, choosing between Webflow, Framer and WordPress isn't about which platform is the most popular or has the longest feature list. It's about understanding what a business needs, how its website will evolve, and which platform makes the most sense for the job.</p>
+<p>Here's how I approach designing with these three platforms, what I've learned from using them, and what I'd recommend each one for.</p>
+<h2>My approach to website design and development</h2>
+<p>Before opening Webflow, Framer, WordPress or even Figma, I want to understand what the website is supposed to accomplish.</p>
+<p>A website isn't simply a collection of attractive sections arranged vertically. It's a business tool, a communication channel and, often, the first meaningful interaction someone has with a brand.</p>
+<p>My process generally starts with understanding the business, its audience, its offerings and what it wants visitors to do.</p>
+<p>From there, I work through a few important stages.</p>
+<h3>1. Understanding the business and its objectives</h3>
+<p>I begin by understanding the business, its products or services, its target audience and the problems its website needs to solve.</p>
+<p>A fintech company looking to communicate trust and simplify financial services doesn't need the same website experience as a creative agency showcasing its portfolio or a service business trying to generate enquiries.</p>
+<p>These differences influence everything from the information architecture to the visual direction and eventual platform selection.</p>
+<h3>2. Research and information architecture</h3>
+<p>Once the objectives are clear, I establish how information should be organised.</p>
+<p>This involves identifying the necessary pages, determining their relationships, prioritising important content and mapping out the visitor journey.</p>
+<p>For a marketing website, this might mean structuring the homepage around the value proposition, services, credibility, benefits and conversion points.</p>
+<p>For a more content-driven website, the architecture might need to accommodate categories, articles, searchable resources and frequently updated information.</p>
+<h3>3. Visual direction and interface design</h3>
+<p>With the structure established, I begin translating the brand's identity into a digital experience.</p>
+<p>Typography, colours, imagery, spacing, layout and interaction patterns all contribute to how a website communicates.</p>
+<p>I pay particular attention to visual consistency and hierarchy. Visitors should be able to understand what a business offers, where to find relevant information and what action to take without having to work too hard.</p>
+<h3>4. Choosing the right platform</h3>
+<p>This is where Webflow, Framer and WordPress come into consideration.</p>
+<p>I evaluate the project's complexity, content requirements, desired interactions, maintenance expectations, available resources and the client's ability to manage the website after launch.</p>
+<p>The platform should support the design and business objectives, not dictate unnecessary limitations.</p>
+<h3>5. Responsive implementation and testing</h3>
+<p>A website that looks impressive on a desktop but falls apart on a mobile device isn't finished.</p>
+<p>I review layouts across different screen sizes, paying attention to typography, spacing, navigation, image behaviour, element positioning and content hierarchy.</p>
+<p>I also check functionality, links, forms, accessibility, loading behaviour and essential SEO configurations before launch.</p>
+<p>This is particularly important because responsive design isn't simply about making everything smaller. It's about making the experience work appropriately for each screen size.</p>
+<h2>Designing with Webflow</h2>
+<p>Webflow is one of the platforms I particularly enjoy working with, especially when a project requires considerable control over its visual presentation and responsive behaviour.</p>
+<p>What makes Webflow interesting to me is the relationship between visual design and the underlying structure of a website.</p>
+<p>It provides a visual development environment where designers can work with layout properties, CSS concepts, responsive breakpoints, interactions and CMS collections without having to write every line of code manually.</p>
+<h3>What I like about Webflow</h3>
+<p>Webflow offers a useful balance between visual freedom and structured website development.</p>
+<p>Some of its strengths include:</p>
+<ul><li><strong>Visual development:</strong> Working with layout properties, positioning, spacing, typography and other CSS concepts through a visual interface.</li><li><strong>Responsive breakpoints:</strong> Creating and refining layouts for different screen sizes.</li><li><strong>CMS:</strong> Managing dynamic content such as blog posts, projects, resources and other structured information.</li><li><strong>Interactions and animations:</strong> Creating engaging interactions without relying on a collection of unrelated animation tools.</li><li><strong>SEO controls:</strong> Managing page titles, meta descriptions, canonical URLs, image alt text and other important on-page SEO elements.</li><li><strong>Reusable components:</strong> Maintaining consistency across repeated sections and website elements.</li></ul>
+<p>I particularly appreciate the level of control Webflow provides when translating a visual design into a responsive website.</p>
+<p>It does, however, require an understanding of layout behaviour. Knowing how Flexbox, Grid, positioning, dimensions and breakpoint inheritance work makes a considerable difference to the quality of the final result.</p>
+<p>I recently documented an issue I encountered with a Webflow mobile layout and how I resolved it by investigating the element's layout settings.</p>
+<p>"<a href="https://willomarty.net.ng/articles/when-your-webflow-mobile-text-layout-keeps-resetting-itself">Read: When Your Webflow Mobile Text Layout Keeps Resetting Itself</a>".</p>
+<h3>A project I worked on with Webflow: A fintech platform</h3>
+<p>One of my Webflow-related projects involved a fintech platform.</p>
+<p>The project involved working on the website's visual experience and implementation, with attention to its layout, content presentation, responsiveness and the communication of its financial products and services.</p>
+<p>Fintech websites have a particular responsibility: they need to communicate information clearly while establishing credibility and trust.</p>
+<p>The experience reinforced why I value having control over page structure, responsive behaviour and the presentation of complex information.</p>
+<p>For this kind of project, Webflow is particularly useful because it provides a good balance between visual flexibility and content management.</p>
+<h3>What I'd recommend Webflow for</h3>
+<p>I'd consider Webflow for:</p>
+<ul><li>Corporate and business websites.</li><li>SaaS and fintech marketing websites.</li><li>Professional service websites.</li><li>Marketing landing pages.</li><li>Portfolio websites.</li><li>Content-driven websites that benefit from structured CMS collections.</li><li>Websites requiring detailed responsive layouts and custom interactions.</li></ul>
+<p>I'd particularly recommend it when the visual experience is important and the project requires more design control than a conventional template-based website might offer.</p>
+<h2>Designing with Framer</h2>
+<p>Framer approaches website design from a slightly different perspective.</p>
+<p>Its design environment feels familiar to people who work with interface design tools, making it particularly attractive for designers who want to move from visual concepts to published websites without a complicated development workflow.</p>
+<p>I've used Framer to design a marketing website for Hola Contracting, a Canada-based contracting and janitorial services business.</p>
+<h3>What I like about Framer</h3>
+<p>Framer makes it relatively straightforward to create visually expressive websites.</p>
+<p>Some of its strengths include:</p>
+<ul><li><strong>Design-first workflow:</strong> A familiar visual environment for arranging and styling website elements.</li><li><strong>Responsive layouts:</strong> Creating layouts that adapt across desktop, tablet and mobile devices.</li><li><strong>Interactions and animations:</strong> Adding motion and interactive elements to improve the experience.</li><li><strong>Components:</strong> Creating reusable design elements and maintaining consistency.</li><li><strong>CMS:</strong> Managing structured content for blogs, projects and other dynamic sections.</li><li><strong>Publishing workflow:</strong> Moving from design to a published website within the same platform.</li></ul>
+<p>One of the things I appreciate about Framer is how quickly I can explore visual ideas and translate them into a polished marketing website.</p>
+<p>This is particularly useful when a project needs a strong visual identity, engaging interactions and a relatively straightforward content structure.</p>
+<h3>A project I worked on with Framer: Hola Contracting</h3>
+<p>Hola Contracting is a Canada-based business offering contracting and janitorial-related services.</p>
+<p>I designed its marketing website using Framer.</p>
+<p>The objective was to give the business a professional digital presence where potential customers could understand its services, learn about the company and find a clear route to making enquiries.</p>
+<p>For a service-based business, the website needs to communicate more than just what the company does.</p>
+<p>It needs to establish confidence, explain its offerings and make it easy for potential customers to take the next step.</p>
+<p>This influenced the way I approached the site's visual hierarchy, service presentation and overall marketing experience.</p>
+<p>The project was a good example of where Framer's design-oriented workflow made sense.</p>
+<p>Although the original project domain is no longer renewed, the design and project experience remain part of my work.</p>
+<h3>What I'd recommend Framer for</h3>
+<p>I'd consider Framer for:</p>
+<ul><li>Designer and developer portfolios.</li><li>Creative agency websites.</li><li>Startup landing pages.</li><li>Marketing websites.</li><li>Personal brands.</li><li>Product launch websites.</li><li>Visually expressive websites with lightweight content requirements.</li></ul>
+<p>I'd particularly recommend Framer when visual presentation, rapid iteration and a relatively straightforward publishing workflow are high priorities.</p>
+<p>For larger content-heavy websites or projects requiring extensive custom integrations, I'd evaluate its capabilities and limitations more carefully before making a recommendation.</p>
+<h2>Designing with WordPress</h2>
+<p>WordPress is a different kind of website-building platform.</p>
+<p>Unlike Webflow and Framer, which provide more integrated visual design and publishing environments, WordPress is an extensible content management system with a much broader ecosystem of themes, plugins and development options.</p>
+<p>Its flexibility is one of its biggest strengths.</p>
+<p>Depending on the project, WordPress can be used with the native block editor, custom themes, page builders and other development approaches.</p>
+<h3>What I like about WordPress</h3>
+<p>WordPress is particularly interesting when a website needs to accommodate different types of content, integrations and functionality.</p>
+<p>Some of its strengths include:</p>
+<ul><li><strong>Content management:</strong> Creating, organising and managing pages, posts and other content types.</li><li><strong>Extensibility:</strong> Expanding functionality through plugins and custom development.</li><li><strong>Themes and customisation:</strong> Using existing themes or building more tailored website experiences.</li><li><strong>SEO ecosystem:</strong> Access to various SEO plugins and tools for managing technical and on-page optimisation.</li><li><strong>Integrations:</strong> Connecting websites to external services, forms, analytics and other business tools.</li><li><strong>Ownership and hosting flexibility:</strong> Choosing hosting arrangements and managing the underlying WordPress installation.</li></ul>
+<p>I also appreciate that WordPress can accommodate very different types of websites.</p>
+<p>A simple business website and a complex publishing platform can both be built with WordPress, although their implementation requirements will be very different.</p>
+<p>That flexibility also comes with responsibility.</p>
+<p>Plugin quality, security updates, hosting, backups, performance optimisation and compatibility need to be managed properly.</p>
+<p>A poorly maintained WordPress website can become difficult to manage, slow or vulnerable to security issues.</p>
+<h3>A project I worked on with WordPress: Tutchonce</h3>
+<p>I designed the Tutchonce website using WordPress.</p>
+<p>The project gave me another opportunity to work with WordPress as the underlying platform for a business website.</p>
+<p>What makes this experience relevant is the distinction between designing a website and selecting the technology that powers it.</p>
+<p>A website still needs a coherent visual direction, logical information architecture, responsive layouts and a useful content experience, regardless of whether it's built with WordPress, Webflow or Framer.</p>
+<p>WordPress provides the flexibility to approach these requirements through different themes, editing tools and extensions.</p>
+<h3>What I'd recommend WordPress for</h3>
+<p>I'd consider WordPress for:</p>
+<ul><li>Blogs and online publications.</li><li>Content-heavy business websites.</li><li>Corporate websites.</li><li>Websites requiring extensive integrations.</li><li>Websites with complex content management requirements.</li><li>Membership and directory websites.</li><li>E-commerce projects, particularly those suited to WooCommerce.</li><li>Businesses requiring greater control over their hosting environment.</li></ul>
+<p>I'd particularly recommend it when content management, extensibility and long-term flexibility are important considerations.</p>
+<h2>Webflow vs Framer vs WordPress: What's the difference?</h2>
+<p>Although these platforms can all be used to create professional websites, they approach website design and management differently.</p>
+<p>Here's how I'd compare them from a practical design and project perspective.</p>
+<div class="overflow-x-auto"><table><thead><tr><th>Consideration</th><th>Webflow</th><th>Framer</th><th>WordPress</th></tr></thead><tbody><tr><th>Design workflow</th><td>Visual development</td><td>Design-first</td><td>Theme, blocks and builders</td></tr><tr><th>Visual flexibility</th><td>High</td><td>High</td><td>Depends on implementation</td></tr><tr><th>Responsive design</th><td>Detailed breakpoint controls</td><td>Visual responsive controls</td><td>Depends on theme and implementation</td></tr><tr><th>CMS</th><td>Integrated CMS</td><td>Integrated CMS</td><td>Extensive content management</td></tr><tr><th>Interactions</th><td>Advanced visual interactions</td><td>Visual interactions and animations</td><td>Depends on plugins and development</td></tr><tr><th>SEO</th><td>Built-in controls</td><td>Built-in controls</td><td>Core features and plugins</td></tr><tr><th>Extensibility</th><td>Integrations and custom code</td><td>Integrations and custom code</td><td>Extensive plugin and development ecosystem</td></tr><tr><th>Maintenance</th><td>Platform-managed infrastructure</td><td>Platform-managed infrastructure</td><td>Hosting and installation maintenance</td></tr><tr><th>Ideal use</th><td>Marketing and CMS-driven websites</td><td>Visual marketing and creative websites</td><td>Content-heavy and extensible websites</td></tr></tbody></table></div>
+<p>It's worth noting that none of these platforms automatically guarantees better SEO, faster performance or a better user experience.</p>
+<p>Those outcomes depend on implementation, content quality, technical configuration, hosting and ongoing maintenance.</p>
+<h2>Which platform would I recommend?</h2>
+<p>If someone asked me which of the three platforms they should use, I wouldn't immediately give them a name.</p>
+<p>I'd first ask what they're trying to achieve.</p>
+<p>Here is how I'd approach some common scenarios.</p>
+<h3>For a startup or SaaS company</h3>
+<p>I'd lean towards Webflow or Framer.</p>
+<p>Both can support polished marketing websites, landing pages and product communication.</p>
+<p>I'd consider Webflow when the website needs more detailed CMS structures, responsive control or a larger marketing content system.</p>
+<p>I'd consider Framer when the priority is a visually expressive website with a relatively straightforward content structure and fast design iteration.</p>
+<h3>For a creative agency or personal brand</h3>
+<p>I'd lean towards Framer or Webflow.</p>
+<p>Framer is attractive for portfolios and creative websites where visual presentation and motion are important.</p>
+<p>Webflow is equally capable, particularly when the website needs more structured content, custom interactions or detailed control over its layout.</p>
+<h3>For a business with a blog or extensive content requirements</h3>
+<p>I'd give WordPress serious consideration.</p>
+<p>Its content management capabilities, plugin ecosystem and flexibility make it a strong option for businesses that publish frequently or require a more extensive publishing infrastructure.</p>
+<p>Webflow can also work well for structured content, so I'd evaluate the actual publishing requirements before deciding.</p>
+<h3>For an e-commerce business</h3>
+<p>I'd assess the products, inventory, payment requirements, integrations and operational needs before selecting a platform.</p>
+<p>WordPress with WooCommerce can be suitable for businesses that need extensive customisation and control.</p>
+<p>For other projects, a dedicated commerce platform might be more appropriate.</p>
+<p>The important thing is to select a platform that supports the business beyond the initial website launch.</p>
+<h2>A few things I consider regardless of the platform</h2>
+<p>There are certain principles I don't think should change simply because the underlying website builder changes.</p>
+<h3>Responsive design should be intentional</h3>
+<p>Mobile responsiveness isn't something I leave until the end.</p>
+<p>I consider how content, navigation, typography and layouts will adapt across different devices throughout the design process.</p>
+<h3>SEO should be part of the design process</h3>
+<p>Search engine optimisation shouldn't be an afterthought.</p>
+<p>Page structure, heading hierarchy, content organisation, descriptive URLs, metadata, image optimisation, internal linking and accessibility all contribute to a website's discoverability.</p>
+<p>The platform provides tools, but the quality of their implementation still matters.</p>
+<h3>Performance is part of the user experience</h3>
+<p>Animations, images, fonts, third-party scripts and unnecessary plugins can affect loading behaviour.</p>
+<p>I pay attention to how these elements are implemented because a visually impressive website should still feel responsive and accessible.</p>
+<h3>The client should be able to manage their website</h3>
+<p>A website shouldn't become a permanent dependency on its designer for every minor content update.</p>
+<p>Where possible, I consider how the client will manage their pages, services, articles and other content after handover.</p>
+<p>The best platform is also one the business can realistically maintain.</p>
+<h2>Final thoughts: It's about choosing the right tool for the job</h2>
+<p>Working with Webflow, Framer and WordPress has reinforced something I believe about website design: the technology is important, but it isn't the starting point.</p>
+<p>A good website begins with understanding the business, its audience and what the experience needs to accomplish.</p>
+<p>Webflow offers an excellent visual development environment with detailed layout control. Framer makes it easier to explore and publish visually expressive websites. WordPress provides an extensive content management and development ecosystem.</p>
+<p>Each has its strengths, limitations and ideal applications.</p>
+<p>I don't believe in choosing a platform simply because it's trending or because it's the one I'm most comfortable using.</p>
+<p>I'd rather understand the problem, evaluate the requirements and recommend the technology that makes the most sense.</p>
+<p>Ultimately, I'm not interested in just putting websites online. I'm interested in designing digital experiences that communicate clearly, work reliably and give businesses a better way to connect with their audiences.</p>
+<p>If you're looking for someone to help with your next website, "<a href="https://willomarty.net.ng/#projects">explore my projects</a>" or "<a href="https://willomarty.net.ng">get in touch</a>".</p>`,
+    tags: ["Web Design", "Webflow", "Framer", "WordPress"],
+    status: "published",
+    published_at: "2026-11-09T03:00:00.000Z",
+    created_at: "2026-11-09T03:00:00.000Z",
+    updated_at: "2026-11-09T03:00:00.000Z",
+  },
   {
     id: "57f82616-2611-4df0-ba50-c3bcae68b568",
     title: "Why Your Webflow Mobile Text Layout Keeps Shifting (And How to Fix It)",

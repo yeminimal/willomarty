@@ -1,4 +1,5 @@
 # Homepage and articles
+- [ ] Publish the new Webflow, Framer and WordPress workflow article with an editorial cover and sitemap/crawler updates.
 - [x] Publish the new Webflow mobile-layout article with a custom cover and update sitemap/crawler references.
 - [x] Add YDPay as the fourth homepage featured project with case study, archive entry and search metadata.
 - [x] Populate the design-process article verbatim from the supplied PDF and verify all text.
