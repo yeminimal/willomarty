@@ -104,3 +104,4 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://willomarty.net.ng/sitemap.xml
+Sitemap: https://willomarty.net.ng/articles-sitemap.xml
