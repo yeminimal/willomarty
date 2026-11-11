@@ -157,6 +157,10 @@
     <loc>https://willomarty.net.ng/projects</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://willomarty.net.ng/education</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>yearly</changefreq>
@@ -175,6 +179,13 @@
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://willomarty.net.ng/articles/why-your-business-still-needs-a-real-website</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
