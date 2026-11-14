@@ -12,6 +12,55 @@ import type { Article } from "@/lib/articles.shared";
  */
 export const ARTICLES: Article[] = [
   {
+    id: "c7a21c9d-6c4f-42b0-a58f-30a21ac9c852",
+    title: "Why Web3 Brands Look the Same (And What It Actually Takes to Stand Out)",
+    slug: "why-web3-brands-look-the-same",
+    meta_description:
+      "Why do Web3 brands rely on the same neon gradients and crypto clichés? A Moon Republic Academy project shows how intentional generative AI art can make a brand distinctive.",
+    cover_image_url:
+      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Ffdf4499acd99448cbea233f1c75f20bf?format=webp&width=800&height=1200",
+    cover_image_alt:
+      "Dark green and gold Web3 illustration featuring cryptocurrency coins and a central token",
+    body_html: `<p>There's a visual language that has quietly taken over Web3 branding, and once you've spotted it, you can't unsee it.</p>
+<p>Neon gradients bleeding into deep black backgrounds. Spinning 3D coin renders. Hexagonal grid overlays that suggest technology without actually saying anything. A sans-serif wordmark set in white, tilted at a slight angle, sitting on top of all of it. It looks futuristic. It looks like every other Web3 project you've ever scrolled past.</p>
+<p>That's the problem.</p>
+<p>I started noticing it properly while working as a creative designer on Moon Republic Academy, a Web3 education platform. It was a team project, multiple designers, different hands on the work. And looking across what was being produced, I kept seeing people reach for the same defaults: same stock imagery, same coin renders, same visual vocabulary that the whole blockchain and crypto industry was already swimming in. The kind of output you'd get if you typed "Web3 brand design" into a prompt box, hit generate, and called it a day.</p>
+<p>That became the brief I gave myself: if everybody in the category is speaking the same visual language, the only move is to refuse it entirely.</p>
+<h2>The generic answer is a consumer answer</h2>
+<p>Here's what I mean by that. When someone designs a brand without a point of view, without actual strategy behind it, what comes out is what any consumer would recognise as "correct." It has the right aesthetic markers. It looks like it belongs in the category. It passes a surface check.</p>
+<p>But correct is not the same as good. And in Web3 specifically, correct is basically invisible.</p>
+<p>Think about how most people interact with crypto projects. They're already skeptical. They've seen enough rug pulls and rebrand-and-disappear projects to be cautious about anything that doesn't immediately feel different and trustworthy. When your brand looks like a template assembled from a "blockchain starter pack" folder, you're not building trust. You're borrowing the visual history of a hundred projects that came before you, and some of those projects were outright scams. That's the baggage your design is walking into whether you planned for it or not.</p>
+<p>Web3 users have different expectations from traditional web users. The best designers in the space build for two audiences at once: the crypto-native person who can tell immediately if something feels off, and the person who is brand new to blockchain and needs everything explained clearly without being talked down to. Generic neon grids do neither. They say "this is a crypto project" without giving anyone a single reason to care about this particular one.</p>
+<h2>Why Web3 needs more design discipline, not less</h2>
+<p>There's a thinking in some circles that because Web3 is decentralized, edgy, counter-cultural, the brand can be loose. That the technology does the talking. That design is packaging and packaging doesn't matter.</p>
+<p>That thinking costs projects real users.</p>
+<p>The trust gap in crypto is enormous. Every design decision, from the color palette to the layout to the way a button is labeled, is either building credibility or quietly chipping away at it. A brand that looks assembled from stock assets is not saying "we're serious." It's saying "we didn't think about this." And in a space where people are deciding whether to put actual money into your project or recommend it to someone they know, "we didn't think about this" is a death sentence.</p>
+<p>Strong Web3 branding has to earn trust first, then community, then hype. Most projects are trying to do it in reverse order. They build hype with generic visuals, then wonder why retention and conversion are weak. The branding is doing real work whether you designed it intentionally or not. The question is whether it's working for you or against you.</p>
+<h2>What actually happened at Moon Republic Academy</h2>
+<p>The turning point on that project was a decision about imagery. The easy path was stock: someone pointing at a glowing blockchain diagram, coins floating dramatically in space, the same cut-out renders you've definitely seen before. That was the direction the work was gravitating toward from several people on the team.</p>
+<p>I went a different way. I used generative AI tools to build custom visuals, but that's not really the point of the story. The point is how I prompted them. Instead of describing what a crypto brand looks like, I prompted around what this specific brand felt like. The concept of education. Access. Community. The idea of a republic, structured participation, shared knowledge, earned membership. What came back from that process looked nothing like what you'd find in a "Web3 brand assets" folder. It was weirder, more considered, more distinctly theirs.</p>
+<figure><img src="https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fd7ef5836071d45bc9fdfb7a29efcd19a?format=webp&amp;width=800&amp;height=1200" alt="Moon Republic Academy social campaign artwork with the headline Leave Broke Days Behind and a blue vintage car" loading="lazy" style="display:block;width:100%;height:auto" /><figcaption><p><em>A finished campaign visual: a specific, story-led direction instead of familiar crypto imagery.</em></p></figcaption></figure>
+<p>The campaign's blue vintage car gave the idea a human, everyday setting. Rather than relying on coins and abstract technology symbols, the imagery connected the message to an expressive character and a scene people could read at a glance.</p>
+<figure><img src="https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F217b26c7cea44f6bae8d4a953e9b5af0?format=webp&amp;width=800&amp;height=1200" alt="Close-up campaign image of the smiling driver inside the blue vintage car" loading="lazy" style="display:block;width:100%;height:auto" /><figcaption><p><em>A closer character view brings warmth and personality to the campaign.</em></p></figcaption></figure>
+<figure><img src="https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fc52b8a71938e4eb88636eca739ce705a?format=webp&amp;width=800&amp;height=1200" alt="Blue vintage car driving through a city street, with the driver visible through the window" loading="lazy" style="display:block;width:100%;height:auto" /><figcaption><p><em>The car and city setting create a recognizable world for the brand's visual story.</em></p></figcaption></figure>
+<figure><img src="https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fc297b48100e84aa2bb01a9bc0bd693e0?format=webp&amp;width=800&amp;height=1200" alt="Blue vintage car in motion with money in the air, part of the Moon Republic Academy campaign" loading="lazy" style="display:block;width:100%;height:auto" /><figcaption><p><em>An alternate campaign treatment uses motion and flying notes to add energy to the same visual concept.</em></p></figcaption></figure>
+<p>The other designers on the team had access to the exact same tools. The difference was not the tool. It was the intent behind the prompt. It was having a point of view before touching anything.</p>
+<p>That's the part people skip. They want the output without the thinking that should come before it. And AI, to its credit, will give you something fast either way. The problem is fast and correct is not the same as intentional and distinctive. One of those travels. The other gets lost in the feed.</p>
+<h2>What this means for your Web3 brand or website</h2>
+<p>Design in Web3 is not decoration. It is user experience, trust signal, and credibility marker all at once. If your brand looks like it was assembled from a checklist of crypto visual conventions, the problem isn't just that it looks generic. It's that it's making it structurally harder for people to understand why your project is worth their time and attention over the fifty others they saw this week.</p>
+<p>A few honest questions worth sitting with before the next brand or site decision:</p>
+<p>Does your visual identity communicate something specific, or does it just say "crypto"? If you swapped your name for a competitor's, would anyone notice the difference?</p>
+<p>Are you designing for trust first, or for the community's internal aesthetic? Both matter. But in a space with as many credibility problems as Web3 has accumulated, trust has to come before cool.</p>
+<p>Are you using AI to generate, or to realize? Generating means prompting broadly and accepting what comes back. Realizing means knowing exactly what you're trying to say, and using every tool available, AI included, to say it with precision. The first produces output. The second produces work.</p>
+<p>The gap between a Web3 brand that people remember and one that disappears into the feed is not about budget. It's not even really about skill level. It's about whether someone with a genuine point of view was directing the work, or whether the work was directing itself.</p>
+<p>One of those scales. The other just multiplies.</p>`,
+    tags: ["Branding", "Web3", "AI", "Creative Direction"],
+    status: "published",
+    published_at: "2026-11-14T00:38:15.000Z",
+    created_at: "2026-11-14T00:38:15.000Z",
+    updated_at: "2026-11-14T00:38:15.000Z",
+  },
+  {
     id: "6ef1df6e-f95d-41c0-a1c6-8f4aa14f38e9",
     title: `Why Your Business Still Needs a Real Website (And Why "One-Shotting" One With AI Isn't the Shortcut You Think It Is)`,
     slug: "why-your-business-still-needs-a-real-website",
