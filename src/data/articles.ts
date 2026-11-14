@@ -18,9 +18,9 @@ export const ARTICLES: Article[] = [
     meta_description:
       "Why do Web3 brands rely on the same neon gradients and crypto clichés? A Moon Republic Academy project shows how intentional generative AI art can make a brand distinctive.",
     cover_image_url:
-      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fd25241e5599540e4b02e1040687ca092?format=webp&width=800&height=1200",
+      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Ffdf4499acd99448cbea233f1c75f20bf?format=webp&width=800&height=1200",
     cover_image_alt:
-      "Moon Republic Academy campaign visual featuring a blue vintage car and its driver",
+      "Dark green and gold Web3 illustration featuring cryptocurrency coins and a central token",
     body_html: `<p>There's a visual language that has quietly taken over Web3 branding, and once you've spotted it, you can't unsee it.</p>
 <p>Neon gradients bleeding into deep black backgrounds. Spinning 3D coin renders. Hexagonal grid overlays that suggest technology without actually saying anything. A sans-serif wordmark set in white, tilted at a slight angle, sitting on top of all of it. It looks futuristic. It looks like every other Web3 project you've ever scrolled past.</p>
 <p>That's the problem.</p>
