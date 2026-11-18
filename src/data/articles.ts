@@ -12,6 +12,50 @@ import type { Article } from "@/lib/articles.shared";
  */
 export const ARTICLES: Article[] = [
   {
+    id: "72b184ea-1466-4ce8-9619-46182bf80268",
+    title: "What Makes a Web3 Consumer Brand Actually Work",
+    slug: "what-makes-a-web3-consumer-brand-work",
+    meta_description:
+      "A Web3 consumer brand needs more than a logo and a whitepaper. Learn how trust, consistency, emotion and intentional design can make unfamiliar technology approachable.",
+    cover_image_url:
+      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F39032ff95edf41758310d905807067a8?format=webp&width=800&height=1200",
+    cover_image_alt:
+      "Web3 Consumer Brands illustration with a smartphone, wallet, and blockchain symbols",
+    body_html: `<p>Most Web3 projects are not consumer brands. They are technology announcements wearing a logo.</p>
+<p>That distinction matters more than the ecosystem likes to admit. And it matters most to the people building Web3 projects who actually want regular people, not just crypto-native users, to show up, stay, and care.</p>
+<p>A Web3 consumer brand is not just a blockchain project with a nicer website. It is a product experience that earns trust from strangers, makes people feel something, and stays consistent enough that those people come back and bring others. That's a much higher bar than "we have a logo and a whitepaper." Too many projects still treat branding as a visual layer to add at the end, rather than part of the experience that earns a newcomer’s trust.</p>
+<p>That gap is the opportunity. And it is also exactly where most projects are losing.</p>
+<h2>Trust, consistency, and emotion: why they're one problem, not three</h2>
+<p>When people talk about what separates a Web3 consumer brand from a generic crypto project, three words come up most: trust, consistency, emotion. The temptation is to treat them as separate items on a checklist. Fix the trust issue. Add some consistency. Make it feel warmer.</p>
+<p>But they're not separate. They are the same problem showing up at different points in a user's journey.</p>
+<p>In traditional finance, trust comes from institutions. Big buildings, government insurance, brand recognition spanning decades. Web3 projects don't have any of that. No decades of history. No government-backed insurance. No physical presence. So the brand has to do that work instead, and it has to do it fast, in the first few seconds someone lands on the page, opens the app, or sees a post.</p>
+<p>If the visual identity looks inconsistent, trust takes a hit. If the product feels cold and technical, the emotional connection never forms. And if someone feels that something is off with a Web3 project, they leave. They are not coming back. <a href="https://designprotocol.substack.com/p/state-of-crypto-design">Design Protocol reports 2.1× higher user retention for protocols with high brand coherence</a>, though its linked article does not expose enough methodology to assess how that comparison was calculated. Treat it as an indicative claim, not a universal benchmark. Coherence is what trust can look like from the outside.</p>
+<h2>The real reason Web3 brands don't feel like consumer brands</h2>
+<p>Walk through most Web3 project pages and the pattern is obvious. Dark background. Neon gradient. Abstract 3D shape implying technology. White wordmark. The same visual language repeated across hundreds of projects until none of them look like anything at all.</p>
+<p>The problem isn't the aesthetic. Dark and minimal can work. The problem is the absence of intention. These aren't creative decisions, they are category defaults. And a default is just what happens when no one has actually thought about what this specific brand needs to feel like to a real person who has never owned a crypto wallet.</p>
+<p>Better user experience will not solve every barrier to Web3 adoption, but it can make unfamiliar products easier to understand and use. <a href="https://clay.global/blog/web3-design">Clay Global's overview</a> highlights clarity, transparency, and usability as ways to build user confidence, while <a href="https://forkast.news/poor-user-experience-holding-back-web3-adoption/">Forkast's analysis</a> describes confusing onboarding as a barrier for newcomers. These are design choices that can support broader adoption, not proof that visual design alone drives adoption numbers.</p>
+<p>Working as a creative designer on Moon Republic Academy, a Web3 education platform, the gap between intentional brand design and default crypto design was visible in real time across the same project. The work that stood out was the work where someone had made an actual creative decision, chose a direction, resisted the first generic answer, and built something that felt like it belonged to that specific project. The work that disappeared into the feed was the work that reached for the same visual shorthand the entire industry was already using.</p>
+<p>Mainstream adoption requires invisible UX, effortless onboarding, and apps with everyday value. The branding has to match that ambition. If the design signals "this is for crypto insiders only," the mainstream user is already gone before they've seen anything else.</p>
+<h2>What an actual Web3 consumer brand needs from its designer</h2>
+<p>This is where the conversation gets practical, especially if you're a founder building something in this space and trying to figure out who you need on the brand and design side.</p>
+<p>A Web3 consumer brand needs a designer who understands that the visual system is infrastructure, not decoration. <a href="https://appear.rno1.com/insights/branding-ux-agency-web3-crypto-startups">Web3-focused branding and UX guidance from RNO1</a> emphasizes trust, technical credibility, and community identity across product touchpoints. Projects aiming for mainstream adoption cannot rely on technology alone; design has to make it approachable.</p>
+<p>It needs someone who can hold consistency across surfaces, because a Web3 consumer brand is not just a website. It is social content, marketing materials, product UI, community touchpoints. Web3 brand strategy must address trust, decentralization narratives, and community identity, requirements that differ substantially from traditional SaaS or consumer brand engagements. That means the brand system has to be built to flex across all of those contexts without falling apart.</p>
+<p>And it needs someone with a point of view. <a href="https://crypto.news/legacy-brands-hold-the-key-to-web3s-next-adoption-wave/">Legacy brands may help bring Web3 to mainstream audiences</a> by connecting blockchain utility to familiar experiences. The design work on a Web3 consumer brand is essentially the same translation problem: take something technical, decentralized, and unfamiliar to most people, and make it feel like something they already want to be part of. That is a creative and strategic problem as much as a visual one.</p>
+<h2>The question worth asking before you brief a designer</h2>
+<p>Before you start any brand or design work on a Web3 consumer project, one question cuts through most of the noise: if you stripped the name off this brand and replaced it with any competitor's, would anyone notice?</p>
+<p>If the answer is no, the brand is not doing its job. It is not building recognition, not building trust, and not building the kind of emotional connection that turns a first-time user into someone who tells other people about the product.</p>
+<p>That is the standard a Web3 consumer brand needs to hold itself to. Not "does this look like a crypto project?" but "does this look and feel like something that could not exist without us?"</p>
+<p>That gap, between those two questions, is where the real design work happens.</p>
+<hr>
+<h2>Sources</h2>
+<ul><li><a href="https://designprotocol.substack.com/p/state-of-crypto-design">State of Crypto Design</a> — Design Protocol</li><li><a href="https://designprotocol.substack.com/p/trust-signals-in-web3">Trust Signals in Web3</a> — Design Protocol</li><li><a href="https://clay.global/blog/web3-design">How Web3 Design Enhances Crypto Adoption and User Trust</a> — Clay Global</li><li><a href="https://forkast.news/poor-user-experience-holding-back-web3-adoption/">Poor User Experience Holding Back Web3 Adoption</a> — Forkast News</li><li><a href="https://hashedout.beehiiv.com/p/next-billion-users-web3-mainstream">The Next Billion Users</a> — Hashed Out</li><li><a href="https://appear.rno1.com/insights/branding-ux-agency-web3-crypto-startups">Brand &amp; UX Agency for Web3 and Crypto Startups</a> — RNO1</li><li><a href="https://crypto.news/legacy-brands-hold-the-key-to-web3s-next-adoption-wave/">Legacy Brands Hold the Key to Web3's Next Adoption Wave</a> — Crypto News</li></ul>`,
+    tags: ["Web3", "Branding", "Brand Strategy", "User Experience"],
+    status: "published",
+    published_at: "2026-11-18T10:44:52.000Z",
+    created_at: "2026-11-18T10:44:52.000Z",
+    updated_at: "2026-11-18T10:44:52.000Z",
+  },
+  {
     id: "c7a21c9d-6c4f-42b0-a58f-30a21ac9c852",
     title: "Why Web3 Brands Look the Same (And What It Actually Takes to Stand Out)",
     slug: "why-web3-brands-look-the-same",
@@ -100,6 +144,9 @@ export const ARTICLES: Article[] = [
     meta_description:
       "My website design workflow, experience with Webflow, Framer and WordPress, and recommendations for choosing the right platform for a project.",
     cover_image_url: "/framer-vs-webflow-vs-wordpress-willomarty.png",
+    cover_image_alt: "Framer vs Webflow vs WordPress comparison graphic",
+    cover_image_width: 1672,
+    cover_image_height: 941,
     body_html: `<p>There isn't a single way to build a great website, and there certainly isn't one platform that gets everything right.</p>
 <p>Over the years, I've worked with different website-building tools, each offering its own approach to translating ideas into functional digital experiences. Three platforms I've particularly worked with are Webflow, Framer and WordPress.</p>
 <p>I've used Webflow for marketing and fintech websites, Framer for business websites, and WordPress for business-focused web projects. While they can sometimes achieve similar results, the experience of designing, building and managing websites with each platform is quite different.</p>

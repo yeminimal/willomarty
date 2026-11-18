@@ -31,6 +31,18 @@ export const Route = createFileRoute("/articles/$slug")({
         ...(image
           ? [
               { property: "og:image", content: image },
+              ...(article.cover_image_width && article.cover_image_height
+                ? [
+                    { property: "og:image:width", content: String(article.cover_image_width) },
+                    { property: "og:image:height", content: String(article.cover_image_height) },
+                  ]
+                : []),
+              ...(article.cover_image_alt
+                ? [
+                    { property: "og:image:alt", content: article.cover_image_alt },
+                    { name: "twitter:image:alt", content: article.cover_image_alt },
+                  ]
+                : []),
               { name: "twitter:image", content: image },
             ]
           : []),
