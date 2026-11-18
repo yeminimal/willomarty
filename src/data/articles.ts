@@ -144,6 +144,9 @@ export const ARTICLES: Article[] = [
     meta_description:
       "My website design workflow, experience with Webflow, Framer and WordPress, and recommendations for choosing the right platform for a project.",
     cover_image_url: "/framer-vs-webflow-vs-wordpress-willomarty.png",
+    cover_image_alt: "Framer vs Webflow vs WordPress comparison graphic",
+    cover_image_width: 1672,
+    cover_image_height: 941,
     body_html: `<p>There isn't a single way to build a great website, and there certainly isn't one platform that gets everything right.</p>
 <p>Over the years, I've worked with different website-building tools, each offering its own approach to translating ideas into functional digital experiences. Three platforms I've particularly worked with are Webflow, Framer and WordPress.</p>
 <p>I've used Webflow for marketing and fintech websites, Framer for business websites, and WordPress for business-focused web projects. While they can sometimes achieve similar results, the experience of designing, building and managing websites with each platform is quite different.</p>
