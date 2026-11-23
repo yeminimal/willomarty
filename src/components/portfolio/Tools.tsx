@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { TOOLS } from "@/data/tools";
+import { TagFilterDrawer } from "@/components/portfolio/TagFilterDrawer";
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
 import { ArrowUpRight } from "lucide-react";
@@ -6,6 +8,10 @@ import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
 import { SITE_URL } from "@/lib/articles.shared";
 
 export function Tools() {
+  const [tag, setTag] = useState("All");
+  const tags = [...new Set(TOOLS.flatMap((tool) => tool.tags))];
+  const filteredTools = tag === "All" ? TOOLS : TOOLS.filter((tool) => tool.tags.includes(tag));
+
   return (
     <section id="personal-projects" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
@@ -30,8 +36,15 @@ export function Tools() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5">
-          {TOOLS.map((t, i) => (
+        <TagFilterDrawer
+          options={["All", ...tags]}
+          selected={tag}
+          onSelect={setTag}
+          label="Project tag filters"
+        />
+
+        <div className="mt-8 grid md:grid-cols-2 gap-5">
+          {filteredTools.map((t, i) => (
             <Reveal key={t.name} delay={Math.min(i * 0.05, 0.2)}>
               <a
                 href={t.url}

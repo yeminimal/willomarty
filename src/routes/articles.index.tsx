@@ -9,6 +9,7 @@ import { ArticleCard } from "@/components/articles/ArticleCard";
 import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { SITE_URL } from "@/lib/articles.shared";
 import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
+import { TagFilterDrawer } from "@/components/portfolio/TagFilterDrawer";
 
 const TITLE = "Articles — Williams Olayemi Martins";
 const DESCRIPTION =
@@ -87,18 +88,12 @@ function ArticlesArchive() {
           </Reveal>
 
           {articles.length > 0 && (
-            <div className="mt-10 flex flex-wrap items-center gap-2">
-              {["All", ...tags].map((item) => (
-                <Button
-                  key={item}
-                  size="sm"
-                  variant={tag === item ? "default" : "outline"}
-                  onClick={() => goTo(item, 1)}
-                >
-                  {item}
-                </Button>
-              ))}
-            </div>
+            <TagFilterDrawer
+              options={["All", ...tags]}
+              selected={tag}
+              onSelect={(item) => goTo(item, 1)}
+              label="Article tag filters"
+            />
           )}
 
           {articles.length === 0 ? (
