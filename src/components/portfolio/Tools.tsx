@@ -39,13 +39,13 @@ export function Tools() {
                 rel="noopener noreferrer"
                 className="group flex flex-col border border-border bg-surface h-full border-l-2 border-l-transparent hover:border-l-accent transition-all duration-300 overflow-hidden"
               >
-                <div className="relative aspect-square w-full overflow-hidden border-b border-border bg-background">
+                <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-background">
                   <img
                     src={t.image}
                     alt={`${t.name} — ${t.tagline}`}
                     loading="lazy"
-                    width={768}
-                    height={768}
+                    width={1280}
+                    height={720}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <span className="absolute top-3 right-3 font-mono text-[10px] uppercase tracking-[0.18em] text-accent border border-accent/40 bg-background/80 backdrop-blur px-2 py-1 whitespace-nowrap">
