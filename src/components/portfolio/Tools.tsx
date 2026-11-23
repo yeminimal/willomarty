@@ -37,7 +37,7 @@ export function Tools() {
                 href={t.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col border border-border bg-surface h-full border-l-2 border-l-transparent hover:border-l-accent transition-all duration-300 overflow-hidden"
+                className="group flex flex-col border border-border bg-surface h-full border-l-2 border-l-transparent hover:border-l-accent transition-all duration-300 overflow-hidden rounded-[15px]"
               >
                 <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-background">
                   <img
