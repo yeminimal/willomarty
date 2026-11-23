@@ -12,6 +12,54 @@ import type { Article } from "@/lib/articles.shared";
  */
 export const ARTICLES: Article[] = [
   {
+    id: "bc4272b1-0d16-41bb-8f8f-71948fc27768",
+    title: "Web3 Business Analytics for Consumer Brands: Why You're Measuring the Wrong Things",
+    slug: "web3-business-analytics-consumer-brands",
+    meta_description:
+      "Learn which on-chain and off-chain analytics Web3 consumer brands should track, from wallet retention and revenue per wallet to audience engagement.",
+    cover_image_url:
+      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2F28ae681a8d114363a3ea19b3b4a4a979?format=webp&width=800&height=1200",
+    cover_image_alt:
+      "Web3 business analytics for consumer brands, illustrating blockchain metrics, wallet retention, consumer engagement and revenue growth.",
+    body_html: `<p>Most Web3 founders running consumer brands are tracking the wrong numbers. Not because they're careless, but because they imported metrics from a playbook that was never built for how Web3 actually works.</p>
+<p>Pageviews. Social media followers. Email open rates. Discord member count. These are the numbers that feel familiar, the ones that look good in a deck and make a team feel like things are moving. And in a traditional consumer brand, they tell a useful enough story.</p>
+<p>In Web3, they're mostly noise.</p>
+<p>Traditional metrics like pageviews and sign-ups don't capture the full picture for Web3 products. The reason is structural. Web3 marketing analytics replaces Web2 KPIs with wallet-native equivalents like Revenue Per Wallet, Cost Per Wallet, and wallet retention rate. These aren't just new names for old metrics. They measure fundamentally different things, and chasing the old metrics while ignoring the new ones is how consumer brands in this space end up with large audiences that don't convert and communities that look active but generate no real growth.</p>
+<h2>The vanity metric trap is worse in Web3</h2>
+<p>Every founder has been warned about vanity metrics. High follower count, low engagement. Big email list, nobody opens. The warnings are the same in Web3 but the stakes are higher, because the gap between what looks like traction and what actually is traction is much wider.</p>
+<p>Marketing teams optimize for vanity metrics while ignoring the on-chain data costs that directly impact protocol sustainability, and vanity metrics are protocol liabilities. A Web3 consumer brand with 50,000 Twitter followers and 200 active wallets is not a healthy brand. It is a brand performing health in front of an audience that hasn't actually shown up where it counts.</p>
+<p>The on-chain data tells the real story. Wallet connections, token transactions, smart contract interactions, return wallet visits, these are the signals that show whether people are actually participating in the product, not just following it from a distance.</p>
+<p>In Web2, marketers rely on cookies, email IDs, and traditional analytics platforms. In Web3, you can't depend on those. Your marketing metrics need to merge traditional KPIs with on-chain insights, tracking not only how users arrive but also how they transact, hold assets, and engage with your on-chain apps over time.</p>
+<h2>What Web3 business analytics actually needs to track</h2>
+<p>The metrics that matter for a Web3 consumer brand split cleanly into two categories: on-chain data and off-chain data. Neither one alone gives you the full picture.</p>
+<p>Using Web2 data, you can track metrics like website traffic, social media engagement, and email open rates, but using on-chain data, you can track metrics like token transactions, wallet addresses, and smart contract interactions. The mistake most founders make is treating these as alternatives. They are complements. Off-chain data tells you how people discover and approach the brand. On-chain data tells you what they actually do when they get there.</p>
+<p>On-chain metrics capture user and asset activity recorded on a blockchain, including wallet interactions, smart contract calls, and token movements, offering visibility that is completely unavailable to traditional web analytics.</p>
+<p>For a Web3 consumer brand specifically, the metrics worth watching are:</p>
+<ul><li>Wallet retention rate (do people come back?)</li><li>Revenue Per Wallet (how much is each active wallet worth over time?)</li><li>Cost Per Wallet (what does it actually cost to acquire a wallet that participates?)</li><li>The ratio of on-chain activity to off-chain audience size, which is the clearest single signal of whether your brand is converting interest into actual participation</li></ul>
+<p>Even in crypto, raising awareness of your brand is a prerequisite for everything that comes next. The off-chain metrics still matter for top-of-funnel. But if you stop measuring there, you're only tracking the beginning of the journey and calling it the destination.</p>
+<h2>Why this matters from the design side</h2>
+<p>Here's the angle that doesn't get talked about enough: what you measure determines what you build. And what you build is what a designer is asked to design.</p>
+<p>I work in brand and web design for Web3 projects, and the clearest signal that a project's analytics strategy is broken is when the design brief is built entirely around traditional conversion metrics. "We need more signups." "Increase time on page." "Grow the Discord." These are real goals, but if they're the only goals, the product and the brand end up optimized for the wrong stage of the funnel.</p>
+<p>A founder who is measuring wallet retention rate gives a designer a completely different brief than one who is measuring Discord member count. The first is building for repeat engagement, for trust, for the kind of experience that makes someone come back and bring their wallet. The second is building for an audience that may never actually participate in the product at all.</p>
+<p>For Web3 product managers, traditional analytics tools often fall short. The decentralized and pseudonymous nature of Web3 necessitates a new approach to understanding user journeys, spanning from off-chain website visits to on-chain transactions. When that understanding isn't in place, the design brief reflects the gap, and the product that gets built reflects the design brief. The measurement problem becomes a product problem becomes a brand problem, all because nobody questioned whether the original metrics made sense for how Web3 actually works.</p>
+<h2>Tools worth knowing</h2>
+<p>For founders who want to close this gap, a few tools do this work well:</p>
+<ul><li><a href="https://formo.so">Formo</a> is built specifically to bridge on-chain and off-chain data in a single dashboard, which is the core infrastructure problem.</li><li><a href="https://dune.com">Dune Analytics</a> is the go-to for ecosystem-level on-chain queries if you want to go deeper into raw blockchain data.</li><li><a href="https://www.a16zcrypto.com/posts/article/measuring-growth-in-crypto">a16z Crypto's growth framework</a> is worth reading as a foundation for thinking about crypto growth funnels before you pick any tool.</li></ul>
+<p>The common thread across all of them is the same point: while standard analytics provide a baseline, on-chain KPIs offer a truer picture of engagement. Standard analytics are where you start. On-chain KPIs are where you learn whether anything you're doing actually matters.</p>
+<h2>The question to bring to your next analytics review</h2>
+<p>If your brand's most-watched metrics would look identical on a Web3 project and a traditional SaaS product, something is wrong. Web3 gives you data that no traditional brand has ever had access to: a permanent, auditable record of exactly how users interact with your product, with no cookies required and no third party in the middle.</p>
+<p>That's not a constraint. It's an advantage. The brands that figure out how to use it are the ones building the kind of analytics strategy that actually maps to how their product works.</p>
+<p>The ones still chasing Discord member count are building an audience. The ones tracking wallet retention and Revenue Per Wallet are building a business.</p>
+<hr>
+<h2>Sources</h2>
+<ul><li><a href="https://formo.so/blog/what-is-web3-marketing-analytics-a-complete-guide">What is Web3 Marketing Analytics</a> — Formo</li><li><a href="https://formo.so/blog/15-web3-metrics-that-drive-real-growth">15+ Web3 Metrics That Drive Real Growth</a> — Formo</li><li><a href="https://www.rzlt.io/blog/blockchain-analytics-marketing-for-web3-growth-using-on-chain-data">Blockchain Analytics Marketing for Web3 Growth</a> — RZLT</li><li><a href="https://www.chainscorelabs.com/blog/crypto-marketing-and-narrative-economics/bear-vs-bull-marketing/the-data-cost-why-youre-measuring-the-wrong-marketing-kpis">The Data Cost: Why You're Measuring the Wrong Marketing KPIs</a> — Chainscore Labs</li><li><a href="https://www.a16zcrypto.com/posts/article/measuring-growth-in-crypto">Measuring Growth in Crypto</a> — a16z Crypto</li><li><a href="https://formo.so/blog/web3-product-analytics-best-practices-and-benefits">Web3 Product Analytics: Best Practices and Benefits</a> — Formo</li><li><a href="https://dune.com">Dune Analytics</a></li></ul>`,
+    tags: ["Web3", "Analytics", "Marketing", "Consumer Brands"],
+    status: "published",
+    published_at: "2026-11-23T22:00:15.000Z",
+    created_at: "2026-11-23T22:00:15.000Z",
+    updated_at: "2026-11-23T22:00:15.000Z",
+  },
+  {
     id: "72b184ea-1466-4ce8-9619-46182bf80268",
     title: "What Makes a Web3 Consumer Brand Actually Work",
     slug: "what-makes-a-web3-consumer-brand-work",
