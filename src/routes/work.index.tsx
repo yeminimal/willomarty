@@ -1,5 +1,5 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WORK, workCategory, WORK_CATEGORY_ORDER } from "@/data/work";
 import { Nav } from "@/components/portfolio/Nav";
@@ -7,6 +7,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import { WorkCard } from "@/components/portfolio/WorkCard";
+import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
 
 const SITE_URL = "https://willomarty.net.ng";
 
@@ -70,13 +71,13 @@ function WorkArchive() {
       <Nav />
       <main className="pt-24 md:pt-28 pb-24 md:pb-32">
         <div className="mx-auto max-w-[1100px] px-6 md:px-10">
-          <Link
-            to="/"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={12} className="group-hover:-translate-x-0.5 transition-transform" />
-            Back home
-          </Link>
+          <Breadcrumbs
+            items={[
+              { name: "Home", url: SITE_URL },
+              { name: "Work", url: `${SITE_URL}/work` },
+            ]}
+            currentPage={`${SITE_URL}/work`}
+          />
 
           <Reveal>
             <div className="mt-10">
