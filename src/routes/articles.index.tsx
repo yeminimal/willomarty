@@ -1,6 +1,6 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
@@ -8,6 +8,7 @@ import { SectionLabel } from "@/components/portfolio/SectionLabel";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { SITE_URL } from "@/lib/articles.shared";
+import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
 
 const TITLE = "Articles — Williams Olayemi Martins";
 const DESCRIPTION =
@@ -62,13 +63,13 @@ function ArticlesArchive() {
       <Nav />
       <main className="pt-24 md:pt-28 pb-24 md:pb-32">
         <div className="mx-auto max-w-[1100px] px-6 md:px-10">
-          <Link
-            to="/"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={12} className="group-hover:-translate-x-0.5 transition-transform" />
-            Back home
-          </Link>
+          <Breadcrumbs
+            items={[
+              { name: "Home", url: SITE_URL },
+              { name: "Articles", url: `${SITE_URL}/articles` },
+            ]}
+            currentPage={`${SITE_URL}/articles`}
+          />
 
           <Reveal>
             <div className="mt-10">

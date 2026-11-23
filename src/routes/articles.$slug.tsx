@@ -6,6 +6,7 @@ import portrait from "@/assets/portrait.webp.asset.json";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { PUBLISHED_ARTICLES } from "@/data/articles";
 import { SITE_URL, absoluteUrl, formatDate, articleReadTime } from "@/lib/articles.shared";
+import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
 
 export const Route = createFileRoute("/articles/$slug")({
   beforeLoad: ({ params }) => {
@@ -124,13 +125,15 @@ function ArticlePage() {
       <Nav />
       <main className="pt-24 md:pt-28 pb-24 md:pb-32">
         <article className="mx-auto max-w-[760px] px-6 md:px-10">
-          <Link
-            to="/articles"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={12} className="group-hover:-translate-x-0.5 transition-transform" />
-            All articles
-          </Link>
+          <Breadcrumbs
+            className="mb-8"
+            items={[
+              { name: "Home", url: SITE_URL },
+              { name: "Articles", url: `${SITE_URL}/articles` },
+              { name: article.heading ?? article.title, url: `${SITE_URL}/articles/${article.slug}` },
+            ]}
+            currentPage={`${SITE_URL}/articles/${article.slug}`}
+          />
 
           {article.cover_image_url && (
             <img

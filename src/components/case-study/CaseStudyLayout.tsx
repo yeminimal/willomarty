@@ -1,10 +1,12 @@
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { CaseStudy, CaseStudySection } from "@/data/case-studies";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SectionLabel } from "@/components/portfolio/SectionLabel";
+import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
+import { SITE_URL } from "@/lib/articles.shared";
 
 function SectionVisuals({
   visuals,
@@ -134,13 +136,14 @@ export function CaseStudyLayout({ study }: { study: CaseStudy }) {
       <Nav />
       <main className="pt-24 md:pt-28">
         <div className="mx-auto max-w-[1100px] px-6 md:px-10">
-          <Link
-            to="/work"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-dim hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={12} className="group-hover:-translate-x-0.5 transition-transform" />
-            All work
-          </Link>
+          <Breadcrumbs
+            items={[
+              { name: "Home", url: SITE_URL },
+              { name: "Work", url: `${SITE_URL}/work` },
+              { name: study.client, url: `${SITE_URL}/work/${study.slug}` },
+            ]}
+            currentPage={`${SITE_URL}/work/${study.slug}`}
+          />
 
           <Reveal>
             <div className="mt-10 aspect-video w-full overflow-hidden border border-border bg-tag">

@@ -2,11 +2,21 @@ import { TOOLS } from "@/data/tools";
 import { SectionLabel } from "./SectionLabel";
 import { Reveal } from "./Reveal";
 import { ArrowUpRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/portfolio/Breadcrumbs";
+import { SITE_URL } from "@/lib/articles.shared";
 
 export function Tools() {
   return (
     <section id="personal-projects" className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
+        <Breadcrumbs
+          className="mb-8"
+          items={[
+            { name: "Home", url: SITE_URL },
+            { name: "Personal Projects", url: `${SITE_URL}/projects` },
+          ]}
+          currentPage={`${SITE_URL}/projects`}
+        />
         <Reveal>
           <SectionLabel>Personal projects</SectionLabel>
           <h1 className="display-serif mt-6 text-3xl md:text-5xl max-w-3xl">
