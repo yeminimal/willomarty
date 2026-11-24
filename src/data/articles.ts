@@ -12,6 +12,46 @@ import type { Article } from "@/lib/articles.shared";
  */
 export const ARTICLES: Article[] = [
   {
+    id: "4fa0e1bc-908f-4ce6-8736-6fe1d94b667e",
+    title: "Evaluating Webflow on Workflow and Client Management: What the Platform Gets Right and Where It Fights You",
+    slug: "evaluating-webflow-workflow-client-management",
+    meta_description:
+      "An honest evaluation of Webflow for designers and clients, covering workflows, workspace decisions, client management and project handoff.",
+    cover_image_url: "",
+    body_html: `<p>If you're searching for a "website designer near me" and they tell you they build in Webflow, here's what you should actually understand about what that means for how your project gets managed, delivered, and handed to you after launch.</p>
+<p>And if you're a Webflow designer or Webflow developer trying to figure out whether this platform is actually the right long-term infrastructure for your client work, this is an honest evaluation from someone who has built with it.</p>
+<p>The short version: Webflow is genuinely one of the best tools available for professional web design and development. It carries a 4.4 out of 5 on G2 across 995 verified reviews, which for a platform handling the complexity it does, is a real number. But the workflow and client management experience has specific friction points that neither the marketing material nor the tutorial library tends to prepare you for. Those friction points are worth naming plainly.</p>
+<h2>What Webflow actually solves well</h2>
+<p>The core promise of Webflow is that it closes the gap between design and production. A Webflow designer builds directly in the browser, making decisions in a visual environment that generates clean, structured HTML, CSS, and JavaScript. Webflow solves slow updates, developer dependency, template constraints, and the kind of migration pain that makes switching platforms feel like starting over.</p>
+<p>For client website management with Webflow specifically, the platform's split between the Designer and the Editor is where the real value lives. The Designer is where the Webflow designer or developer works, full control over structure, styling, and functionality. The Editor is what the client gets after handoff, a simplified interface where they can update text, swap images, and manage CMS content without touching the design or breaking anything structural.</p>
+<p>One thing that comes up consistently from people who've worked alongside a Webflow designer is that the platform lets them review progress, give clear feedback, and make small text or content changes without worrying about breaking anything. That is the ideal version of how the client-designer relationship works in Webflow, and when it works, it genuinely does work well.</p>
+<p>Editor-accessible management means marketing teams can add, edit, and publish CMS items through the Editor without touching the Designer or requiring development support. For a business that publishes content regularly but doesn't have an in-house developer, this is the entire value proposition.</p>
+<h2>Where the workflow starts fighting you</h2>
+<p>Here's the honest part.</p>
+<p>Poor client management in Webflow can lead to miscommunication, scope creep, and project delays. That is true of any platform, but Webflow has some structural specifics that make this worse if you don't set up the engagement correctly from the start.</p>
+<p>The first real decision every Webflow developer has to make at the start of a project is whether to build on their own workspace or the client's. If you build on your own workspace, no one touches the project until you transfer it. If you build on the client's workspace, you avoid transfer problems from the beginning and the client can get used to the Editor in time. Both choices have tradeoffs. Neither is obviously correct. And the wrong choice creates friction at handoff that is entirely avoidable with a conversation that most designers don't have with clients upfront.</p>
+<p>The billing and workspace situation compounds this. Recent changes to client billing and workspaces have increased costs and complicated workflows for Webflow designers, with the community asking for it to be easier to set up client accounts and provide the right level of access. This isn't a hypothetical complaint. It's a real operational headache that affects the cost structure of any Webflow designer or developer working with multiple clients.</p>
+<p>Clients often see the front-end result but may not fully understand the depth of work behind the scenes. This gap in understanding is where client management becomes critical. Webflow doesn't solve that gap by itself. It gives you the tools to manage it, but the communication structure, the milestone reviews, the scope definition, all of that still has to come from the designer or developer running the engagement.</p>
+<p>Users across G2 reviews consistently note missing features in Webflow which hinder efficient editing and project management on larger scales. On smaller projects, this rarely surfaces. On anything with multiple collaborators, complex CMS structures, or clients with frequent change requests, the platform's limitations in multi-language management and advanced custom code flexibility become real friction, not theoretical ones.</p>
+<h2>What client website management with Webflow actually requires</h2>
+<p>Webflow does not make client management automatic. What it does is give a good Webflow designer or Webflow developer the infrastructure to build a clean, manageable client relationship, if they use it deliberately.</p>
+<p>Client management in Webflow is not a soft skill. It is a structured operational system that directly impacts profitability and reputation. Building a repeatable collaboration framework is essential for scalability and long-term growth.</p>
+<p>That means: defining communication structure before the project starts, not mid-build. Setting up the workspace correctly at the beginning, not scrambling at handoff. Using the Editor properly so the client's post-launch updates don't require a developer every time something needs changing. And being clear about what the CMS can and cannot do before the client asks for something the structure doesn't support.</p>
+<p>QA should include responsive testing across devices, form submission checks, CMS content review, broken link testing, and speed optimization review before any project is handed over. Skipping any of those steps is where post-launch problems start, and post-launch problems are where client relationships quietly break down.</p>
+<h2>How this affects who you hire</h2>
+<p>If you're searching "website designer near me" and trying to decide between someone who builds in Webflow and someone who doesn't, the platform itself is less important than whether the person using it understands the workflow well enough to protect you from the friction points above.</p>
+<p>A Webflow designer who hands you a site on the wrong workspace, with no Editor training, no CMS documentation, and no clear handoff process has not done you a service regardless of how good the site looks. The design is one deliverable. The operational setup that lets you actually manage the site after launch is a separate deliverable, and it requires just as much intention.</p>
+<p>The right Webflow developer is not just someone who knows the platform. It is someone who understands that their job includes setting up the client's side of the relationship correctly, and who treats that as part of the work, not an afterthought after the launch call ends.</p>
+<hr>
+<h2>Sources</h2>
+<ul><li><a href="https://webflow.com/blog/how-to-manage-clients-in-webflow-a-guide-to-seamless-agency-client-collaboration">How to Manage Clients in Webflow</a> — Webflow Blog</li><li><a href="https://www.g2.com/products/webflow/reviews">Webflow Reviews</a> — G2</li><li><a href="https://www.lowcode.agency/blog/what-problems-does-webflow-solve">What Problems Does Webflow Solve</a> — Lowcode Agency</li><li><a href="https://www.lowcode.agency/blog/how-to-manage-a-website-redesign-project">How to Manage a Website Redesign Project</a> — Lowcode Agency</li><li><a href="https://www.appsrow.com/blog/how-to-manage-clients-in-webflow">How to Manage Clients in Webflow</a> — Appsrow</li><li><a href="https://www.flowninja.com/blog/10-common-webflow-problems-and-how-to-fix-them">10 Common Webflow Problems and How to Fix Them</a> — FlowNinja</li><li><a href="https://discourse.webflow.com/t/to-webflow-solutions-for-client-billing-workspace-changes/202520">Client Billing &amp; Workspace Changes</a> — Webflow Community Forum</li><li><a href="https://webflow.com/blog/scaling-webflow-projects">Scaling Webflow Projects</a> — Webflow Blog</li></ul>`,
+    tags: ["Webflow", "Web Design", "Client Management", "Workflow"],
+    status: "published",
+    published_at: "2026-11-24T21:16:42.000Z",
+    created_at: "2026-11-24T21:16:42.000Z",
+    updated_at: "2026-11-24T21:16:42.000Z",
+  },
+  {
     id: "bc4272b1-0d16-41bb-8f8f-71948fc27768",
     title: "Web3 Business Analytics for Consumer Brands: Why You're Measuring the Wrong Things",
     slug: "web3-business-analytics-consumer-brands",
