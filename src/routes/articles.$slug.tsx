@@ -146,7 +146,7 @@ function ArticlePage() {
               className="mt-10 aspect-[1.9] w-full border border-border object-cover"
             />
           )}
-          <h1 className="display-serif mt-10 text-4xl md:text-5xl leading-[1.05]">
+          <h1 className="display-serif mt-10 text-3xl md:text-5xl leading-[1.05]">
             {article.heading ?? article.title}
           </h1>
 
