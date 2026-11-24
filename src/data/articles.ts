@@ -17,7 +17,12 @@ export const ARTICLES: Article[] = [
     slug: "evaluating-webflow-workflow-client-management",
     meta_description:
       "An honest evaluation of Webflow for designers and clients, covering workflows, workspace decisions, client management and project handoff.",
-    cover_image_url: "",
+    cover_image_url:
+      "https://cdn.builder.io/api/v1/image/assets%2Ff029e48f71974ee389ffe944b9d634a1%2Fadc03126bec94d13824bbc69e58b1aa7?format=webp&width=800&height=1200",
+    cover_image_alt:
+      "Green and gold Webflow workflow illustration with a laptop, project calendar, client team, checklist, and completed tasks.",
+    cover_image_width: 1600,
+    cover_image_height: 900,
     body_html: `<p>If you're searching for a "website designer near me" and they tell you they build in Webflow, here's what you should actually understand about what that means for how your project gets managed, delivered, and handed to you after launch.</p>
 <p>And if you're a Webflow designer or Webflow developer trying to figure out whether this platform is actually the right long-term infrastructure for your client work, this is an honest evaluation from someone who has built with it.</p>
 <p>The short version: Webflow is genuinely one of the best tools available for professional web design and development. It carries a 4.4 out of 5 on G2 across 995 verified reviews, which for a platform handling the complexity it does, is a real number. But the workflow and client management experience has specific friction points that neither the marketing material nor the tutorial library tends to prepare you for. Those friction points are worth naming plainly.</p>
